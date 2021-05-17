@@ -1,59 +1,74 @@
-.glow-button {
-    font-size: 1.3rem;
+:root {
+    --clr-neon: hsl(317 100% 54%);
+    --clr-bg: hsl(323 21% 16%);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+.glowing-button {
+    font-size: 1.25rem;
 
     display: inline-block;
     cursor: pointer;
     text-decoration: none;
-    color: hsl(317 100% 54%);
-    border: hsl(317 100% 54%) .125em solid;
-    padding: .25em 1em;
-    border-radius: .25em;
+    color: var(--clr-neon);
+    border: var(--clr-neon) 0.125em solid;
+    padding: 0.25em 1em;
+    border-radius: 0.25em;
 
-    text-shadow: 0 0 .125em hsl(0 0% 100% / .3), 0 0 .45em currentColor;
-    box-shadow: inset 0 0 .5em 0 hsl(317 100% 54%), 0 0 .5em 0 hsl(317 100% 54%);
+    text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em currentColor;
+
+    box-shadow: inset 0 0 0.5em 0 var(--clr-neon), 0 0 0.5em 0 var(--clr-neon);
 
     position: relative;
-    left: '40%',
+    z-index: 1;
 }
 
-.glow-button::before {
+.glowing-button::before {
     pointer-events: none;
     content: "";
     position: absolute;
-    background: hsl(317 100% 54%);
+    background: var(--clr-neon);
     top: 120%;
     left: 0;
     width: 100%;
     height: 100%;
 
-    transform: perspective(1em) rotateX(40deg) scale(1, .35);
+    transform: perspective(1em) rotateX(40deg) scale(1, 0.35);
     filter: blur(1em);
     opacity: 0.7;
 }
 
-.glow-button::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  box-shadow: 0 0 2em .5em hsl(317 100% 54%);
-  opacity: 0;
-  background-color: hsl(317 100% 54%);
-  z-index: -1;
-  transition: opacity 100ms linear;
+.glowing-button::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    box-shadow: 0 0 2em 0.5em var(--clr-neon);
+    opacity: 0;
+    background-color: var(--clr-neon);
+    transition: opacity 100ms linear;
+    z-index: -1;
 }
 
-.glow-button:hover, .glow-button:focus {
-    color: hsl(323 21% 16%);
+.glowing-button:hover,
+.glowing-button:focus {
+    color: var(--clr-bg);
     text-shadow: none;
 }
 
-.glow-button:hover::before, .glow-button:focus::before  {
+.glowing-button:hover::before,
+.glowing-button:focus::before {
     opacity: 1;
 }
-
-.glow-button:hover::after, .glow-button:focus::after {
+.glowing-button:hover::after,
+.glowing-button:focus::after {
     opacity: 1;
 }
+  

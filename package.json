@@ -1,8 +1,8 @@
 {
-  "name": "cse183-assignment4",
+  "name": "dphenry-website",
   "version": "1.0.0",
-  "description": "CSE183 Assignment 5 - React I",
-  "author": "David Harrison <dcharris@ucsc.edu>",
+  "description": "Donovan Henry website",
+  "author": "Donovan Henry <dphenry@ucsc.edu>",
   "license": "UNLICENSED",
   "repository": "none",
   "devDependencies": {

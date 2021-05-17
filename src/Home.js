@@ -574,7 +574,7 @@ function Home() {
         </Box>
 
         <Box style = {{display: 'flex', justifyContent: 'center'}}>
-          <a href = "#" class = "glow-button">Scroll to Top</a>
+          <a href = "#" className = "glowing-button">Scroll to Top</a>
         </Box>
       </Paper>
 
