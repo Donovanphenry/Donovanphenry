@@ -146,7 +146,6 @@ const useStyles = makeStyles((theme) => ({
   },
 
   siteTitleBox: {
-    width: '100%',
     display: 'flex',
   },
 
@@ -156,14 +155,12 @@ const useStyles = makeStyles((theme) => ({
   // #FADA5E
 
   siteTitleTypog: {
-    borderBottom: `2px solid ${AppColors.homePrimary}`,
+    borderBottom: `2px solid ${AppColors.homeSecondary}`,
     textAlign: 'center',
     marginTop: theme.spacing(2),
     marginBottom: theme.spacing(2),
-    paddingBottom: theme.spacing(2),
-    flexGrow: 1,
     fontWeight: 'bold',
-    color: AppColors.homePrimary,
+    color: AppColors.homeSecondary,
 
     [theme.breakpoints.up('sm')]: {
       fontSize: '50px',
@@ -278,9 +275,7 @@ const useStyles = makeStyles((theme) => ({
   },
 
   homeInfoHeader: {
-    marginTop: theme.spacing(4),
     marginBottom: theme.spacing(1),
-    paddingTop: theme.spacing(3),
     borderTop: `2px solid ${AppColors.primary}`,
     fontSize: '20px',
     fontWeight: 'bold',
