@@ -1,0 +1,598 @@
+import './Styles/glowStyle.css'
+
+import React from 'react';
+
+import {useHistory} from 'react-router-dom';
+
+import JoshuaSunset from './images/JoshuaSunset.jpg';
+import Dijkstras from './images/Dijkstras.png';
+import CompSciNoRules from './images/CompSciNoRules.png';
+import SantaCruz from './images/SantaCruz.jpg';
+
+import Paper from '@material-ui/core/Paper';
+import makeStyles from '@material-ui/core/styles/makeStyles';
+import Button from '@material-ui/core/Button';
+import Box from '@material-ui/core/Box';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import Typography from '@material-ui/core/Typography';
+import DescriptionIcon from '@material-ui/icons/Description';
+import AssignmentIndIcon from '@material-ui/icons/AssignmentInd';
+import AppBar from '@material-ui/core/AppBar';
+import Hidden from '@material-ui/core/Hidden';
+import Drawer from '@material-ui/core/Drawer';
+import Divider from '@material-ui/core/Divider';
+import Toolbar from '@material-ui/core/Toolbar';
+import Link from '@material-ui/core/Link';
+
+import IconButton from '@material-ui/core/IconButton';
+import MenuIcon from '@material-ui/icons/Menu';
+import GitHubIcon from '@material-ui/icons/GitHub';
+import LinkedInIcon from '@material-ui/icons/LinkedIn';
+import WorkIcon from '@material-ui/icons/Work';
+
+const buttonWidth = 150;
+const btnWidth = 150;
+
+const useStyles = makeStyles((theme) => ({
+  homeAppBar: {
+    width: '100%',
+    background: '#131921',
+  },
+
+  homeToolbar: {
+    paddingLeft: '0px',
+    paddingRight: '0px',
+
+    [theme.breakpoints.up('sm')]: {
+    },
+  },
+
+  homeMenuBtn: {
+    color: '#5e9bf7',
+    marginLeft: theme.spacing(6),
+  },
+
+  homeTraverseBtn: {
+    // backgroundColor: '#6b6b6b',
+    // color: 'black',
+    color: '#5e9bf7',
+    margin: theme.spacing(1),
+    marginLeft: theme.spacing(5),
+    width: btnWidth,
+  },
+
+  homeTraversalDrawer: {
+    fill: '#252627',
+  },
+
+  homeButtonList: {
+    // background: '#252627',
+    background: '#0D1117',
+    width: '100%',
+    height: '100%',
+  },
+
+  homeDrawerTravBtn: {
+    // backgroundColor: '#6b6b6b',
+    color: '#5e9bf7',
+    width: btnWidth,
+    justifyContent: 'flex-start',
+  },
+
+  homeDrawerTravDocBtn: {
+    color: '#5e9bf7',
+    width: btnWidth,
+    justifyContent: 'flex-start',
+  },
+
+  homeBtnDivider: {
+    background: '#3b3c3d',
+    marginTop: theme.spacing(1),
+    marginBottom: theme.spacing(1),
+  },
+
+  homeContainer: {
+    width: '100%',
+    height: '100%',
+    backgroundColor: '#0D1117',
+  },
+
+  homePaper: {
+    backgroundColor: '#0D1117',
+    color: '#5e9bf7',
+    display: 'flex',
+    flexDirection: 'column',
+    paddingLeft: theme.spacing(6),
+    paddingRight: theme.spacing(6),
+  },
+
+  li: {
+    width: '100%',
+  },
+
+  liButton: {
+    // backgroundColor: '#6B6B6B',
+    // color: '#BEBEBE',
+    width: buttonWidth,
+    justifyContent: 'flex-start',
+  },
+
+  liText: {
+    width: '100%',
+    color: '#5e9bf7',
+    align: 'center',
+  },
+
+  homePersonalInfo: {
+    display: 'flex',
+    justifyContent: 'center',
+  },
+
+  homePersonalInfoTypog: {
+    fontSize: '20px',
+    textAlign: 'center',
+    marginTop: theme.spacing(3),
+    marginBottom: theme.spacing(5),
+
+    [theme.breakpoints.up('sm')]: {
+      width: '50%',
+    },
+    [theme.breakpoints.down('xs')]: {
+      width: '100%',
+    },
+  },
+
+  siteAuthorInfo: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+  },
+
+  siteTitleBox: {
+    width: '100%',
+    display: 'flex',
+  },
+
+  siteTitleTypog: {
+    borderBottom: '2px solid #5e9bf7',
+    textAlign: 'center',
+    marginTop: theme.spacing(2),
+    marginBottom: theme.spacing(2),
+    paddingBottom: theme.spacing(2),
+    flexGrow: 1,
+    fontWeight: 'bold',
+
+    [theme.breakpoints.up('sm')]: {
+      fontSize: '50px',
+    },
+    [theme.breakpoints.down('xs')]: {
+      fontSize: '40px',
+    },
+  },
+
+  homeAboutMeTypog: {
+    fontSize: '18px',
+    textAlign: 'center',
+    marginTop: theme.spacing(3),
+    marginBottom: theme.spacing(4),
+
+    [theme.breakpoints.up('md')]: {
+      width: '60%',
+    },
+  },
+
+  homeAspirTypog: {
+    fontSize: '18px',
+    textAlign: 'center',
+    marginBottom: theme.spacing(5),
+
+    [theme.breakpoints.up('md')]: {
+      width: '60%',
+    },
+  },
+
+  listAvenues: {
+    marginBottom: theme.spacing(10),
+  },
+
+  homeAboutMeTitleTypog: {
+    textAlign: 'center',
+    marginTop: theme.spacing(2),
+    marginBottom: theme.spacing(2),
+    color: '#5e9bf7',
+    fontWeight: 'bold',
+
+    [theme.breakpoints.up('sm')]: {
+      fontSize: '50px',
+    },
+    [theme.breakpoints.down('xs')]: {
+      fontSize: '40px',
+    },
+  },
+
+  homeInfoBox: {
+    display: 'flex',
+
+    [theme.breakpoints.up('lg')]: {
+      flexDirection: 'row',
+    },
+    [theme.breakpoints.down('md')]: {
+      flexDirection: 'column',
+    },
+
+    marginTop: theme.spacing(4),
+    marginBottom: theme.spacing(3),
+  },
+
+  homeInfoSubBox: {
+    display: 'flex',
+    color: '#5e9bf7',
+
+    [theme.breakpoints.up('lg')]: {
+      flexGrow: 1,
+      flexBasis: 1,
+    },
+    [theme.breakpoints.up('sm')]: {
+      flexDirection: 'row',
+    },
+    [theme.breakpoints.down('xs')]: {
+      flexDirection: 'column',
+    },
+  },
+
+  homeInfoPaper: {
+    display: 'flex',
+    flexDirection: 'column',
+    // background_v0: '#10151c',
+    background: '#11171f',
+    color: '#5e9bf7',
+
+    [theme.breakpoints.up('sm')]: {
+      flexGrow: 1,
+      flexBasis: 1,
+      margin: theme.spacing(1),
+    },
+    [theme.breakpoints.down('xs')]: {
+      marginTop: theme.spacing(2),
+      marginBottom: theme.spacing(2),
+    },
+  },
+
+  homeInfoPaperPic: {
+    width: '100%',
+    [theme.breakpoints.up('sm')]: {
+      height: theme.spacing(60),
+    },
+    [theme.breakpoints.down('xs')]: {
+      height: theme.spacing(40),
+    },
+  },
+
+  homeInfoTextFlex: {
+    display: 'flex',
+    flexDirection: 'column',
+    padding: theme.spacing(3),
+  },
+
+  homeInfoHeader: {
+    marginTop: theme.spacing(4),
+    marginBottom: theme.spacing(1),
+    paddingTop: theme.spacing(3),
+    borderTop: '2px solid #5e9bf7',
+    fontSize: '20px',
+    fontWeight: 'bold',
+    textAlign: 'center',
+  },
+
+  homeInfoTypog: {
+    marginTop: theme.spacing(1),
+  },
+
+  buttonFlexBox: {
+    width: '100%',
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'center',
+  },
+
+  externalLinks: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    color: '#5e9bf7',
+    paddingTop: theme.spacing(2),
+    paddingBottom: theme.spacing(2),
+  },
+
+  middleOfTextLink: {
+    color: '#5e7af7',
+    textDecoration: 'underline',
+  },
+
+  ucscLink: {
+    border: '1px solid #5e9bf7',
+    color: '#5e9bf7',
+    paddingLeft: theme.spacing(1),
+    paddingRight: theme.spacing(1),
+    textDecoration: 'none',
+  },
+}));
+
+/**
+ * @return {*}
+ */
+function Home() {
+  const classes = useStyles();
+  const history = useHistory();
+
+  const [drawerOpen, setDrawerOpen] = React.useState(false);
+
+  const toggleDrawerTraverse = (location) => {
+    setDrawerOpen(false);
+    history.push(location);
+  };
+
+  return (
+    <div className={classes.homeContainer}>
+      <Hidden smUp>
+        <AppBar position="static" className={classes.homeAppBar}>
+          <Toolbar className={classes.homeToolbar}>
+            <IconButton
+              edge="start"
+              aria-label="menu"
+              onClick={() => setDrawerOpen(true)}
+              className={classes.homeMenuBtn}
+            >
+              <MenuIcon />
+            </IconButton>
+
+            <Drawer
+              variant='temporary'
+              open={drawerOpen}
+              onClose={() => setDrawerOpen(false)}
+              className={classes.homeTraversalDrawer}
+            >
+              <List className={classes.homeButtonList}>
+                <ListItem>
+                  <Button
+                    className={classes.homeDrawerTravBtn}
+                    startIcon={<DescriptionIcon />}
+                    onClick={() => toggleDrawerTraverse('/Resume')}
+                    variant='outlined'
+                    color='inherit'
+                  >
+                    Resume
+                  </Button>
+                </ListItem>
+
+                <ListItem>
+                  <Button
+                    className={classes.homeDrawerTravBtn}
+                    startIcon={<WorkIcon />}
+                    onClick={() => toggleDrawerTraverse('/JobPortfolio')}
+                    variant='outlined'
+                    color='inherit'
+                  >
+                    Portfolio
+                  </Button>
+                </ListItem>
+
+                <Divider
+                  className = {classes.homeBtnDivider}
+                />
+
+                <ListItem>
+                  <Button
+                    className = {classes.homeDrawerTravDocBtn}
+                    startIcon = {<AssignmentIndIcon />}
+                    onClick = {() => {
+                      setDrawerOpen(false);
+                      const el = document.getElementById('homeAboutMeTitle');
+                      el.scrollIntoView(true);
+                    }}
+                    color = 'inherit'
+                    variant = 'outlined'
+                  >
+                    About Me
+                  </Button>
+                </ListItem>
+              </List>
+            </Drawer>
+          </Toolbar>
+        </AppBar>
+      </Hidden>
+
+      <Paper className={classes.homePaper}>
+        <Box className = {classes.siteAuthorInfo}>
+          <Box className = {classes.siteTitleBox}>
+            <Typography className={classes.siteTitleTypog}>
+              Donovan Henry&apos;s Website
+            </Typography>
+          </Box>
+
+          <Typography className={classes.homeAboutMeTypog}>
+            UC Santa Cruz student who&apos;s passionate about computer science,
+            math and physics. Great experience in C-based languages
+            (see &quot;Skills&quot; section of portfolio or resume)
+            and web development, with a love for the underlying concepts.
+            I.e. data structures, algorithms, computer architecture etc.
+          </Typography>
+
+          <Typography className={classes.homeAspirTypog}>
+            Currently seeking internships & opportunities in STEM-related
+            fields, but some areas of particular interest to me are theoretical
+            computer science, machine learning, web development,
+            deep learning, and computational physics.
+          </Typography>
+        </Box>
+
+        <List className={classes.listAvenues}>
+          <ListItem className={classes.li}>
+            <Box className={classes.buttonFlexBox}>
+              <Button
+                className={classes.liButton}
+                onClick={() => history.push('/Resume')}
+                startIcon={<DescriptionIcon />}
+                color='inherit'
+                variant='outlined'
+              >
+                Resume
+              </Button>
+            </Box>
+          </ListItem>
+
+          <ListItem className={classes.li}>
+            <Box className={classes.buttonFlexBox}>
+              <Button
+                className={classes.liButton}
+                onClick={() => history.push('/JobPortfolio')}
+                startIcon={<WorkIcon />}
+                color='inherit'
+                variant='outlined'
+              >
+                Portfolio
+              </Button>
+            </Box>
+          </ListItem>
+        </List>
+
+        <Typography
+          className = {classes.homeAboutMeTitleTypog}
+          id = 'homeAboutMeTitle'
+        >
+          About Me
+        </Typography>
+
+        <Box className={classes.homeInfoBox}>
+          <Box className={classes.homeInfoSubBox}>
+            <Paper className={classes.homeInfoPaper}>
+              <img
+                src={SantaCruz}
+                className={classes.homeInfoPaperPic}
+              >
+              </img>
+
+              <Box className={classes.homeInfoTextFlex}>
+                <Typography className={classes.homeInfoHeader}>
+                  Academic Achievements
+                </Typography>
+
+                <Typography className={classes.homeInfoTypog}>
+                  &nbsp;&nbsp;&nbsp;&nbsp;I&apos;m
+                  currently a junior at UC Santa Cruz 🎓
+                  majoring in computer science (B.S.), and concurrently
+                  pursuing a minor in statistics.
+                </Typography>
+              </Box>
+            </Paper>
+
+            <Paper className={classes.homeInfoPaper}>
+              <img
+                src={CompSciNoRules}
+                className={classes.homeInfoPaperPic}
+              >
+              </img>
+
+              <Box className={classes.homeInfoTextFlex}>
+                <Typography className={classes.homeInfoHeader}>
+                  Goals &amp; Aspirations
+                </Typography>
+
+                <Typography className={classes.homeInfoTypog}>
+                  &nbsp;&nbsp;&nbsp;&nbsp;I&apos;m
+                  very passionate about math
+                  and computer science, which leads me to believe
+                  that I will enjoy machine learning. In turn, I&apos;d
+                  love an opportunity to contribute to a company whose
+                  mission lies at the forefront of this technology. I
+                  plan to enroll in several machine learning courses
+                  throughout the remainder of my time at UC Santa Cruz,
+                  and I&apos;m currently a member of UCSC&apos;s <a
+                    className = {classes.middleOfTextLink}
+                    href = "https://scai.ucsc.edu/" >
+                    SCAI
+                  </a> (Santa
+                  Cruz Artificial Intelligence)
+                  club. I
+                  also particularly enjoy analysing algorithms and their
+                  order of growth and would be thrilled to be able to
+                  contribute to a company who specializes in such a field.
+                </Typography>
+              </Box>
+            </Paper>
+          </Box>
+
+          <Box className={classes.homeInfoSubBox}>
+            <Paper className={classes.homeInfoPaper}>
+              <img
+                src={Dijkstras}
+                className={classes.homeInfoPaperPic}
+              >
+              </img>
+
+              <Box className={classes.homeInfoTextFlex}>
+                <Typography className = {classes.homeInfoHeader}>
+                  Passions
+                </Typography>
+
+                <Typography className = {classes.homeInfoTypog}>
+                  &nbsp;&nbsp;&nbsp;&nbsp;I&apos;m
+                  dedicated to making this world a
+                  better place whether that be through machine
+                  learning, physics/astrophysics, quantum computing, or many
+                  other interesting areas.
+                </Typography>
+              </Box>
+            </Paper>
+
+            <Paper className={classes.homeInfoPaper}>
+              <img
+                src={JoshuaSunset}
+                className={classes.homeInfoPaperPic}
+              >
+              </img>
+
+              <Box className={classes.homeInfoTextFlex}>
+                <Typography className={classes.homeInfoHeader}>
+                  Personal Interests
+                </Typography>
+
+                <Typography className={classes.homeInfoTypog}>
+                  &nbsp;&nbsp;&nbsp;&nbsp;I
+                  played tier one hockey for around six years
+                  and in turn, I love doing things that involve
+                  teamwork. Whether that be working on projects
+                  with friends, getting involved in SCAI club
+                  affairs, playing/watching sports etc., I&apos;ll
+                  love it if it requires that we do it as a team. I
+                  also love to go for hikes with friends.
+                </Typography>
+              </Box>
+            </Paper>
+          </Box>
+        </Box>
+
+        <Box style = {{display: 'flex', justifyContent: 'center'}}>
+          <a href = "#" class = "glow-button">Scroll to Top</a>
+        </Box>
+      </Paper>
+
+      <Box className = {classes.externalLinks}>
+        <Link href = "https://github.com/Donovanphenry">
+          <IconButton color = 'inherit'>
+            <GitHubIcon />
+          </IconButton>
+        </Link>
+
+        <Link href = "https://www.linkedin.com/in/donovan-henry/">
+          <IconButton color = 'inherit'>
+            <LinkedInIcon />
+          </IconButton>
+        </Link>
+      </Box>
+    </div>
+  );
+}
+
+export default Home;
