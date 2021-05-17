@@ -327,22 +327,26 @@ const useStyles = makeStyles((theme) => ({
     color: AppColors.grey,
   },
 
-  jpFooter: {
+  jpFooterContainer: {
     borderTop: `2px solid ${AppColors.grey}`,
+    display: 'flex',
+    flexDirection: 'column',
     marginTop: theme.spacing(4),
     marginBottom: theme.spacing(1),
     marginLeft: theme.spacing(8),
     marginRight: theme.spacing(8),
     padding: theme.spacing(2),
-    display: 'flex',
     justifyContent: 'center',
-    overflow: 'auto',
 
     [theme.breakpoints.down('sm')]: {
       fontSize: '14px',
       marginLeft: theme.spacing(2),
       marginRight: theme.spacing(2),
     },
+  },
+
+  jpFooterTypogs: {
+    textAlign: 'center',
   },
 }));
 
@@ -820,9 +824,15 @@ function Portfolio() {
         </Box>
       </Paper>
 
-      <Typography className = {classes.jpFooter}>
-        Copyright &#169; 2021 Donovan Henry | All Rights Reserved.
-      </Typography>
+      <Box className = {classes.jpFooterContainer}>
+        <Typography className = {classes.jpFooterTypogs}>
+          Copyright &#169; 2021 Donovan Henry | All Rights Reserved.
+        </Typography>
+
+        <Typography className = {classes.jpFooterTypogs}>
+          www.donovanhenry.com
+        </Typography>
+      </Box>
     </Box>
   );
 }
