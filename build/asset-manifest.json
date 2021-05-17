@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "/static/css/main.fbadac6d.chunk.css",
+    "main.js": "/static/js/main.f253523f.chunk.js",
+    "main.js.map": "/static/js/main.f253523f.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.7c0bbbc3.js",
+    "runtime-main.js.map": "/static/js/runtime-main.7c0bbbc3.js.map",
+    "static/js/2.27dba7f6.chunk.js": "/static/js/2.27dba7f6.chunk.js",
+    "static/js/2.27dba7f6.chunk.js.map": "/static/js/2.27dba7f6.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.fbadac6d.chunk.css.map": "/static/css/main.fbadac6d.chunk.css.map",
+    "static/js/2.27dba7f6.chunk.js.LICENSE.txt": "/static/js/2.27dba7f6.chunk.js.LICENSE.txt",
+    "static/media/AoJ.1a0decbe.png": "/static/media/AoJ.1a0decbe.png",
+    "static/media/AoJGIF.6137cd38.gif": "/static/media/AoJGIF.6137cd38.gif",
+    "static/media/BST_Analysis.313af17b.png": "/static/media/BST_Analysis.313af17b.png",
+    "static/media/CompSciNoRules.07944bd5.png": "/static/media/CompSciNoRules.07944bd5.png",
+    "static/media/Dijkstras.b59d985a.png": "/static/media/Dijkstras.b59d985a.png",
+    "static/media/FindingNemoGIF.4fe2822f.gif": "/static/media/FindingNemoGIF.4fe2822f.gif",
+    "static/media/Integral.ab7dea63.png": "/static/media/Integral.ab7dea63.png",
+    "static/media/JoshuaSunset.c52ed334.jpg": "/static/media/JoshuaSunset.c52ed334.jpg",
+    "static/media/PromoterPredictorModel.e8865ee1.png": "/static/media/PromoterPredictorModel.e8865ee1.png",
+    "static/media/SantaCruz.9608a392.jpg": "/static/media/SantaCruz.9608a392.jpg",
+    "static/media/SlugMail.5d0d0439.png": "/static/media/SlugMail.5d0d0439.png",
+    "static/media/SlugMailGIF.10ca3986.gif": "/static/media/SlugMailGIF.10ca3986.gif"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.7c0bbbc3.js",
+    "static/js/2.27dba7f6.chunk.js",
+    "static/css/main.fbadac6d.chunk.css",
+    "static/js/main.f253523f.chunk.js"
+  ]
+}
