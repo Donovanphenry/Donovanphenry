@@ -35,6 +35,7 @@ import GitHubIcon from '@material-ui/icons/GitHub';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import HomeIcon from '@material-ui/icons/Home';
 import {makeStyles} from '@material-ui/core/styles';
+import AppColors from './Styles/AppColors';
 
 const btnWidth = 140;
 
@@ -54,7 +55,7 @@ const useStyles = makeStyles((theme) => ({
   },
 
   menuBtn: {
-    color: '#BEBEBE',
+    color: AppColors.grey,
     marginLeft: theme.spacing(6),
 
     [theme.breakpoints.down('xs')]: {
@@ -66,7 +67,7 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(1),
     marginLeft: theme.spacing(8),
     width: btnWidth,
-    background: '#BEBEBE',
+    background: AppColors.grey,
   },
 
   traversalDrawer: {
@@ -92,7 +93,7 @@ const useStyles = makeStyles((theme) => ({
   drawerTravDocBtn: {
     width: btnWidth,
     justifyContent: 'flex-start',
-    color: '#3deb69b7',
+    color: AppColors.resumePrimary,
   },
 
   travBtnDivider: {
@@ -111,10 +112,10 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
     margin: theme.spacing(8),
     marginBottom: theme.spacing(5),
-    borderTop: '6px solid #3deb69b7',
-    borderBottom: '6px solid #3deb69b7',
+    borderTop: `6px solid ${AppColors.resumePrimary}`,
+    borderBottom: `6px solid ${AppColors.resumePrimary}`,
     paddingBottom: theme.spacing(4),
-    color: '#3deb69b7',
+    color: AppColors.resumePrimary,
     overflow: 'hidden',
 
     [theme.breakpoints.up('sm')]: {
@@ -181,12 +182,12 @@ const useStyles = makeStyles((theme) => ({
 
   addressTypog: {
     marginLeft: theme.spacing(1),
-    color: '#BEBEBE',
+    color: AppColors.grey,
   },
 
   phoneEmailTypog: {
     padding: theme.spacing(1),
-    color: '#BEBEBE',
+    color: AppColors.grey,
   },
 
   githubTypog: {
@@ -195,7 +196,7 @@ const useStyles = makeStyles((theme) => ({
 
   myContactLink: {
     border: '1px solid #6b6b6b',
-    color: '#BEBEBE',
+    color: AppColors.grey,
     marginLeft: theme.spacing(1),
     padding: theme.spacing(1),
   },
@@ -231,7 +232,7 @@ const useStyles = makeStyles((theme) => ({
   },
 
   descriptionList: {
-    color: '#BEBEBE',
+    color: AppColors.grey,
     paddingTop: theme.spacing(1),
   },
 
@@ -266,7 +267,7 @@ const useStyles = makeStyles((theme) => ({
   },
 
   schoolList: {
-    color: '#BEBEBE',
+    color: AppColors.grey,
   },
 
   school: {
@@ -351,7 +352,7 @@ const useStyles = makeStyles((theme) => ({
   },
 
   interestsDescript: {
-    color: '#BEBEBE',
+    color: AppColors.grey,
     paddingTop: theme.spacing(1),
 
     [theme.breakpoints.up('sm')]: {
@@ -393,14 +394,14 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('xs')]: {
       fontSize: '16px',
       overflow: 'auto',
-      color: '#3deb69b7',
+      color: AppColors.resumePrimary,
       marginTop: theme.spacing(2),
       marginBottom: theme.spacing(1),
     },
   },
 
   projectDesc: {
-    color: '#BEBEBE',
+    color: AppColors.grey,
     paddingTop: theme.spacing(1),
   },
 
@@ -416,7 +417,7 @@ const useStyles = makeStyles((theme) => ({
 
   projectNameTypog: {
     paddingTop: theme.spacing(1),
-    color: '#BEBEBE',
+    color: AppColors.grey,
     fontWeight: 'bold',
 
     [theme.breakpoints.down('sm')]: {
@@ -430,7 +431,7 @@ const useStyles = makeStyles((theme) => ({
   },
   
   resumeFooter: {
-    borderTop: '2px solid #BEBEBE',
+    borderTop: `2px solid ${AppColors.grey}`,
     marginBottom: theme.spacing(1),
     marginLeft: theme.spacing(8),
     marginRight: theme.spacing(8),
@@ -585,7 +586,7 @@ function Resume() {
                 className = {classes.traverseBtn}
                 startIcon = {<HomeIcon />}
                 onClick = {() => history.push('/')}
-                variant = 'outlined'
+                variant = 'contained'
                 color = 'inherit'
               >
                 Home
@@ -595,7 +596,7 @@ function Resume() {
                 className = {classes.traverseBtn}
                 startIcon = {<WorkIcon />}
                 onClick = {() => history.push('/JobPortfolio')}
-                variant = 'outlined'
+                variant = 'contained'
                 color = 'inherit'
               >
                 Portfolio

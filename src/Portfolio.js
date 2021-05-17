@@ -1,8 +1,9 @@
 import React from 'react';
 import {useHistory} from 'react-router-dom';
 
-import PortfolioPicture from './PortfolioPicture';
+import AppColors from './Styles/AppColors';
 
+import PortfolioPicture from './PortfolioPicture';
 import AoJ from './images/AoJ.png';
 import AoJGIF from './images/AoJGIF.gif';
 import FindingNemo from './images/FindingNemo.png';
@@ -52,7 +53,7 @@ const useStyles = makeStyles((theme) => ({
   },
 
   menuBtn: {
-    color: '#BEBEBE',
+    color: AppColors.grey,
     marginLeft: theme.spacing(6),
   },
 
@@ -69,7 +70,7 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(1),
     marginLeft: theme.spacing(8),
     width: btnWidth,
-    background: '#BEBEBE',
+    background: AppColors.grey,
   },
 
   traversalDrawer: {
@@ -88,7 +89,7 @@ const useStyles = makeStyles((theme) => ({
   },
 
   drawerTravDocBtn: {
-    color: '#ED5565',
+    color: AppColors.portfolioPrimary,
     width: btnWidth,
     justifyContent: 'flex-start',
   },
@@ -108,11 +109,11 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'column',
     background: '#252627',
-    color: '#BEBEBE',
+    color: AppColors.grey,
   },
 
   jpTitle: {
-    color: '#ED5565',
+    color: AppColors.portfolioPrimary,
     display: 'flex',
     justifyContent: 'center',
     overflow: 'auto',
@@ -152,7 +153,7 @@ const useStyles = makeStyles((theme) => ({
   },
 
   jpSkillsTitleTypog: {
-    color: '#ED5565',
+    color: AppColors.portfolioPrimary,
     fontWeight: 'bold',
 
     [theme.breakpoints.up('sm')]: {
@@ -193,7 +194,7 @@ const useStyles = makeStyles((theme) => ({
   jpSkillsPaper: {
     paddingTop: theme.spacing(4),
     paddingBottom: theme.spacing(7),
-    color: '#BEBEBE',
+    color: AppColors.grey,
     display: 'flex',
     flexDirection: 'column',
     margin: theme.spacing(1),
@@ -247,7 +248,7 @@ const useStyles = makeStyles((theme) => ({
 
   jpProjectsTitleTypog: {
     fontWeight: 'bold',
-    color: '#ED5565',
+    color: AppColors.portfolioPrimary,
     textAlign: 'center',
 
     [theme.breakpoints.up('sm')]: {
@@ -260,7 +261,7 @@ const useStyles = makeStyles((theme) => ({
 
   jpProjectsGrid: {
     display: 'grid',
-    color: '#BEBEBE',
+    color: AppColors.grey,
     marginTop: theme.spacing(4),
     marginBottom: theme.spacing(3),
 
@@ -277,7 +278,7 @@ const useStyles = makeStyles((theme) => ({
 
   jpProjectPaper: {
     background: '#252627',
-    color: '#BEBEBE',
+    color: AppColors.grey,
     marginLeft: theme.spacing(1),
     marginRight: theme.spacing(1),
     marginTop: theme.spacing(2),
@@ -297,7 +298,7 @@ const useStyles = makeStyles((theme) => ({
 
   jpProjectNameTypog: {
     fontWeight: 'bold',
-    color: '#ED5565',
+    color: AppColors.portfolioPrimary,
     borderTop: '2px solid #ED5565',
     paddingTop: theme.spacing(3),
     marginTop:theme.spacing(2),
@@ -323,11 +324,11 @@ const useStyles = makeStyles((theme) => ({
   },
 
   projectGitHubLink: {
-    color: '#BEBEBE',
+    color: AppColors.grey,
   },
 
   jpFooter: {
-    borderTop: '2px solid #BEBEBE',
+    borderTop: `2px solid ${AppColors.grey}`,
     marginTop: theme.spacing(4),
     marginBottom: theme.spacing(1),
     marginLeft: theme.spacing(8),
@@ -448,7 +449,7 @@ function Portfolio() {
                 className = {classes.traverseBtn}
                 startIcon = {<HomeIcon />}
                 onClick = {() => history.push('/')}
-                variant = 'outlined'
+                variant = 'contained'
                 color = 'inherit'
               >
                 Home
@@ -458,7 +459,7 @@ function Portfolio() {
                 className = {classes.traverseBtn}
                 startIcon = {<DescriptionIcon />}
                 onClick = {() => history.push('/Resume')}
-                variant = 'outlined'
+                variant = 'contained'
                 color = 'inherit'
               >
                 Resume
