@@ -92,7 +92,7 @@ const useStyles = makeStyles((theme) => ({
   drawerTravDocBtn: {
     width: btnWidth,
     justifyContent: 'flex-start',
-    color: '#3deb69b7'
+    color: '#3deb69b7',
   },
 
   travBtnDivider: {

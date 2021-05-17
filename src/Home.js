@@ -30,6 +30,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import WorkIcon from '@material-ui/icons/Work';
+import AppColors from './Styles/AppColors';
 
 const buttonWidth = 150;
 const btnWidth = 150;
@@ -49,14 +50,14 @@ const useStyles = makeStyles((theme) => ({
   },
 
   homeMenuBtn: {
-    color: '#5e9bf7',
+    color: AppColors.homePrimary,
     marginLeft: theme.spacing(6),
   },
 
   homeTraverseBtn: {
     // backgroundColor: '#6b6b6b',
     // color: 'black',
-    color: '#5e9bf7',
+    color: AppColors.homePrimary,
     margin: theme.spacing(1),
     marginLeft: theme.spacing(5),
     width: btnWidth,
@@ -75,13 +76,13 @@ const useStyles = makeStyles((theme) => ({
 
   homeDrawerTravBtn: {
     // backgroundColor: '#6b6b6b',
-    color: '#5e9bf7',
+    color: AppColors.homePrimary,
     width: btnWidth,
     justifyContent: 'flex-start',
   },
 
   homeDrawerTravDocBtn: {
-    color: '#5e9bf7',
+    color: AppColors.homePrimary,
     width: btnWidth,
     justifyContent: 'flex-start',
   },
@@ -100,7 +101,7 @@ const useStyles = makeStyles((theme) => ({
 
   homePaper: {
     backgroundColor: '#0D1117',
-    color: '#5e9bf7',
+    color: AppColors.homePrimary,
     display: 'flex',
     flexDirection: 'column',
     paddingLeft: theme.spacing(6),
@@ -118,11 +119,6 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'flex-start',
   },
 
-  liText: {
-    width: '100%',
-    color: '#5e9bf7',
-    align: 'center',
-  },
 
   homePersonalInfo: {
     display: 'flex',
@@ -154,14 +150,20 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
   },
 
+  // #FFD700
+  // #FCF55F
+  // #FFDB58
+  // #FADA5E
+
   siteTitleTypog: {
-    borderBottom: '2px solid #5e9bf7',
+    borderBottom: `2px solid ${AppColors.homePrimary}`,
     textAlign: 'center',
     marginTop: theme.spacing(2),
     marginBottom: theme.spacing(2),
     paddingBottom: theme.spacing(2),
     flexGrow: 1,
     fontWeight: 'bold',
+    color: AppColors.homePrimary,
 
     [theme.breakpoints.up('sm')]: {
       fontSize: '50px',
@@ -200,7 +202,7 @@ const useStyles = makeStyles((theme) => ({
     textAlign: 'center',
     marginTop: theme.spacing(2),
     marginBottom: theme.spacing(2),
-    color: '#5e9bf7',
+    color: AppColors.homeSecondary,
     fontWeight: 'bold',
 
     [theme.breakpoints.up('sm')]: {
@@ -227,7 +229,7 @@ const useStyles = makeStyles((theme) => ({
 
   homeInfoSubBox: {
     display: 'flex',
-    color: '#5e9bf7',
+    color: AppColors.homePrimary,
 
     [theme.breakpoints.up('lg')]: {
       flexGrow: 1,
@@ -246,7 +248,7 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
     // background_v0: '#10151c',
     background: '#11171f',
-    color: '#5e9bf7',
+    color: AppColors.homePrimary,
 
     [theme.breakpoints.up('sm')]: {
       flexGrow: 1,
@@ -279,10 +281,13 @@ const useStyles = makeStyles((theme) => ({
     marginTop: theme.spacing(4),
     marginBottom: theme.spacing(1),
     paddingTop: theme.spacing(3),
-    borderTop: '2px solid #5e9bf7',
+    borderTop: `2px solid ${AppColors.primary}`,
     fontSize: '20px',
     fontWeight: 'bold',
     textAlign: 'center',
+    color: AppColors.homeSecondary,
+    paddingBottom: theme.spacing(1),
+    borderBottom: `1px solid ${AppColors.homeSecondary}`,
   },
 
   homeInfoTypog: {
@@ -300,7 +305,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'center',
-    color: '#5e9bf7',
+    color: AppColors.homePrimary,
     paddingTop: theme.spacing(2),
     paddingBottom: theme.spacing(2),
   },
@@ -311,8 +316,8 @@ const useStyles = makeStyles((theme) => ({
   },
 
   ucscLink: {
-    border: '1px solid #5e9bf7',
-    color: '#5e9bf7',
+    border: `1px solid ${AppColors.primary}`,
+    color: AppColors.homePrimary,
     paddingLeft: theme.spacing(1),
     paddingRight: theme.spacing(1),
     textDecoration: 'none',
