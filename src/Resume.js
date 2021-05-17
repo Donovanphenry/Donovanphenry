@@ -373,9 +373,6 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up('sm')]: {
       marginTop: theme.spacing(1),
     },
-    [theme.breakpoints.down('xs')]: {
-      marginTop: theme.spacing(3),
-    },
   },
 
   projectTemplateContainer: {
@@ -422,6 +419,10 @@ const useStyles = makeStyles((theme) => ({
 
     [theme.breakpoints.down('sm')]: {
       fontSize: '14px',
+    },
+
+    [theme.breakpoints.down('xs')]: {
+      marginBottom: theme.spacing(2),
     },
   },
 
@@ -887,30 +888,27 @@ function Resume() {
             </Grid>
           </Grid>
         </Hidden>
+
+        <Hidden smUp>
+          <Typography className = {classes.sectionType}>
+            Projects
+          </Typography>
+        </Hidden>
         
 
         <Grid container className = {classes.project}>
           <Grid item xs = {12} sm = {2} className = {classes.projectName}>
-            <Hidden smUp>
-              <Typography className = {classes.projectTemplate} id = 'resProjects'>Project Name</Typography>
-            </Hidden>
             <Typography className = {classes.projectNameTypog}>
               Attack On Jupiter
             </Typography>
           </Grid>
 
           <Grid item xs = {12} sm = {4} className = {classes.projectPictureContainer}>
-            <Hidden smUp>
-              <Typography className = {classes.projectTemplate}>Project Picture</Typography>
-            </Hidden>
             <Avatar className = {classes.projectPicture}
               src = {AoJ}
             />
           </Grid>
           <Grid item xs = {12} sm = {6} className = {classes.projectDesc}>
-            <Hidden smUp>
-              <Typography className = {classes.projectTemplate}>Project Description</Typography>
-            </Hidden>
             <Typography className = {classes.projectDescTypog}>
               I, along with three other classmates, designed and deployed a 2-dimensional video game
               (created using Java FX’s API) in which the user has to defeat three bosses. My role in the game’s
@@ -921,26 +919,17 @@ function Resume() {
 
         <Grid container className = {classes.project}>
           <Grid item xs = {12} sm = {2} className = {classes.projectName}>
-            <Hidden smUp>
-              <Typography className = {classes.projectTemplate}>Project Name</Typography>
-            </Hidden>
             <Typography className = {classes.projectNameTypog}>
               Finding Nemo
             </Typography>
           </Grid>
 
           <Grid item xs = {12} sm = {4} className = {classes.projectPictureContainer}>
-            <Hidden smUp>
-              <Typography className = {classes.projectTemplate}>Project Picture</Typography>
-            </Hidden>
             <Avatar className = {classes.projectPicture} src = {FindingNemo}>
               FN
             </Avatar>
           </Grid>
           <Grid item xs = {12} sm = {6} className = {classes.projectDesc}>
-            <Hidden smUp>
-              <Typography className = {classes.projectTemplate}>Project Description</Typography>
-            </Hidden>
             <Typography className = {classes.projectDescTypog}>
               Designed a linked list, stack, queue and binary search tree and integrated them in a maze game
               and created an algorithm to find the exit of the maze based on a depth-first search.
@@ -950,27 +939,18 @@ function Resume() {
 
         <Grid container className = {classes.project}>
           <Grid item xs = {12} sm = {2} className = {classes.projectName}>
-            <Hidden smUp>
-              <Typography className = {classes.projectTemplate}>Project Name</Typography>
-            </Hidden>
             <Typography className = {classes.projectNameTypog}>
               Slug Mail
             </Typography>
           </Grid>
 
           <Grid item xs = {12} sm = {4} className = {classes.projectPictureContainer}>
-            <Hidden smUp>
-              <Typography className = {classes.projectTemplate}>Project Picture</Typography>
-            </Hidden>
             <Avatar className = {classes.projectPicture} src = {SlugMail}
             >
               SM
             </Avatar>
           </Grid>
           <Grid item xs = {12} sm = {6} className = {classes.projectDesc}>
-            <Hidden smUp>
-              <Typography className = {classes.projectTemplate}>Project Description</Typography>
-            </Hidden>
             <Typography className = {classes.projectDescTypog}>
               Full stack, responsive web app using Node.js, Express, ReactJS, PostgreSQL, Material UI among other development
               tools. A REST API is implemented. Supports multiple users who are able to check their mailboxes for mail,
