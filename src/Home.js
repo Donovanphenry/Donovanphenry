@@ -155,10 +155,9 @@ const useStyles = makeStyles((theme) => ({
   // #FADA5E
 
   siteTitleTypog: {
-    borderBottom: `2px solid ${AppColors.homeSecondary}`,
+    // borderBottom: `2px solid ${AppColors.homeSecondary}`,
     textAlign: 'center',
     marginTop: theme.spacing(2),
-    marginBottom: theme.spacing(2),
     fontWeight: 'bold',
     color: AppColors.homeSecondary,
 
@@ -173,8 +172,9 @@ const useStyles = makeStyles((theme) => ({
   homeAboutMeTypog: {
     fontSize: '18px',
     textAlign: 'center',
-    marginTop: theme.spacing(3),
     marginBottom: theme.spacing(4),
+    borderTop: `2px solid ${AppColors.homeSecondary}`,
+    paddingTop: theme.spacing(4),
 
     [theme.breakpoints.up('md')]: {
       width: '60%',
