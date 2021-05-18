@@ -2,7 +2,9 @@ import React from 'react';
 import {HashRouter as Router, Switch, Route} from 'react-router-dom';
 
 import {makeStyles} from '@material-ui/styles';
+import AppColors from './Styles/AppColors';
 
+import AppContext from './AppContext';
 import Home from './Home';
 import Resume from './Resume';
 import Portfolio from './Portfolio';
@@ -28,22 +30,29 @@ const useStyles = makeStyles({
  */
 function App() {
   const classes = useStyles();
+  const [userTheme, setUserTheme] = React.useState(AppColors.darkTheme);
 
   return (
     <div className = {classes.appContainer}>
       <Router>
         <Switch>
-          <Route path = '/' exact>
-            <Home />
-          </Route>
+          <AppContext.Provider value = {
+            {
+              userTheme, setUserTheme,
+            }
+          }>
+            <Route path = '/' exact>
+              <Home />
+            </Route>
 
-          <Route path = '/Resume'>
-            <Resume />
-          </Route>
+            <Route path = '/Resume'>
+              <Resume />
+            </Route>
 
-          <Route path = '/JobPortfolio'>
-            <Portfolio />
-          </Route>
+            <Route path = '/JobPortfolio'>
+              <Portfolio />
+            </Route>
+          </AppContext.Provider>
         </Switch>
       </Router>
     </div>

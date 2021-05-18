@@ -1,6 +1,7 @@
 import React from 'react';
 import {useHistory} from 'react-router-dom';
 
+import AppContext from './AppContext';
 import AoJ from './images/AoJ.png';
 import FindingNemo from './images/FindingNemo.png';
 import SlugMail from './images/SlugMail.png';
@@ -34,7 +35,11 @@ import PhoneIcon from '@material-ui/icons/Phone';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import HomeIcon from '@material-ui/icons/Home';
+import Brightness4Icon from '@material-ui/icons/Brightness4';
+import Brightness7Icon from '@material-ui/icons/Brightness7';
+
 import {makeStyles} from '@material-ui/core/styles';
+
 import AppColors from './Styles/AppColors';
 
 const btnWidth = 140;
@@ -46,7 +51,7 @@ const useStyles = makeStyles((theme) => ({
 
   appBar: {
     width: '100%',
-    background: '#303030',
+    background: props => props.resumeAppBarColor,
   },
 
   toolBar: {
@@ -55,7 +60,7 @@ const useStyles = makeStyles((theme) => ({
   },
 
   menuBtn: {
-    color: AppColors.grey,
+    color: props => props.grey,
     marginLeft: theme.spacing(6),
 
     [theme.breakpoints.down('xs')]: {
@@ -67,7 +72,7 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(1),
     marginLeft: theme.spacing(8),
     width: btnWidth,
-    background: AppColors.grey,
+    background: props => props.grey,
   },
 
   traversalDrawer: {
@@ -93,7 +98,7 @@ const useStyles = makeStyles((theme) => ({
   drawerTravDocBtn: {
     width: btnWidth,
     justifyContent: 'flex-start',
-    color: AppColors.resumePrimary,
+    color: props => props.resumePrimary,
   },
 
   travBtnDivider: {
@@ -102,9 +107,32 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: theme.spacing(1),
   },
 
+  appBarBtnContainer: {
+    color: '#252627',
+    display: 'flex',
+    width: '100%',
+  },
+
+  travBtnContainer: {
+    flexGrow: 1,
+    flexBasis: 1,
+  },
+
+  themeBtnContainer: {
+    flexGrow: 1,
+    flexBasis: 1,
+    display: 'flex',
+    justifyContent: 'right',
+    paddingRight: theme.spacing(6),
+  },
+
+  themeBtn: {
+    color: props => props.grey,
+  },
+
   resumeContainer: {
     width: '100%',
-    backgroundColor: '#252627',
+    backgroundColor: props => props.resumeBackground,
   },
 
   resumeContentContainer: {
@@ -112,10 +140,10 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
     margin: theme.spacing(8),
     marginBottom: theme.spacing(5),
-    borderTop: `6px solid ${AppColors.resumePrimary}`,
-    borderBottom: `6px solid ${AppColors.resumePrimary}`,
+    borderTop: props => `6px solid ${props.resumePrimary}`,
+    borderBottom: props => `6px solid ${props.resumePrimary}`,
     paddingBottom: theme.spacing(4),
-    color: AppColors.resumePrimary,
+    color: props => props.resumePrimary,
     overflow: 'hidden',
 
     [theme.breakpoints.up('sm')]: {
@@ -182,12 +210,12 @@ const useStyles = makeStyles((theme) => ({
 
   addressTypog: {
     marginLeft: theme.spacing(1),
-    color: AppColors.grey,
+    color: props => props.grey,
   },
 
   phoneEmailTypog: {
     padding: theme.spacing(1),
-    color: AppColors.grey,
+    color: props => props.grey,
   },
 
   githubTypog: {
@@ -196,7 +224,7 @@ const useStyles = makeStyles((theme) => ({
 
   myContactLink: {
     border: '1px solid #6b6b6b',
-    color: AppColors.grey,
+    color: props => props.grey,
     marginLeft: theme.spacing(1),
     padding: theme.spacing(1),
   },
@@ -232,7 +260,7 @@ const useStyles = makeStyles((theme) => ({
   },
 
   descriptionList: {
-    color: AppColors.grey,
+    color: props => props.grey,
     paddingTop: theme.spacing(1),
   },
 
@@ -267,7 +295,7 @@ const useStyles = makeStyles((theme) => ({
   },
 
   schoolList: {
-    color: AppColors.grey,
+    color: props => props.grey,
   },
 
   school: {
@@ -352,7 +380,7 @@ const useStyles = makeStyles((theme) => ({
   },
 
   interestsDescript: {
-    color: AppColors.grey,
+    color: props => props.grey,
     paddingTop: theme.spacing(1),
 
     [theme.breakpoints.up('sm')]: {
@@ -391,14 +419,14 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('xs')]: {
       fontSize: '16px',
       overflow: 'auto',
-      color: AppColors.resumePrimary,
+      color: props => props.resumePrimary,
       marginTop: theme.spacing(2),
       marginBottom: theme.spacing(1),
     },
   },
 
   projectDesc: {
-    color: AppColors.grey,
+    color: props => props.grey,
     paddingTop: theme.spacing(1),
   },
 
@@ -414,7 +442,7 @@ const useStyles = makeStyles((theme) => ({
 
   projectNameTypog: {
     paddingTop: theme.spacing(1),
-    color: AppColors.grey,
+    color: props => props.grey,
     fontWeight: 'bold',
 
     [theme.breakpoints.down('sm')]: {
@@ -432,7 +460,7 @@ const useStyles = makeStyles((theme) => ({
   },
   
   resumeFooter: {
-    borderTop: `2px solid ${AppColors.grey}`,
+    borderTop: props => `2px solid ${props.grey}`,
     marginBottom: theme.spacing(1),
     marginLeft: theme.spacing(8),
     marginRight: theme.spacing(8),
@@ -459,14 +487,18 @@ const useStyles = makeStyles((theme) => ({
  * @return {*}
  */
 function Resume() {
-  const history = useHistory();
-  const classes = useStyles();
-
+  const {userTheme, setUserTheme} = React.useContext(AppContext);
   const [drawerOpen, setDrawerOpen] = React.useState(false);
+  const history = useHistory();
+  const classes = useStyles(userTheme);
 
   const toggleDrawerTraverse = (location) => {
     setDrawerOpen(false);
     history.push(location)
+  };
+
+  const changeTheme = () => {
+    setUserTheme(userTheme == AppColors.darkTheme ? AppColors.lightTheme : AppColors.darkTheme);
   };
 
   return (
@@ -582,26 +614,36 @@ function Resume() {
           </Hidden>
 
           <Hidden xsDown>
-            <Box style = {{color: '#252627'}}>
-              <Button
-                className = {classes.traverseBtn}
-                startIcon = {<HomeIcon />}
-                onClick = {() => history.push('/')}
-                variant = 'contained'
-                color = 'inherit'
-              >
-                Home
-              </Button>
+            <Box className = {classes.appBarBtnContainer}>
+              <Box className = {classes.travBtnContainer}>
+                <Button
+                  className = {classes.traverseBtn}
+                  startIcon = {<HomeIcon />}
+                  onClick = {() => history.push('/')}
+                  variant = 'contained'
+                >
+                  Home
+                </Button>
 
-              <Button
-                className = {classes.traverseBtn}
-                startIcon = {<WorkIcon />}
-                onClick = {() => history.push('/JobPortfolio')}
-                variant = 'contained'
-                color = 'inherit'
-              >
-                Portfolio
-              </Button>
+                <Button
+                  className = {classes.traverseBtn}
+                  startIcon = {<WorkIcon />}
+                  onClick = {() => history.push('/JobPortfolio')}
+                  variant = 'contained'
+                >
+                  Portfolio
+                </Button>
+              </Box>
+
+              <Box className = {classes.themeBtnContainer}>
+                  <IconButton onClick = {changeTheme}>
+                    {
+                      userTheme == AppColors.darkTheme ?
+                        <Brightness4Icon className = {classes.themeBtn} /> :
+                        <Brightness7Icon className = {classes.themeBtn} />
+                    }
+                  </IconButton>
+              </Box>
             </Box>
           </Hidden>
         </Toolbar>

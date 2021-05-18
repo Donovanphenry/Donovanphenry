@@ -2,6 +2,8 @@ import React from 'react';
 
 import {makeStyles} from '@material-ui/core/styles';
 import PropTypes from 'prop-types';
+import AppContext from './AppContext';
+import AppColors from './Styles/AppColors';
 
 const useStyles = makeStyles((theme) => ({
   jpProjectPaperPic: (props) => ({
@@ -13,6 +15,8 @@ const useStyles = makeStyles((theme) => ({
       height: theme.spacing(40),
     },
     opacity: props.hovering ? '.5' : '1.0',
+
+    border: props => props.currTheme == 'light' ? '2px solid red' : '',
   }),
 }));
 
@@ -22,7 +26,8 @@ const useStyles = makeStyles((theme) => ({
  */
 function PortfolioPicture(props) {
   const [hovering, setHovering] = React.useState(false);
-  const styleProps = {hovering: hovering};
+  const {userTheme} = React.useContext(AppContext);
+  const styleProps = {hovering: hovering, currTheme: userTheme == AppColors.darkTheme ? 'dark' : 'light'};
   const classes = useStyles(styleProps);
 
   return (

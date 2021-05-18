@@ -4,6 +4,8 @@ import React from 'react';
 
 import {useHistory} from 'react-router-dom';
 
+import AppContext from './AppContext';
+
 import JoshuaSunset from './images/JoshuaSunset.jpg';
 import Dijkstras from './images/Dijkstras.png';
 import CompSciNoRules from './images/CompSciNoRules.png';
@@ -38,7 +40,7 @@ const btnWidth = 150;
 const useStyles = makeStyles((theme) => ({
   homeAppBar: {
     width: '100%',
-    background: '#131921',
+    backgroundColor: props => props.homeAppBarColor,
   },
 
   homeToolbar: {
@@ -50,14 +52,12 @@ const useStyles = makeStyles((theme) => ({
   },
 
   homeMenuBtn: {
-    color: AppColors.homePrimary,
+    color: props => props.homeMenuBtn,
     marginLeft: theme.spacing(6),
   },
 
   homeTraverseBtn: {
-    // backgroundColor: '#6b6b6b',
-    // color: 'black',
-    color: AppColors.homePrimary,
+    color: props => props.homePrimary,
     margin: theme.spacing(1),
     marginLeft: theme.spacing(5),
     width: btnWidth,
@@ -69,20 +69,20 @@ const useStyles = makeStyles((theme) => ({
 
   homeButtonList: {
     // background: '#252627',
-    background: '#0D1117',
+    background: props => props.homeBackground,
     width: '100%',
     height: '100%',
   },
 
   homeDrawerTravBtn: {
     // backgroundColor: '#6b6b6b',
-    color: AppColors.homePrimary,
+    color: props => props.homePrimary,
     width: btnWidth,
     justifyContent: 'flex-start',
   },
 
   homeDrawerTravDocBtn: {
-    color: AppColors.homePrimary,
+    color: props => props.homePrimary,
     width: btnWidth,
     justifyContent: 'flex-start',
   },
@@ -96,12 +96,12 @@ const useStyles = makeStyles((theme) => ({
   homeContainer: {
     width: '100%',
     height: '100%',
-    backgroundColor: '#0D1117',
+    backgroundColor: props => props.homeBackground,
   },
 
   homePaper: {
-    backgroundColor: '#0D1117',
-    color: AppColors.homePrimary,
+    backgroundColor: props => props.homeBackground,
+    color: props => props.homePrimary,
     display: 'flex',
     flexDirection: 'column',
     paddingLeft: theme.spacing(6),
@@ -147,19 +147,17 @@ const useStyles = makeStyles((theme) => ({
 
   siteTitleBox: {
     display: 'flex',
+    width: '100%',
+    justifyContent: 'center',
   },
 
-  // #FFD700
-  // #FCF55F
-  // #FFDB58
-  // #FADA5E
-
   siteTitleTypog: {
-    // borderBottom: `2px solid ${AppColors.homeSecondary}`,
     textAlign: 'center',
     marginTop: theme.spacing(2),
     fontWeight: 'bold',
-    color: AppColors.homeSecondary,
+    color: props => props.homeSecondary,
+    width: '100%',
+    borderBottom: props => `2px solid ${props.homeSecondary}`,
 
     [theme.breakpoints.up('sm')]: {
       fontSize: '50px',
@@ -173,7 +171,6 @@ const useStyles = makeStyles((theme) => ({
     fontSize: '18px',
     textAlign: 'center',
     marginBottom: theme.spacing(4),
-    borderTop: `2px solid ${AppColors.homeSecondary}`,
     paddingTop: theme.spacing(4),
 
     [theme.breakpoints.up('md')]: {
@@ -199,7 +196,7 @@ const useStyles = makeStyles((theme) => ({
     textAlign: 'center',
     marginTop: theme.spacing(2),
     marginBottom: theme.spacing(2),
-    color: AppColors.homeSecondary,
+    color: props => props.homeSecondary,
     fontWeight: 'bold',
 
     [theme.breakpoints.up('sm')]: {
@@ -226,7 +223,7 @@ const useStyles = makeStyles((theme) => ({
 
   homeInfoSubBox: {
     display: 'flex',
-    color: AppColors.homePrimary,
+    color: props => props.homePrimary,
 
     [theme.breakpoints.up('lg')]: {
       flexGrow: 1,
@@ -244,8 +241,8 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'column',
     // background_v0: '#10151c',
-    background: '#11171f',
-    color: AppColors.homePrimary,
+    background: props => props.homeBackgroundGradient,
+    color: props => props.homePrimary,
 
     [theme.breakpoints.up('sm')]: {
       flexGrow: 1,
@@ -276,17 +273,18 @@ const useStyles = makeStyles((theme) => ({
 
   homeInfoHeader: {
     marginBottom: theme.spacing(1),
-    borderTop: `2px solid ${AppColors.primary}`,
+    borderTop: props => `2px solid ${props.primary}`,
     fontSize: '20px',
     fontWeight: 'bold',
     textAlign: 'center',
-    color: AppColors.homeSecondary,
+    color: props => props.homeSecondary,
     paddingBottom: theme.spacing(1),
-    borderBottom: `1px solid ${AppColors.homeSecondary}`,
+    borderBottom: props => `1px solid ${props.homeSecondary}`,
   },
 
   homeInfoTypog: {
     marginTop: theme.spacing(1),
+    color: props => props.homePrimary,
   },
 
   buttonFlexBox: {
@@ -300,7 +298,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'center',
-    color: AppColors.homePrimary,
+    color: props => props.homePrimary,
     paddingTop: theme.spacing(2),
     paddingBottom: theme.spacing(2),
   },
@@ -311,8 +309,8 @@ const useStyles = makeStyles((theme) => ({
   },
 
   ucscLink: {
-    border: `1px solid ${AppColors.primary}`,
-    color: AppColors.homePrimary,
+    border: props => `1px solid ${props.primary}`,
+    color: props => props.homePrimary,
     paddingLeft: theme.spacing(1),
     paddingRight: theme.spacing(1),
     textDecoration: 'none',
@@ -323,7 +321,8 @@ const useStyles = makeStyles((theme) => ({
  * @return {*}
  */
 function Home() {
-  const classes = useStyles();
+  const {userTheme, setUserTheme} = React.useContext(AppContext);
+  const classes = useStyles(userTheme);
   const history = useHistory();
 
   const [drawerOpen, setDrawerOpen] = React.useState(false);
@@ -331,6 +330,10 @@ function Home() {
   const toggleDrawerTraverse = (location) => {
     setDrawerOpen(false);
     history.push(location);
+  };
+
+  const changeTheme = () => {
+    setUserTheme(userTheme == AppColors.darkTheme ? AppColors.lightTheme : AppColors.darkTheme);
   };
 
   return (
@@ -573,8 +576,8 @@ function Home() {
           </Box>
         </Box>
 
-        <Box style = {{display: 'flex', justifyContent: 'center'}}>
-          <a href = "#" className = "glowing-button">Scroll to Top</a>
+        <Box style = {{display: AppColors.lightTheme == userTheme ? 'none' : 'flex', justifyContent: 'center'}}>
+          <a className = "glowing-button" onClick = {changeTheme}>Change Theme</a>
         </Box>
       </Paper>
 

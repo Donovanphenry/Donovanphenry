@@ -2,6 +2,7 @@ import React from 'react';
 import {useHistory} from 'react-router-dom';
 
 import AppColors from './Styles/AppColors';
+import AppContext from './AppContext';
 
 import PortfolioPicture from './PortfolioPicture';
 import AoJ from './images/AoJ.png';
@@ -30,6 +31,8 @@ import Drawer from '@material-ui/core/Drawer';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import IconButton from '@material-ui/core/IconButton';
+import Brightness4Icon from '@material-ui/icons/Brightness4';
+import Brightness7Icon from '@material-ui/icons/Brightness7';
 
 import SportsHockeyIcon from '@material-ui/icons/SportsHockey';
 import MenuIcon from '@material-ui/icons/Menu';
@@ -43,8 +46,8 @@ const btnWidth = 140;
 
 const useStyles = makeStyles((theme) => ({
   appBar: {
-    width: '100%',
-    background: '#303030',
+    background: props => props == AppColors.lightTheme ?
+      props.portfolioPrimary : props.portfolioBackground2,
   },
 
   toolBar: {
@@ -52,8 +55,32 @@ const useStyles = makeStyles((theme) => ({
     paddingRight: '0px',
   },
 
+  appBarBtnContainer: {
+    width: '100%',
+    display: 'flex',
+    color: props => props.portfolioBackground,
+  },
+
+  traversalBtnContainer: {
+    display: 'flex',
+    flexGrow: '1',
+    flexBasis: '1',
+  },
+
+  appBarThemeBtnContainer: {
+    paddingRight: theme.spacing(6),
+    flexGrow: '1',
+    display: 'flex',
+    justifyContent: 'right',
+    color: props => props.portfolioBackground,
+  },
+
+  themeBtn: {
+    color: '#BEBEBE',
+  },
+
   menuBtn: {
-    color: AppColors.grey,
+    color: props => props.grey,
     marginLeft: theme.spacing(6),
   },
 
@@ -70,15 +97,15 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(1),
     marginLeft: theme.spacing(8),
     width: btnWidth,
-    background: AppColors.grey,
+    background: props => props.grey,
   },
 
   traversalDrawer: {
-    fill: '#252627',
+    fill: props => props.portfolioBackground,
   },
 
   buttonList: {
-    background: '#252627',
+    background: props => props.portfolioBackground,
     width: '100%',
     height: '100%',
   },
@@ -89,7 +116,7 @@ const useStyles = makeStyles((theme) => ({
   },
 
   drawerTravDocBtn: {
-    color: AppColors.portfolioPrimary,
+    color: props => props.portfolioPrimary,
     width: btnWidth,
     justifyContent: 'flex-start',
   },
@@ -108,19 +135,19 @@ const useStyles = makeStyles((theme) => ({
   jpContentContainer: {
     display: 'flex',
     flexDirection: 'column',
-    background: '#252627',
-    color: AppColors.grey,
+    background: props => props.portfolioBackground,
+    color: props => props.grey,
   },
 
   jpTitle: {
-    color: AppColors.portfolioPrimary,
+    color: props => props.portfolioPrimary,
     display: 'flex',
     justifyContent: 'center',
     overflow: 'auto',
     marginTop: theme.spacing(6),
     marginLeft: theme.spacing(8),
     marginRight: theme.spacing(8),
-    borderBottom: '2px solid #ED5565',
+    borderBottom: props => `2px solid ${props.portfolioPrimary}`,
   },
 
   jpTitleTypog: {
@@ -153,7 +180,7 @@ const useStyles = makeStyles((theme) => ({
   },
 
   jpSkillsTitleTypog: {
-    color: AppColors.portfolioPrimary,
+    color: props => props.portfolioPrimary,
     fontWeight: 'bold',
 
     [theme.breakpoints.up('sm')]: {
@@ -194,11 +221,13 @@ const useStyles = makeStyles((theme) => ({
   jpSkillsPaper: {
     paddingTop: theme.spacing(4),
     paddingBottom: theme.spacing(7),
-    color: AppColors.grey,
+    paddingLeft: theme.spacing(3),
+    paddingRight: theme.spacing(3),
+    color: props => props.grey,
     display: 'flex',
     flexDirection: 'column',
     margin: theme.spacing(1),
-    background: '#252627',
+    background: props => props.portfolioBackground2,
 
     [theme.breakpoints.up('sm')]: {
       flexBasis: 1,
@@ -213,22 +242,15 @@ const useStyles = makeStyles((theme) => ({
   jpSkillsTypog: {
     marginTop: theme.spacing(1),
     marginBottom: theme.spacing(4),
-
-    [theme.breakpoints.down('xs')]: {
-      fontSize: '14px',
-    },
-    [theme.breakpoints.up('sm')]: {
-      fontSize: '18px',
-    },
+    paddingBottom: theme.spacing(1),
+    color: props => props.portfolioPrimary,
+    fontWeight: 'bold',
+    borderBottom: props => `2px solid ${props.grey}`,
+    fontSize: '20px',
   },
 
-  skillType: {
-    color: '#878685a4',
-    fontWeight: 'bold',
-
-    [theme.breakpoints.down('sm')]: {
-      fontSize: '20px',
-    },
+  jpSkill: {
+    color: props => props.grey,
   },
 
   jpProjects: {
@@ -248,7 +270,7 @@ const useStyles = makeStyles((theme) => ({
 
   jpProjectsTitleTypog: {
     fontWeight: 'bold',
-    color: AppColors.portfolioPrimary,
+    color: props => props.portfolioPrimary,
     textAlign: 'center',
 
     [theme.breakpoints.up('sm')]: {
@@ -261,7 +283,7 @@ const useStyles = makeStyles((theme) => ({
 
   jpProjectsGrid: {
     display: 'grid',
-    color: AppColors.grey,
+    color: props => props.grey,
     marginTop: theme.spacing(4),
     marginBottom: theme.spacing(3),
 
@@ -277,8 +299,8 @@ const useStyles = makeStyles((theme) => ({
   },
 
   jpProjectPaper: {
-    background: '#252627',
-    color: AppColors.grey,
+    background: props => props.portfolioBackground2,
+    color: props => props.grey,
     marginLeft: theme.spacing(1),
     marginRight: theme.spacing(1),
     marginTop: theme.spacing(2),
@@ -298,8 +320,8 @@ const useStyles = makeStyles((theme) => ({
 
   jpProjectNameTypog: {
     fontWeight: 'bold',
-    color: AppColors.portfolioPrimary,
-    borderTop: '2px solid #ED5565',
+    color: props => props.portfolioPrimary,
+    borderTop: props => `2px solid ${props.portfolioPrimary}`,
     paddingTop: theme.spacing(3),
     marginTop:theme.spacing(2),
     marginBottom: theme.spacing(2),
@@ -315,6 +337,8 @@ const useStyles = makeStyles((theme) => ({
   },
 
   jpProjectDescTypog: {
+    color: props => props.grey,
+
     [theme.breakpoints.up('sm')]: {
       fontSize: '18px',
     },
@@ -324,11 +348,11 @@ const useStyles = makeStyles((theme) => ({
   },
 
   projectGitHubLink: {
-    color: AppColors.grey,
+    color: props => props.grey,
   },
 
   jpFooterContainer: {
-    borderTop: `2px solid ${AppColors.grey}`,
+    borderTop: props => `2px solid ${props.grey}`,
     display: 'flex',
     flexDirection: 'column',
     marginTop: theme.spacing(4),
@@ -354,14 +378,21 @@ const useStyles = makeStyles((theme) => ({
  * @return {*}
  */
 function Portfolio() {
-  const history = useHistory();
-  const classes = useStyles();
-
+  const {userTheme, setUserTheme} = React.useContext(AppContext);
   const [drawerOpen, setDrawerOpen] = React.useState(false);
+  const history = useHistory();
+  const classes = useStyles(userTheme);
+
 
   const toggleDrawerTraverse = (location) => {
     setDrawerOpen(false);
     history.push(location);
+  };
+
+  const changeTheme = () => {
+    const newTheme = userTheme === AppColors.darkTheme ?
+      AppColors.lightTheme : AppColors.darkTheme;
+    setUserTheme(newTheme);
   };
 
   return (
@@ -448,26 +479,39 @@ function Portfolio() {
           </Hidden>
 
           <Hidden xsDown>
-            <Box style = {{color: '#252627'}}>
-              <Button
-                className = {classes.traverseBtn}
-                startIcon = {<HomeIcon />}
-                onClick = {() => history.push('/')}
-                variant = 'contained'
-                color = 'inherit'
-              >
-                Home
-              </Button>
+            <Box className = {classes.appBarBtnContainer}>
+              <Box className = {classes.traversalBtnContainer}>
+                <Button
+                  className = {classes.traverseBtn}
+                  startIcon = {<HomeIcon />}
+                  onClick = {() => history.push('/')}
+                  variant = 'contained'
+                  color = 'inherit'
+                >
+                  Home
+                </Button>
 
-              <Button
-                className = {classes.traverseBtn}
-                startIcon = {<DescriptionIcon />}
-                onClick = {() => history.push('/Resume')}
-                variant = 'contained'
-                color = 'inherit'
-              >
-                Resume
-              </Button>
+                <Button
+                  className = {classes.traverseBtn}
+                  startIcon = {<DescriptionIcon />}
+                  onClick = {() => history.push('/Resume')}
+                  variant = 'contained'
+                  color = 'inherit'
+                >
+                  Resume
+                </Button>
+              </Box>
+
+              <Box className = {classes.appBarThemeBtnContainer}>
+                <IconButton onClick = {changeTheme}>
+                  {
+                    userTheme == AppColors.darkTheme ?
+                      <Brightness4Icon className = {classes.themeBtn} /> :
+                      <Brightness7Icon className = {classes.themeBtn} />
+
+                  }
+                </IconButton>
+              </Box>
             </Box>
           </Hidden>
         </Toolbar>
@@ -511,67 +555,67 @@ function Portfolio() {
                 // flex basis and grow set when strictly greater than xs
               >
                 <Typography className = {classes.jpSkillsTypog}>
-                  <span className = {classes.skillType}>Languages</span>
+                  Languages
                 </Typography>
 
-                <Typography>Java</Typography>
-                <Typography>C++</Typography>
-                <Typography>JavaScript</Typography>
-                <Typography>Python</Typography>
-                <Typography>C</Typography>
-                <Typography>C#</Typography>
-                <Typography>XHTML</Typography>
-                <Typography>CSS</Typography>
-                <Typography>Assembly</Typography>
-                <Typography>PostgreSQL</Typography>
-                <Typography>Scheme, OCaml &amp; Smalltalk</Typography>
+                <Typography className = {classes.jpSkill}>Java</Typography>
+                <Typography className = {classes.jpSkill}>C++</Typography>
+                <Typography className = {classes.jpSkill}>JavaScript</Typography>
+                <Typography className = {classes.jpSkill}>Python</Typography>
+                <Typography className = {classes.jpSkill}>C</Typography>
+                <Typography className = {classes.jpSkill}>C#</Typography>
+                <Typography className = {classes.jpSkill}>XHTML</Typography>
+                <Typography className = {classes.jpSkill}>CSS</Typography>
+                <Typography className = {classes.jpSkill}>Assembly</Typography>
+                <Typography className = {classes.jpSkill}>PostgreSQL</Typography>
+                <Typography className = {classes.jpSkill}>Scheme, OCaml &amp; Smalltalk</Typography>
               </Paper>
 
               <Paper className = {classes.jpSkillsPaper} elevation = {12}>
                 <Typography className = {classes.jpSkillsTypog}>
-                  <span className = {classes.skillType}>Frameworks/Libraries</span>
+                  Frameworks/Libraries
                 </Typography>
 
-                <Typography>ReactJS</Typography>
-                <Typography>Material UI</Typography>
-                <Typography>NumPy</Typography>
-                <Typography>Pandas</Typography>
-                <Typography>Keras</Typography>
-                <Typography>PyTorch</Typography>
-                <Typography>Java Util</Typography>
-                <Typography>JavaFX</Typography>
+                <Typography className = {classes.jpSkill}>ReactJS</Typography>
+                <Typography className = {classes.jpSkill}>Material UI</Typography>
+                <Typography className = {classes.jpSkill}>NumPy</Typography>
+                <Typography className = {classes.jpSkill}>Pandas</Typography>
+                <Typography className = {classes.jpSkill}>Keras</Typography>
+                <Typography className = {classes.jpSkill}>PyTorch</Typography>
+                <Typography className = {classes.jpSkill}>Java Util</Typography>
+                <Typography className = {classes.jpSkill}>JavaFX</Typography>
               </Paper>
             </Box>
 
             <Box className = {classes.jpSkillsPaperBox}>
               <Paper className = {classes.jpSkillsPaper} elevation = {12}>
                 <Typography className = {classes.jpSkillsTypog}>
-                  <span className = {classes.skillType}>Server Tier</span>
+                  Server Tier
                 </Typography>
 
-                <Typography>NodeJS</Typography>
-                <Typography>Express</Typography>
-                <Typography>OpenAPI</Typography>
+                <Typography className = {classes.jpSkill}>NodeJS</Typography>
+                <Typography className = {classes.jpSkill}>Express</Typography>
+                <Typography className = {classes.jpSkill}>OpenAPI</Typography>
               </Paper>
 
               <Paper className = {classes.jpSkillsPaper} elevation = {12}>
                 <Typography className = {classes.jpSkillsTypog}>
-                  <span className = {classes.skillType}>Other</span>
+                  Other
                 </Typography>
 
-                <Typography>Git</Typography>
-                <Typography>GitHub</Typography>
-                <Typography>Docker</Typography>
-                <Typography>Jest & Puppeteer</Typography>
-                <Typography>Calculus I, II, III</Typography>
-                <Typography>Computer Architecture</Typography>
-                <Typography>Web Development</Typography>
-                <Typography>Linear Algebra</Typography>
-                <Typography>Discrete Structures</Typography>
-                <Typography>Probability Theory</Typography>
-                <Typography>Calc. Based Mechanics</Typography>
-                <Typography>Calc. Based Electromagnetism</Typography>
-                <Typography>Calc. Based Fluids, Optics & Waves</Typography>
+                <Typography className = {classes.jpSkill}>Git</Typography>
+                <Typography className = {classes.jpSkill}>GitHub</Typography>
+                <Typography className = {classes.jpSkill}>Docker</Typography>
+                <Typography className = {classes.jpSkill}>Jest & Puppeteer</Typography>
+                <Typography className = {classes.jpSkill}>Calculus I, II, III</Typography>
+                <Typography className = {classes.jpSkill}>Computer Architecture</Typography>
+                <Typography className = {classes.jpSkill}>Web Development</Typography>
+                <Typography className = {classes.jpSkill}>Linear Algebra</Typography>
+                <Typography className = {classes.jpSkill}>Discrete Structures</Typography>
+                <Typography className = {classes.jpSkill}>Probability Theory</Typography>
+                <Typography className = {classes.jpSkill}>Calc. Based Mechanics</Typography>
+                <Typography className = {classes.jpSkill}>Calc. Based Electromagnetism</Typography>
+                <Typography className = {classes.jpSkill}>Calc. Based Fluids, Optics & Waves</Typography>
               </Paper>
             </Box>
           </Box>
