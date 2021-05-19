@@ -113,6 +113,8 @@ const useStyles = makeStyles((theme) => ({
   },
 
   travBtnContainer: {
+    color: props => props == AppColors.lightTheme ?
+      props.resumeBackground : props.resumePrimary,
     flexGrow: 1,
     flexBasis: 1,
   },
@@ -623,7 +625,8 @@ function Resume() {
                   className = {classes.traverseBtn}
                   startIcon = {<HomeIcon />}
                   onClick = {() => history.push('/')}
-                  variant = 'contained'
+                  variant = 'outlined'
+                  color = 'inherit'
                 >
                   Home
                 </Button>
@@ -632,7 +635,8 @@ function Resume() {
                   className = {classes.traverseBtn}
                   startIcon = {<WorkIcon />}
                   onClick = {() => history.push('/JobPortfolio')}
-                  variant = 'contained'
+                  variant = 'outlined'
+                  color = 'inherit'
                 >
                   Portfolio
                 </Button>

@@ -65,6 +65,8 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexGrow: '1',
     flexBasis: '1',
+    color: props => props == AppColors.lightTheme ?
+      props.portfolioBackground : props.portfolioPrimary,
   },
 
   appBarThemeBtnContainer: {
@@ -97,7 +99,6 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(1),
     marginLeft: theme.spacing(8),
     width: btnWidth,
-    color: 'black',
   },
 
   traversalDrawer: {
@@ -488,7 +489,7 @@ function Portfolio() {
                   className = {classes.traverseBtn}
                   startIcon = {<HomeIcon />}
                   onClick = {() => history.push('/')}
-                  variant = 'contained'
+                  variant = 'outlined'
                   color = 'inherit'
                 >
                   Home
@@ -498,7 +499,7 @@ function Portfolio() {
                   className = {classes.traverseBtn}
                   startIcon = {<DescriptionIcon />}
                   onClick = {() => history.push('/Resume')}
-                  variant = 'contained'
+                  variant = 'outlined'
                   color = 'inherit'
                 >
                   Resume

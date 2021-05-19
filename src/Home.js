@@ -60,7 +60,8 @@ const useStyles = makeStyles((theme) => ({
   },
 
   travBtnContainer: {
-    color: props => props.grey,
+    color: props => props == AppColors.lightTheme ?
+      props.homeBackground : props.homeSecondary,
     flexGrow: 3,
     flexBasis: 3,
   },
