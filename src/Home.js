@@ -70,7 +70,7 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: '1',
     flexBasis: '1',
     display: 'flex',
-    justifyContent: 'right',
+    justifyContent: 'flex-end',
     paddingRight: theme.spacing(6),
     border: '2px solid red',
   },
