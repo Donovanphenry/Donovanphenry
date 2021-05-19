@@ -73,7 +73,7 @@ const useStyles = makeStyles((theme) => ({
     paddingRight: theme.spacing(6),
     flexGrow: '1',
     display: 'flex',
-    justifyContent: 'right',
+    justifyContent: 'flex-end',
     color: props => props.portfolioBackground,
   },
 

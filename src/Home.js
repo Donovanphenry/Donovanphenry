@@ -72,7 +72,6 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     justifyContent: 'flex-end',
     paddingRight: theme.spacing(6),
-    border: '2px solid red',
   },
 
   themeBtn: {

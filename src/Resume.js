@@ -121,7 +121,7 @@ const useStyles = makeStyles((theme) => ({
 
   themeBtnContainer: {
     display: 'flex',
-    justifyContent: 'right',
+    justifyContent: 'flex-end',
     [theme.breakpoints.down('xs')]: {
       flexGrow: 1,
     },
