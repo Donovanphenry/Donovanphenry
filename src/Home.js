@@ -62,13 +62,13 @@ const useStyles = makeStyles((theme) => ({
   travBtnContainer: {
     color: props => props == AppColors.lightTheme ?
       props.homeBackground : props.homeSecondary,
-    flexGrow: 3,
-    flexBasis: 3,
+    flexGrow: '3',
+    flexBasis: '3',
   },
 
   themeBtnContainer: {
-    flexGrow: 1,
-    flexBasis: 1,
+    flexGrow: '1',
+    flexBasis: '1',
     display: 'flex',
     justifyContent: 'right',
     paddingRight: theme.spacing(6),
