@@ -112,6 +112,7 @@ const useStyles = makeStyles((theme) => ({
 
   drawerTravBtn: {
     width: btnWidth,
+    color: props => props.homePrimary,
     justifyContent: 'flex-start',
   },
 

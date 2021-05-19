@@ -60,6 +60,7 @@ const useStyles = makeStyles((theme) => ({
   },
 
   travBtnContainer: {
+    color: props => props.grey,
     flexGrow: 3,
     flexBasis: 3,
   },
@@ -77,13 +78,11 @@ const useStyles = makeStyles((theme) => ({
   },
 
   homeMenuBtn: {
-    color: props => props.homeMenuBtn,
+    color: props => props.grey,
     marginLeft: theme.spacing(6),
   },
 
   homeTraverseBtn: {
-    color: 'black',
-    background: props => props.grey,
     margin: theme.spacing(1),
     marginLeft: theme.spacing(5),
     width: btnWidth,
@@ -436,6 +435,7 @@ function Home() {
                   startIcon = {<DescriptionIcon />}
                   onClick = {() => history.push('/Resume')}
                   variant = 'outlined'
+                  color = 'inherit'
                 >
                   Resume
                 </Button>
@@ -445,6 +445,7 @@ function Home() {
                   startIcon = {<WorkIcon />}
                   onClick = {() => history.push('/JobPortfolio')}
                   variant = 'outlined'
+                  color = 'inherit'
                 >
                   Portfolio
                 </Button>

@@ -79,18 +79,18 @@ const useStyles = makeStyles((theme) => ({
   },
 
   buttonList: {
-    background: '#252627',
+    background: props => props.resumeBackground,
     width: '100%',
     height: '100%',
   },
 
   innerDocTraversals: {
-    color: '#5e9bf7',
+    color: props => props.resumePrimary,
   },
 
   drawerTravBtn: {
     width: btnWidth,
-    color: '#5e9bf7',
+    color: props => props.homePrimary,
     justifyContent: 'flex-start',
   },
 
@@ -120,7 +120,9 @@ const useStyles = makeStyles((theme) => ({
   themeBtnContainer: {
     display: 'flex',
     justifyContent: 'right',
-    [theme.breakpoints.down('xs')]: {flexGrow: 1,},
+    [theme.breakpoints.down('xs')]: {
+      flexGrow: 1,
+    },
     paddingRight: theme.spacing(6),
   },
 
