@@ -72,7 +72,6 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(1),
     marginLeft: theme.spacing(8),
     width: btnWidth,
-    background: props => props.grey,
   },
 
   traversalDrawer: {
@@ -119,10 +118,9 @@ const useStyles = makeStyles((theme) => ({
   },
 
   themeBtnContainer: {
-    flexGrow: 1,
-    flexBasis: 1,
     display: 'flex',
     justifyContent: 'right',
+    [theme.breakpoints.down('xs')]: {flexGrow: 1,},
     paddingRight: theme.spacing(6),
   },
 
@@ -194,7 +192,6 @@ const useStyles = makeStyles((theme) => ({
 
   selfDescriptionAndAchievements: {
     [theme.breakpoints.up('sm')]: {
-      marginTop: theme.spacing(3),
       marginBottom: theme.spacing(2),
     },
   },
@@ -210,12 +207,12 @@ const useStyles = makeStyles((theme) => ({
 
   addressTypog: {
     marginLeft: theme.spacing(1),
-    color: props => props.grey,
+    color: props => props.resumeSecondary,
   },
 
   phoneEmailTypog: {
     padding: theme.spacing(1),
-    color: props => props.grey,
+    color: props => props.resumeSecondary,
   },
 
   githubTypog: {
@@ -224,7 +221,7 @@ const useStyles = makeStyles((theme) => ({
 
   myContactLink: {
     border: '1px solid #6b6b6b',
-    color: props => props.grey,
+    color: props => props.resumeSecondary,
     marginLeft: theme.spacing(1),
     padding: theme.spacing(1),
   },
@@ -260,11 +257,11 @@ const useStyles = makeStyles((theme) => ({
   },
 
   descriptionList: {
-    color: props => props.grey,
     paddingTop: theme.spacing(1),
   },
 
   employmentOp: {
+    color: props => props.resumeSecondary,
     paddingLeft: '0px',
   },
 
@@ -300,6 +297,10 @@ const useStyles = makeStyles((theme) => ({
 
   school: {
     paddingLeft: '0px',
+  },
+
+  uniInfo: {
+    color: props => props.resumeSecondary,
   },
 
   schoolNameDates: {
@@ -380,7 +381,7 @@ const useStyles = makeStyles((theme) => ({
   },
 
   interestsDescript: {
-    color: props => props.grey,
+    color: props => props.resumeSecondary,
     paddingTop: theme.spacing(1),
 
     [theme.breakpoints.up('sm')]: {
@@ -396,6 +397,7 @@ const useStyles = makeStyles((theme) => ({
   },
 
   project: {
+    color: props => props.resumeSecondary,
     marginBottom: theme.spacing(1),
 
     [theme.breakpoints.up('sm')]: {
@@ -426,7 +428,6 @@ const useStyles = makeStyles((theme) => ({
   },
 
   projectDesc: {
-    color: props => props.grey,
     paddingTop: theme.spacing(1),
   },
 
@@ -442,7 +443,6 @@ const useStyles = makeStyles((theme) => ({
 
   projectNameTypog: {
     paddingTop: theme.spacing(1),
-    color: props => props.grey,
     fontWeight: 'bold',
 
     [theme.breakpoints.down('sm')]: {
@@ -480,6 +480,7 @@ const useStyles = makeStyles((theme) => ({
 
   resumeFooterTypog: {
     textAlign: 'center',
+    color: props => props.resumeSecondary,
   },
 }));
 
@@ -613,8 +614,8 @@ function Resume() {
             </Drawer>
           </Hidden>
 
-          <Hidden xsDown>
-            <Box className = {classes.appBarBtnContainer}>
+          <Box className = {classes.appBarBtnContainer}>
+            <Hidden xsDown>
               <Box className = {classes.travBtnContainer}>
                 <Button
                   className = {classes.traverseBtn}
@@ -634,18 +635,18 @@ function Resume() {
                   Portfolio
                 </Button>
               </Box>
+            </Hidden>
 
-              <Box className = {classes.themeBtnContainer}>
-                  <IconButton onClick = {changeTheme}>
-                    {
-                      userTheme == AppColors.darkTheme ?
-                        <Brightness4Icon className = {classes.themeBtn} /> :
-                        <Brightness7Icon className = {classes.themeBtn} />
-                    }
-                  </IconButton>
-              </Box>
+            <Box className = {classes.themeBtnContainer}>
+                <IconButton onClick = {changeTheme}>
+                  {
+                    userTheme == AppColors.darkTheme ?
+                      <Brightness4Icon className = {classes.themeBtn} /> :
+                      <Brightness7Icon className = {classes.themeBtn} />
+                  }
+                </IconButton>
             </Box>
-          </Hidden>
+          </Box>
         </Toolbar>
       </AppBar>
 

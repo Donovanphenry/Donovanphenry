@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
     },
     opacity: props.hovering ? '.5' : '1.0',
 
-    border: props => props.currTheme == 'light' ? '2px solid red' : '',
+    borderBottom: props.currTheme == 'light' ? `2px solid black` : '',
   }),
 }));
 

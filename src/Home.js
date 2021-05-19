@@ -29,6 +29,8 @@ import Link from '@material-ui/core/Link';
 
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
+import Brightness4Icon from '@material-ui/icons/Brightness4';
+import Brightness7Icon from '@material-ui/icons/Brightness7';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import WorkIcon from '@material-ui/icons/Work';
@@ -51,13 +53,37 @@ const useStyles = makeStyles((theme) => ({
     },
   },
 
+  appBarBtnContainer: {
+    color: '#252627',
+    display: 'flex',
+    width: '100%',
+  },
+
+  travBtnContainer: {
+    flexGrow: 3,
+    flexBasis: 3,
+  },
+
+  themeBtnContainer: {
+    flexGrow: 1,
+    flexBasis: 1,
+    display: 'flex',
+    justifyContent: 'right',
+    paddingRight: theme.spacing(6),
+  },
+
+  themeBtn: {
+    color: props => props.grey,
+  },
+
   homeMenuBtn: {
     color: props => props.homeMenuBtn,
     marginLeft: theme.spacing(6),
   },
 
   homeTraverseBtn: {
-    color: props => props.homePrimary,
+    color: 'black',
+    background: props => props.grey,
     margin: theme.spacing(1),
     marginLeft: theme.spacing(5),
     width: btnWidth,
@@ -154,7 +180,6 @@ const useStyles = makeStyles((theme) => ({
   siteTitleTypog: {
     textAlign: 'center',
     marginTop: theme.spacing(2),
-    fontWeight: 'bold',
     color: props => props.homeSecondary,
     width: '100%',
     borderBottom: props => `2px solid ${props.homeSecondary}`,
@@ -168,6 +193,7 @@ const useStyles = makeStyles((theme) => ({
   },
 
   homeAboutMeTypog: {
+    color: props => props.homePrimary,
     fontSize: '18px',
     textAlign: 'center',
     marginBottom: theme.spacing(4),
@@ -179,6 +205,7 @@ const useStyles = makeStyles((theme) => ({
   },
 
   homeAspirTypog: {
+    color: props => props.homePrimary,
     fontSize: '18px',
     textAlign: 'center',
     marginBottom: theme.spacing(5),
@@ -195,9 +222,7 @@ const useStyles = makeStyles((theme) => ({
   homeAboutMeTitleTypog: {
     textAlign: 'center',
     marginTop: theme.spacing(2),
-    marginBottom: theme.spacing(2),
     color: props => props.homeSecondary,
-    fontWeight: 'bold',
 
     [theme.breakpoints.up('sm')]: {
       fontSize: '50px',
@@ -218,7 +243,7 @@ const useStyles = makeStyles((theme) => ({
     },
 
     marginTop: theme.spacing(4),
-    marginBottom: theme.spacing(3),
+    marginBottom: theme.spacing(2),
   },
 
   homeInfoSubBox: {
@@ -275,7 +300,6 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: theme.spacing(1),
     borderTop: props => `2px solid ${props.primary}`,
     fontSize: '20px',
-    fontWeight: 'bold',
     textAlign: 'center',
     color: props => props.homeSecondary,
     paddingBottom: theme.spacing(1),
@@ -338,9 +362,9 @@ function Home() {
 
   return (
     <div className={classes.homeContainer}>
-      <Hidden smUp>
-        <AppBar position="static" className={classes.homeAppBar}>
-          <Toolbar className={classes.homeToolbar}>
+      <AppBar position="static" className={classes.homeAppBar}>
+        <Toolbar className={classes.homeToolbar}>
+          <Hidden smUp>
             <IconButton
               edge="start"
               aria-label="menu"
@@ -402,9 +426,43 @@ function Home() {
                 </ListItem>
               </List>
             </Drawer>
-          </Toolbar>
-        </AppBar>
-      </Hidden>
+          </Hidden>
+        
+          <Box className = {classes.appBarBtnContainer}>
+            <Hidden xsDown>
+              <Box className = {classes.travBtnContainer}>
+                <Button
+                  className = {classes.homeTraverseBtn}
+                  startIcon = {<DescriptionIcon />}
+                  onClick = {() => history.push('/Resume')}
+                  variant = 'outlined'
+                >
+                  Resume
+                </Button>
+
+                <Button
+                  className = {classes.homeTraverseBtn}
+                  startIcon = {<WorkIcon />}
+                  onClick = {() => history.push('/JobPortfolio')}
+                  variant = 'outlined'
+                >
+                  Portfolio
+                </Button>
+              </Box>
+            </Hidden>
+
+            <Box className = {classes.themeBtnContainer}>
+                <IconButton onClick = {changeTheme}>
+                  {
+                    userTheme == AppColors.darkTheme ?
+                      <Brightness4Icon className = {classes.themeBtn} /> :
+                      <Brightness7Icon className = {classes.themeBtn} />
+                  }
+                </IconButton>
+            </Box>
+          </Box>
+        </Toolbar>
+      </AppBar>
 
       <Paper className={classes.homePaper}>
         <Box className = {classes.siteAuthorInfo}>
@@ -429,36 +487,6 @@ function Home() {
             deep learning, and computational physics.
           </Typography>
         </Box>
-
-        <List className={classes.listAvenues}>
-          <ListItem className={classes.li}>
-            <Box className={classes.buttonFlexBox}>
-              <Button
-                className={classes.liButton}
-                onClick={() => history.push('/Resume')}
-                startIcon={<DescriptionIcon />}
-                color='inherit'
-                variant='outlined'
-              >
-                Resume
-              </Button>
-            </Box>
-          </ListItem>
-
-          <ListItem className={classes.li}>
-            <Box className={classes.buttonFlexBox}>
-              <Button
-                className={classes.liButton}
-                onClick={() => history.push('/JobPortfolio')}
-                startIcon={<WorkIcon />}
-                color='inherit'
-                variant='outlined'
-              >
-                Portfolio
-              </Button>
-            </Box>
-          </ListItem>
-        </List>
 
         <Typography
           className = {classes.homeAboutMeTitleTypog}

@@ -97,7 +97,7 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(1),
     marginLeft: theme.spacing(8),
     width: btnWidth,
-    background: props => props.grey,
+    color: 'black',
   },
 
   traversalDrawer: {
@@ -130,6 +130,7 @@ const useStyles = makeStyles((theme) => ({
   jpContainer: {
     display: 'flex',
     flexDirection: 'column',
+    background: props => props.portfolioBackground,
   },
 
   jpContentContainer: {
@@ -250,7 +251,7 @@ const useStyles = makeStyles((theme) => ({
   },
 
   jpSkill: {
-    color: props => props.grey,
+    color: props => props.portfolioSecondary,
   },
 
   jpProjects: {
@@ -337,7 +338,7 @@ const useStyles = makeStyles((theme) => ({
   },
 
   jpProjectDescTypog: {
-    color: props => props.grey,
+    color: props => props.portfolioSecondary,
 
     [theme.breakpoints.up('sm')]: {
       fontSize: '18px',
@@ -348,7 +349,7 @@ const useStyles = makeStyles((theme) => ({
   },
 
   projectGitHubLink: {
-    color: props => props.grey,
+    color: props => props.portfolioSecondary,
   },
 
   jpFooterContainer: {
@@ -370,6 +371,7 @@ const useStyles = makeStyles((theme) => ({
   },
 
   jpFooterTypogs: {
+    color: props => props.portfolioSecondary,
     textAlign: 'center',
   },
 }));
@@ -478,8 +480,8 @@ function Portfolio() {
             </Drawer>
           </Hidden>
 
-          <Hidden xsDown>
-            <Box className = {classes.appBarBtnContainer}>
+          <Box className = {classes.appBarBtnContainer}>
+            <Hidden xsDown>
               <Box className = {classes.traversalBtnContainer}>
                 <Button
                   className = {classes.traverseBtn}
@@ -501,19 +503,19 @@ function Portfolio() {
                   Resume
                 </Button>
               </Box>
+            </Hidden>
 
-              <Box className = {classes.appBarThemeBtnContainer}>
-                <IconButton onClick = {changeTheme}>
-                  {
-                    userTheme == AppColors.darkTheme ?
-                      <Brightness4Icon className = {classes.themeBtn} /> :
-                      <Brightness7Icon className = {classes.themeBtn} />
+            <Box className = {classes.appBarThemeBtnContainer}>
+              <IconButton onClick = {changeTheme}>
+                {
+                  userTheme == AppColors.darkTheme ?
+                    <Brightness4Icon className = {classes.themeBtn} /> :
+                    <Brightness7Icon className = {classes.themeBtn} />
 
-                  }
-                </IconButton>
-              </Box>
+                }
+              </IconButton>
             </Box>
-          </Hidden>
+          </Box>
         </Toolbar>
       </AppBar>
 
@@ -573,7 +575,7 @@ function Portfolio() {
 
               <Paper className = {classes.jpSkillsPaper} elevation = {12}>
                 <Typography className = {classes.jpSkillsTypog}>
-                  Frameworks/Libraries
+                  Frameworks / Libraries
                 </Typography>
 
                 <Typography className = {classes.jpSkill}>ReactJS</Typography>
