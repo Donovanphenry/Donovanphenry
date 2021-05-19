@@ -18,8 +18,6 @@ const useStyles = makeStyles({
   },
 });
 
-// Temp
-
 /**
  * Simple component with no state.
  *

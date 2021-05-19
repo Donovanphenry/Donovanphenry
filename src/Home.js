@@ -139,8 +139,6 @@ const useStyles = makeStyles((theme) => ({
   },
 
   liButton: {
-    // backgroundColor: '#6B6B6B',
-    // color: '#BEBEBE',
     width: buttonWidth,
     justifyContent: 'flex-start',
   },

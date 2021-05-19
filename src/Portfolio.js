@@ -11,7 +11,6 @@ import FindingNemo from './images/FindingNemo.png';
 import FindingNemoGIF from './images/FindingNemoGIF.gif';
 import SlugMail from './images/SlugMail.png';
 import SlugMailGIF from './images/SlugMailGIF.gif';
-// import PromoterPredictorPSFM from './images/PromoterPredictorPSFM.png';
 import PromoterPredictorModel from './images/PromoterPredictorModel.png';
 import BstAnalysis from './images/BST_Analysis.png';
 import Integral from './images/Integral.png';
