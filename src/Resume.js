@@ -939,7 +939,7 @@ function Resume() {
         </Hidden>
 
         <Hidden smUp>
-          <Typography className = {classes.sectionType}>
+          <Typography className = {classes.sectionType} id = 'resProjects'>
             Projects
           </Typography>
         </Hidden>
