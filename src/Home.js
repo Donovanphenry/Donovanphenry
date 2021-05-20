@@ -604,7 +604,7 @@ function Home() {
           </Box>
         </Box>
 
-        <Box style = {{display: AppColors.lightTheme == userTheme ? 'none' : 'flex', justifyContent: 'center'}}>
+        <Box style = {{display: AppColors.lightTheme == userTheme ? 'none' : 'none', justifyContent: 'center'}}>
           <a className = "glowing-button" onClick = {changeTheme}>Change Theme</a>
         </Box>
       </Paper>

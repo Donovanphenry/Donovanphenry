@@ -19,7 +19,7 @@ AppColors.darkTheme = {
 };
 
 AppColors.lightTheme = {
-  homeBackground: 'white',
+  homeBackground: '#eeeeee',
   homeBackgroundGradient: 'white',
   homeAppBarColor: '#3f51b5',
   homePrimary: '#252627',
