@@ -5,6 +5,8 @@ import AppContext from './AppContext';
 import AoJ from './images/AoJ.png';
 import FindingNemo from './images/FindingNemo.png';
 import SlugMail from './images/SlugMail.png';
+import PromoterPredictorModel from './images/PromoterPredictorModel.png';
+import Integral from './images/Integral.png';
 
 /* eslint-disable */
 
@@ -811,13 +813,13 @@ function Resume() {
 
             <Typography className = {classes.interestsDescript}>
               - Languages: Java, C++, C, JavaScript, Python, PostgreSQL,
-              C#, JSX, XHTML, CSS, Assembly
+              C#, JSX, XHTML, CSS, Assembly, Scheme, SmallTalk, Ocaml, Perl
             </Typography>
 
             <Typography className = {classes.interestsDescript}>
               - Developer Tools &amp; Misc: ReactJS, Material UI, NodeJS, NPM, Docker,
               Java Util, Express, REST APIs, Jest, Puppeteer, JavaFX, PyTorch, NumPy,
-              Pandas, Keras
+              Pandas, TensorFlow, PyTorch, SKLearn
             </Typography>
           </Grid>
 
@@ -880,7 +882,7 @@ function Resume() {
                   </Typography>
 
                   <Typography className = {classes.schoolGPA}>
-                    - GPA: 4.0
+                    - GPA: 3.8
                   </Typography>
                 </ListItemText>
               </ListItem>
@@ -943,7 +945,58 @@ function Resume() {
             Projects
           </Typography>
         </Hidden>
-        
+
+        <Grid container className = {classes.project}>
+          <Grid item xs = {12} sm = {2} className = {classes.projectName}>
+            <Typography className = {classes.projectNameTypog}>
+              Hide and Seq
+            </Typography>
+          </Grid>
+
+          <Grid item xs = {12} sm = {4} className = {classes.projectPictureContainer}>
+            <Avatar className = {classes.projectPicture}
+              src = {PromoterPredictorModel}
+            />
+          </Grid>
+          <Grid item xs = {12} sm = {6} className = {classes.projectDesc}>
+            <Typography className = {classes.projectDescTypog}>
+              Machine learning
+              project with the goal of detecting the position
+              of a promoter in a given DNA sequence.
+              My partner and I have collected, cleansed,
+              and analyzed data that was collected from EPDNew.
+              We are currently constructing the model, which will
+              be a convolutional neural network (CNN) combined
+              with a BiLSTM. If interested, more information on it can
+              be found on my GitHub repository.
+            </Typography>
+          </Grid>
+        </Grid>
+
+        <Grid container className = {classes.project}>
+          <Grid item xs = {12} sm = {2} className = {classes.projectName}>
+            <Typography className = {classes.projectNameTypog}>
+              Symbolic Calculator
+            </Typography>
+          </Grid>
+
+          <Grid item xs = {12} sm = {4} className = {classes.projectPictureContainer}>
+            <Avatar className = {classes.projectPicture}
+              src = {Integral}
+            />
+          </Grid>
+          <Grid item xs = {12} sm = {6} className = {classes.projectDesc}>
+            <Typography className = {classes.projectDescTypog}>
+              Hub for mathematical
+              operations covered in calculus and linear algebra
+              such as integration, derivatives, matrix multiplication,
+              vector operations, eigen decompositions etc. Currently
+              under construction, but as of right now, many derivatives
+              can be calculated and most basic matrix operations can
+              be performed.
+            </Typography>
+          </Grid>
+        </Grid>
 
         <Grid container className = {classes.project}>
           <Grid item xs = {12} sm = {2} className = {classes.projectName}>
