@@ -740,6 +740,26 @@ function Resume() {
               <ListItem className = {classes.employmentOp}>
                 <ListItemText>
                   <Typography className = {classes.employmentInfo}>
+                    <span className = {classes.compName}>Infinite Options/Serving Fresh</span>
+                    <span className = {classes.locTitle}>, Remote - Data Science/React Intern</span>
+                  </Typography>
+
+                  <Typography className = {classes.employmentDates}>
+                    March, 2021 - Present
+                  </Typography>
+
+                  <Typography className = {classes.employmentDescription}>
+                    Created various histograms and tables based off of (probabilistic)
+                    expected value of products and price differentials between competitors
+                    for the Serving Fresh admin page. Currently contributing in various
+                    ways to Serving Fresh as a front-end React developer.
+                  </Typography>
+                </ListItemText>
+              </ListItem>
+
+              <ListItem className = {classes.employmentOp}>
+                <ListItemText>
+                  <Typography className = {classes.employmentInfo}>
                     <span className = {classes.compName}>Westside</span>
                     <span className = {classes.locTitle}>, Torrance - Technician</span>
                   </Typography>
@@ -903,7 +923,8 @@ function Resume() {
             </Typography>
             
             <Typography className = {classes.interestsDescript}>
-              - Computer Science: Data Structs and Algorithms, Computer Architecture,
+              - Computer Science: Applied Machine Learning,
+              Data Structs and Algorithms, Computer Architecture,
               Web Development, Analysis of Algorithms
             </Typography>
 
