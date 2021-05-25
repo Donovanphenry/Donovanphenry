@@ -749,10 +749,10 @@ function Resume() {
                   </Typography>
 
                   <Typography className = {classes.employmentDescription}>
-                    Created various histograms and tables based off of (probabilistic)
+                    Created various histograms and tables based off of the
                     expected value of products and price differentials between competitors
-                    for the Serving Fresh admin page. Currently contributing in various
-                    ways to Serving Fresh as a front-end React developer.
+                    for the Serving Fresh admin page. Currently contributing to Serving
+                    Fresh in various ways as a front-end React developer.
                   </Typography>
                 </ListItemText>
               </ListItem>
