@@ -25,7 +25,7 @@ AppColors.lightTheme = {
   homePrimary: '#252627',
   homeSecondary: '#3f51b5',
   homeMenuBtn: '#0D1117',
-  resumeBackground: 'white',
+  resumeBackground: '#eeeeee',
   resumePrimary: '#3f51b5',
   resumeSecondary: '#252627',
   resumeAppBarColor: '#3f51b5',
