@@ -14,9 +14,10 @@ import SlugMailGIF from './images/SlugMailGIF.gif';
 import PromoterPredictorModel from './images/PromoterPredictorModel.png';
 import BstAnalysis from './images/BST_Analysis.png';
 import Integral from './images/Integral.png';
-import Mancala_AI from './images/Mancala-AI.png'
-import Model_See_Model_Do from './images/Model-See-Model-Do.png'
+import Mancala_AI from './images/Mancala-AI.png';
+import Model_See_Model_Do from './images/Model-See-Model-Do.png';
 
+import {ReactComponent as Google_Colab} from './SVGs/Google_ G _Logo.svg';
 /* eslint-disable */
 
 import Link from '@material-ui/core/Link';
@@ -34,6 +35,7 @@ import Box from '@material-ui/core/Box';
 import IconButton from '@material-ui/core/IconButton';
 import Brightness4Icon from '@material-ui/icons/Brightness4';
 import Brightness7Icon from '@material-ui/icons/Brightness7';
+import SvgIcon from '@material-ui/core/SvgIcon';
 
 import SportsHockeyIcon from '@material-ui/icons/SportsHockey';
 import MenuIcon from '@material-ui/icons/Menu';
@@ -760,14 +762,26 @@ function Portfolio() {
               </Link>
 
               <Box className = {classes.jpProjectInfo}>
-                <Link
-                  href = "https://github.com/Donovanphenry/Hide_And_Seq"
-                  className = {classes.projectGitHubLink}
-                >
-                  <IconButton color = 'inherit'>
-                    <GitHubIcon />
-                  </IconButton>
-                </Link>
+
+
+                <Box style = {{display: 'flex'}}>
+                  <Link
+                    href = "https://github.com/Donovanphenry/Hide_And_Seq"
+                    className = {classes.projectGitHubLink}
+                  >
+                    <IconButton color = 'inherit'>
+                      <GitHubIcon />
+                    </IconButton>
+                  </Link>
+
+                  <Link
+                    href = "https://colab.research.google.com/github/Donovanphenry/Hide_And_Seq/blob/main/Hide_And_Seq.ipynb"
+                  >
+                    <IconButton>
+                      <SvgIcon component = {Google_Colab} />
+                    </IconButton>
+                  </Link>
+                </Box>
 
                 <Typography className = {classes.jpProjectNameTypog}>
                   Hide &amp; Seq
@@ -917,14 +931,24 @@ function Portfolio() {
               </Link>
 
               <Box className = {classes.jpProjectInfo}>
-                <Link
-                  href = "https://github.com/Donovanphenry/Model-See-Model-Do"
-                  className = {classes.projectGitHubLink}
-                >
-                  <IconButton color = 'inherit'>
-                    <GitHubIcon />
-                  </IconButton>
-                </Link>
+                <Box style = {{display: 'flex'}}>
+                  <Link
+                    href = "https://github.com/Donovanphenry/Model-See-Model-Do"
+                    className = {classes.projectGitHubLink}
+                  >
+                    <IconButton color = 'inherit'>
+                      <GitHubIcon />
+                    </IconButton>
+                  </Link>
+
+                  <Link
+                    href = "https://colab.research.google.com/drive/1PM4tHzmZGzSoXSoSKz_Qh5-23BC2oTO4#scrollTo=ssAiORDaX_EH"
+                  >
+                    <IconButton>
+                      <SvgIcon component = {Google_Colab} />
+                    </IconButton>
+                  </Link>
+                </Box>
 
                 <Typography className = {classes.jpProjectNameTypog}>
                   Model See Model Do
