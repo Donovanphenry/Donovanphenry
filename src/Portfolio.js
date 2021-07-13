@@ -15,6 +15,7 @@ import PromoterPredictorModel from './images/PromoterPredictorModel.png';
 import BstAnalysis from './images/BST_Analysis.png';
 import Integral from './images/Integral.png';
 import Mancala_AI from './images/Mancala-AI.png'
+import Model_See_Model_Do from './images/Model-See-Model-Do.png'
 
 /* eslint-disable */
 
@@ -900,6 +901,43 @@ function Portfolio() {
                   under construction, but as of right now, many derivatives
                   can be calculated and most basic matrix operations can
                   be performed.
+                </Typography>
+              </Box>
+            </Paper>
+
+            <Paper className = {classes.jpProjectPaper} elevation = {12}>
+              <Link
+                href = "https://github.com/Donovanphenry/Model-See-Model-Do"
+              >
+                <PortfolioPicture
+                  className = {classes.portfolioPaperPic}
+                  statPicSrc = {Model_See_Model_Do}
+                  dynamPicSrc = {Model_See_Model_Do}
+                />
+              </Link>
+
+              <Box className = {classes.jpProjectInfo}>
+                <Link
+                  href = "https://github.com/Donovanphenry/Model-See-Model-Do"
+                  className = {classes.projectGitHubLink}
+                >
+                  <IconButton color = 'inherit'>
+                    <GitHubIcon />
+                  </IconButton>
+                </Link>
+
+                <Typography className = {classes.jpProjectNameTypog}>
+                  Model See Model Do
+                </Typography>
+
+                <Typography className = {classes.jpProjectDescTypog}>
+                  &nbsp;&nbsp;&nbsp;&nbsp;Image recognition model built with TensorFlow
+                  utilizing transfer learning. An Xception base model is passed into a
+                  feed-forward network. Each dense layer has an HE initializer, is
+                  batch normalized, and is ReLU activated, except a softmax
+                  for the output layer. See the Google Colab if interested in more
+                  details. A testing accuracy of 99.9% is achieved, with a validation
+                  accuracy of 97%.
                 </Typography>
               </Box>
             </Paper>
