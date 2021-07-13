@@ -14,6 +14,7 @@ import SlugMailGIF from './images/SlugMailGIF.gif';
 import PromoterPredictorModel from './images/PromoterPredictorModel.png';
 import BstAnalysis from './images/BST_Analysis.png';
 import Integral from './images/Integral.png';
+import Mancala_AI from './images/Mancala-AI.png'
 
 /* eslint-disable */
 
@@ -785,9 +786,44 @@ function Portfolio() {
               </Box>
             </Paper>
 
-            <Hidden mdDown>
-              <Box />
-            </Hidden>
+            <Paper className = {classes.jpProjectPaper} elevation = {12}>
+              <Link
+                href = "https://github.com/Donovanphenry/Mancala-AI"
+              >
+                <PortfolioPicture
+                  className = {classes.portfolioPaperPic}
+                  statPicSrc = {Mancala_AI}
+                  dynamPicSrc = {Mancala_AI}
+                />
+              </Link>
+
+              <Box className = {classes.jpProjectInfo}>
+                <Link
+                  href = "https://github.com/Donovanphenry/Mancala-AI"
+                  className = {classes.projectGitHubLink}
+                >
+                  <IconButton color = 'inherit'>
+                    <GitHubIcon />
+                  </IconButton>
+                </Link>
+
+                <Typography className = {classes.jpProjectNameTypog}>
+                  Mancala A.I.
+                </Typography>
+
+                <Typography className = {classes.jpProjectDescTypog}>
+                  &nbsp;&nbsp;&nbsp;&nbsp;Game A.I. built to play mancala
+                  using minimax, and minimax with alpha-beta pruning. Interact
+                  with the game through the command-line. One can choose to play
+                  against it, or have two A.I.'s play against one another by providing
+                  which player the human would like to be as the second argument to the
+                  command-line. Choosing a player number other than 1 or 2 will pit two A.I.
+                  against each other. The first argument is the player that will move first.
+                  As is, the AI will be able to see 6 moves ahead. One change this depth,
+                  but may run into RAM issues if the depth gets too high.
+                </Typography>
+              </Box>
+            </Paper>
 
             <Paper className = {classes.jpProjectPaper} elevation = {12}>
               <Link
