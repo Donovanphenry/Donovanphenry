@@ -16,6 +16,8 @@ import BstAnalysis from './images/BST_Analysis.png';
 import Integral from './images/Integral.png';
 import Mancala_AI from './images/Mancala-AI.png';
 import Model_See_Model_Do from './images/Model-See-Model-Do.png';
+import Snake_Pic from './images/Snake.png';
+import Snake from './images/Snake-AI-Small.gif';
 
 import {ReactComponent as Google_Colab} from './SVGs/Google_ G _Logo.svg';
 /* eslint-disable */
@@ -834,7 +836,7 @@ function Portfolio() {
                   which player the human would like to be as the second argument to the
                   command-line. Choosing a player number other than 1 or 2 will pit two A.I.
                   against each other. The first argument is the player that will move first.
-                  As is, the AI will be able to see 6 moves ahead. One can change this depth,
+                  As is, the AI will be able to see 4 moves ahead. One can change this depth,
                   but may run into RAM issues if the depth gets too high.
                 </Typography>
               </Box>
@@ -962,6 +964,45 @@ function Portfolio() {
                   for the output layer. See the Google Colab if interested in more
                   details. A testing accuracy of 99.9% is achieved, with a validation
                   accuracy of 97%.
+                </Typography>
+              </Box>
+            </Paper>
+
+            <Box />
+
+            <Paper className = {classes.jpProjectPaper} elevation = {12}>
+              <Link
+                href = "https://github.com/Donovanphenry/Snake-AI"
+              >
+                <PortfolioPicture
+                  className = {classes.portfolioPaperPic}
+                  statPicSrc = {Snake_Pic}
+                  dynamPicSrc = {Snake}
+                />
+              </Link>
+
+              <Box className = {classes.jpProjectInfo}>
+                <Box style = {{display: 'flex'}}>
+                  <Link
+                    href = "https://github.com/Donovanphenry/Snake-AI"
+                    className = {classes.projectGitHubLink}
+                  >
+                    <IconButton color = 'inherit'>
+                      <GitHubIcon />
+                    </IconButton>
+                  </Link>
+                </Box>
+
+                <Typography className = {classes.jpProjectNameTypog}>
+                  Snek
+                </Typography>
+
+                <Typography className = {classes.jpProjectDescTypog}>
+                  &nbsp;&nbsp;&nbsp;&nbsp;Through model-free reinforcement learning,
+                  an A.I. agent was taught how to play the game "Snake."
+                  The program utilizes pygame to setup the graphics and
+                  event loops. The most optimal q-table is saved and the
+                  agent uses said q-table to navigate the board.
                 </Typography>
               </Box>
             </Paper>
