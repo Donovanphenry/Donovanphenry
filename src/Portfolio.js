@@ -16,8 +16,8 @@ import BstAnalysis from './images/BST_Analysis.png';
 import Integral from './images/Integral.png';
 import Mancala_AI from './images/Mancala-AI.png';
 import Model_See_Model_Do from './images/Model-See-Model-Do.png';
-import Snake_Pic from './images/Snake.png';
-import Snake from './images/Snake-AI-Small.gif';
+import Snake_Pic from './images/Snake-Pic.png';
+import Snake from './images/Snake.gif';
 
 import {ReactComponent as Google_Colab} from './SVGs/Google_ G _Logo.svg';
 /* eslint-disable */
@@ -1000,7 +1000,7 @@ function Portfolio() {
                 <Typography className = {classes.jpProjectDescTypog}>
                   &nbsp;&nbsp;&nbsp;&nbsp;Through model-free reinforcement learning,
                   an A.I. agent was taught how to play the game "Snake."
-                  The program utilizes pygame to setup the graphics and
+                  The program utilizes pygame to set up the graphics and
                   event loops. The most optimal q-table is saved and the
                   agent uses said q-table to navigate the board.
                 </Typography>
