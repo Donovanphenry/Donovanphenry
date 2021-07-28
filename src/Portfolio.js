@@ -679,35 +679,37 @@ function Portfolio() {
 
             <Paper className = {classes.jpProjectPaper} elevation = {12}>
               <Link
-                href = "https://github.com/Donovanphenry/FInding-Nemo"
+                href = "https://github.com/Donovanphenry/Snake-AI"
               >
                 <PortfolioPicture
                   className = {classes.portfolioPaperPic}
-                  statPicSrc = {FindingNemo}
-                  dynamPicSrc = {FindingNemoGIF}
+                  statPicSrc = {Snake_Pic}
+                  dynamPicSrc = {Snake}
                 />
               </Link>
 
               <Box className = {classes.jpProjectInfo}>
-                <Link
-                  href = "https://github.com/Donovanphenry/FInding-Nemo"
-                  className = {classes.projectGitHubLink}
-                >
-                  <IconButton color = 'inherit'>
-                    <GitHubIcon />
-                  </IconButton>
-                </Link>
+                <Box style = {{display: 'flex'}}>
+                  <Link
+                    href = "https://github.com/Donovanphenry/Snake-AI"
+                    className = {classes.projectGitHubLink}
+                  >
+                    <IconButton color = 'inherit'>
+                      <GitHubIcon />
+                    </IconButton>
+                  </Link>
+                </Box>
 
                 <Typography className = {classes.jpProjectNameTypog}>
-                  Finding Nemo
+                  Snek
                 </Typography>
 
                 <Typography className = {classes.jpProjectDescTypog}>
-                  &nbsp;&nbsp;&nbsp;&nbsp;I created a maze game in
-                  which a program must find the exit of a maze. To
-                  find the exit, I built stack and queue modules,
-                  and used them to implement depth first search
-                  and breadth first search.
+                  &nbsp;&nbsp;&nbsp;&nbsp;Through model-free reinforcement learning,
+                  an A.I. agent was taught how to play the game "Snake."
+                  The program utilizes pygame to set up the graphics and
+                  event loops. The most optimal q-table is saved and the
+                  agent uses said q-table to navigate the board.
                 </Typography>
               </Box>
             </Paper>
@@ -964,45 +966,6 @@ function Portfolio() {
                   for the output layer. See the Google Colab if interested in more
                   details. A testing accuracy of 99.9% is achieved, with a validation
                   accuracy of 97%.
-                </Typography>
-              </Box>
-            </Paper>
-
-            <Box />
-
-            <Paper className = {classes.jpProjectPaper} elevation = {12}>
-              <Link
-                href = "https://github.com/Donovanphenry/Snake-AI"
-              >
-                <PortfolioPicture
-                  className = {classes.portfolioPaperPic}
-                  statPicSrc = {Snake_Pic}
-                  dynamPicSrc = {Snake}
-                />
-              </Link>
-
-              <Box className = {classes.jpProjectInfo}>
-                <Box style = {{display: 'flex'}}>
-                  <Link
-                    href = "https://github.com/Donovanphenry/Snake-AI"
-                    className = {classes.projectGitHubLink}
-                  >
-                    <IconButton color = 'inherit'>
-                      <GitHubIcon />
-                    </IconButton>
-                  </Link>
-                </Box>
-
-                <Typography className = {classes.jpProjectNameTypog}>
-                  Snek
-                </Typography>
-
-                <Typography className = {classes.jpProjectDescTypog}>
-                  &nbsp;&nbsp;&nbsp;&nbsp;Through model-free reinforcement learning,
-                  an A.I. agent was taught how to play the game "Snake."
-                  The program utilizes pygame to set up the graphics and
-                  event loops. The most optimal q-table is saved and the
-                  agent uses said q-table to navigate the board.
                 </Typography>
               </Box>
             </Paper>
