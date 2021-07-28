@@ -537,8 +537,9 @@ function Home() {
                   that I will enjoy machine learning. In turn, I&apos;d
                   love an opportunity to contribute to a company whose
                   mission lies at the forefront of this technology. I
-                  plan to enroll in several machine learning courses
-                  throughout the remainder of my time at UC Santa Cruz,
+                  have enrolled in several machine learning courses
+                  throughout my time at UC Santa Cruz, will continue
+                  to enroll in more,
                   and I&apos;m currently a member of UCSC&apos;s <a
                     className = {classes.middleOfTextLink}
                     href = "https://scai.ucsc.edu/" >
