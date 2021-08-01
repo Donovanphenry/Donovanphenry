@@ -589,7 +589,7 @@ function Portfolio() {
                 <Typography className = {classes.jpSkill}>Material UI</Typography>
                 <Typography className = {classes.jpSkill}>NumPy</Typography>
                 <Typography className = {classes.jpSkill}>Pandas</Typography>
-                <Typography className = {classes.jpSkill}>Keras</Typography>
+                <Typography className = {classes.jpSkill}>TensorFlow</Typography>
                 <Typography className = {classes.jpSkill}>PyTorch</Typography>
                 <Typography className = {classes.jpSkill}>Java Util</Typography>
                 <Typography className = {classes.jpSkill}>JavaFX</Typography>
