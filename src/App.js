@@ -28,7 +28,15 @@ const useStyles = makeStyles({
  */
 function App() {
   const classes = useStyles();
-  const [userTheme, setUserTheme] = React.useState(AppColors.darkTheme);
+  let appCol = JSON.parse(localStorage.getItem('AppColors') || '{}');
+  if (appCol == {})
+    appCol = AppColors.darkTheme
+    localStorage.setItem('AppColors', JSON.stringify(AppColors.darkTheme));
+  const [userTheme, setUserTheme] = React.useState(appCol);
+
+  React.useEffect(() => {
+    localStorage.setItem('AppColors', JSON.stringify(userTheme));
+  }, [userTheme])
 
   return (
     <div className = {classes.appContainer}>
