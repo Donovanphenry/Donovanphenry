@@ -707,10 +707,12 @@ function Portfolio() {
 
                 <Typography className = {classes.jpProjectDescTypog}>
                   &nbsp;&nbsp;&nbsp;&nbsp;Through model-free reinforcement learning,
-                  an A.I. agent was taught how to play the game "Snake."
+                  an A.I. agent is taught how to play the game "Snake."
                   The program utilizes pygame to set up the graphics and
-                  event loops. The most optimal q-table is saved and the
-                  agent uses said q-table to navigate the board.
+                  event loops. The method of reinforcement learning used
+                  by the snake agent is Q-learning. Each time the program
+                  executes, the most optimal q-table is
+                  saved and the agent uses said q-table to navigate the board.
                 </Typography>
               </Box>
             </Paper>
