@@ -602,7 +602,7 @@ function Portfolio() {
                   Server Tier
                 </Typography>
 
-                <Typography className = {classes.jpSkill}>NodeJS</Typography>
+                <Typography className = {classes.jpSkill}>Node.js</Typography>
                 <Typography className = {classes.jpSkill}>Express</Typography>
                 <Typography className = {classes.jpSkill}>OpenAPI</Typography>
               </Paper>
@@ -622,6 +622,7 @@ function Portfolio() {
                 <Typography className = {classes.jpSkill}>Linear Algebra</Typography>
                 <Typography className = {classes.jpSkill}>Discrete Structures</Typography>
                 <Typography className = {classes.jpSkill}>Probability Theory</Typography>
+                <Typography className = {classes.jpSkill}>Differential Equations</Typography>
                 <Typography className = {classes.jpSkill}>Calc. Based Mechanics</Typography>
                 <Typography className = {classes.jpSkill}>Calc. Based Electromagnetism</Typography>
                 <Typography className = {classes.jpSkill}>Calc. Based Fluids, Optics & Waves</Typography>

@@ -837,9 +837,9 @@ function Resume() {
             </Typography>
 
             <Typography className = {classes.interestsDescript}>
-              - Developer Tools &amp; Misc: ReactJS, Material UI, NodeJS, NPM, Docker,
+              - Developer Tools &amp; Misc: ReactJS, Material UI, Node.js, NPM, Docker,
               Java Util, Express, REST APIs, Jest, Puppeteer, JavaFX, PyTorch, NumPy,
-              Pandas, TensorFlow, PyTorch, SKLearn
+              Pandas, TensorFlow, SKLearn
             </Typography>
           </Grid>
 
