@@ -7,8 +7,6 @@ import AppContext from './AppContext';
 import PortfolioPicture from './PortfolioPicture';
 import AoJ from './images/AoJ.png';
 import AoJGIF from './images/AoJGIF.gif';
-import FindingNemo from './images/FindingNemo.png';
-import FindingNemoGIF from './images/FindingNemoGIF.gif';
 import SlugMail from './images/SlugMail.png';
 import SlugMailGIF from './images/SlugMailGIF.gif';
 import PromoterPredictorModel from './images/PromoterPredictorModel.png';
@@ -35,8 +33,8 @@ import Drawer from '@material-ui/core/Drawer';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import IconButton from '@material-ui/core/IconButton';
-import Brightness4Icon from '@material-ui/icons/Brightness4';
-import Brightness7Icon from '@material-ui/icons/Brightness7';
+import {FiSun} from 'react-icons/fi';
+import {BiMoon} from 'react-icons/bi';
 import SvgIcon from '@material-ui/core/SvgIcon';
 
 import SportsHockeyIcon from '@material-ui/icons/SportsHockey';
@@ -516,8 +514,8 @@ function Portfolio() {
               <IconButton onClick = {changeTheme}>
                 {
                   userTheme == AppColors.darkTheme ?
-                    <Brightness4Icon className = {classes.themeBtn} /> :
-                    <Brightness7Icon className = {classes.themeBtn} />
+                    <BiMoon className = {classes.themeBtn} /> :
+                    <FiSun className = {classes.themeBtn} />
 
                 }
               </IconButton>

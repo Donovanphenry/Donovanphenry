@@ -29,8 +29,8 @@ import Link from '@material-ui/core/Link';
 
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
-import Brightness4Icon from '@material-ui/icons/Brightness4';
-import Brightness7Icon from '@material-ui/icons/Brightness7';
+import {FiSun} from 'react-icons/fi';
+import {BiMoon} from 'react-icons/bi';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import WorkIcon from '@material-ui/icons/Work';
@@ -455,8 +455,8 @@ function Home() {
                 <IconButton onClick = {changeTheme}>
                   {
                     userTheme == AppColors.darkTheme ?
-                      <Brightness4Icon className = {classes.themeBtn} /> :
-                      <Brightness7Icon className = {classes.themeBtn} />
+                      <BiMoon className = {classes.themeBtn} /> :
+                      <FiSun className = {classes.themeBtn} />
                   }
                 </IconButton>
             </Box>
