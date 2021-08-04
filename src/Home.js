@@ -426,10 +426,10 @@ function Home() {
     e.preventDefault();
 
     emailjs.sendForm('service_iggvzj7', 'personal_website', e.target, 'user_hEmdXCylL98AtRfQFa8Rt')
-      .then((result) => {
-          console.log(result.text);
+      .then(() => {
+          console.log('Email sent.');
       }, (error) => {
-          console.log(error.text);
+          console.error(error.text);
       });
     e.target.reset();
   };
@@ -696,11 +696,8 @@ function Home() {
           <label className = {classes.contactMeLabel}>Subject</label>
           <input type="input" name="subject" className = {classes.contactMeInput}/>
 
-          <label className = {classes.contactMeLabel}>First Name</label>
-          <input type="input" name="firstName_from" className = {classes.contactMeInput}/>
-
-          <label className = {classes.contactMeLabel}>Last Name</label>
-          <input type="input" name="lastName_from" className = {classes.contactMeInput}/>
+          <label className = {classes.contactMeLabel}>Name</label>
+          <input type="input" name="name_from" className = {classes.contactMeInput}/>
 
           <label className = {classes.contactMeLabel}>Email</label>
           <input type="email" name="email_from" className = {classes.contactMeInput}/>
