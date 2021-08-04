@@ -341,19 +341,19 @@ const useStyles = makeStyles((theme) => ({
   },
 
   contactMeTitle: {
-    marginTop: theme.spacing(3),
+    marginTop: theme.spacing(1),
     fontSize: '30px',
-    color: props => props.homeSecondary,
+    color: props => props.contactSecondary,
     textAlign: 'center',
     fontWeight: 'bold',
   },
 
   contactMeForm: {
-    margin: '1rem auto',
+    margin: '1rem auto 3rem',
     maxWidth: '800px',
     width: '40%',
     minWidth: '250px',
-    border: props => `2px solid ${props.homeSecondary}`,
+    border: props => `2px solid ${props.contactSecondary}`,
     padding: '2rem',
 
     [theme.breakpoints.down('xs')]: {
@@ -386,7 +386,7 @@ const useStyles = makeStyles((theme) => ({
   },
 
   contactMeSubmit: {
-    margin: '20px auto',
+    margin: '1rem auto 0',
     width: '40%',
     border: '0',
     padding: '.5rem',
