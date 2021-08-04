@@ -381,13 +381,20 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: '5px',
   },
 
+  contactSubmitContainer: {
+    display: 'flex',
+  },
+
   contactMeSubmit: {
-    width: '100%',
+    margin: '20px auto',
+    width: '40%',
     border: '0',
     padding: '.5rem',
+    height: '50px',
     background: props => props.contactPrimary,
     color: props => props.contactTirtiary,
     cursor: 'pointer',
+    textTransform: 'uppercase',
 
     '&:hover': {
       background: props => props.contactSecondary,
@@ -695,8 +702,10 @@ function Home() {
 
           <label className = {classes.contactMeLabel}>Message</label>
           <textarea name="message" className = {classes.contactMeInput}/>
-
-          <input type="submit" value="Send" className = {classes.contactMeSubmit} />
+          
+          <div className = {classes.contactSubmitContainer}>
+            <input type="submit" value="Send" className = {classes.contactMeSubmit} />
+          </div>
         </form>
       </Paper>
 
