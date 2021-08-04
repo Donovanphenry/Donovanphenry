@@ -833,7 +833,7 @@ function Portfolio() {
 
                 <Typography className = {classes.jpProjectDescTypog}>
                   &nbsp;&nbsp;&nbsp;&nbsp;Game A.I. built to play mancala
-                  using mini-max, and mini-max with alpha-beta pruning. Interact
+                  using mini-max, and mini-max with &alpha;-&beta; pruning. Interact
                   with the game through the command-line. One can choose to play
                   against it, or have two A.I.'s play against one another by providing
                   which player the human would like to be as the second argument to the
