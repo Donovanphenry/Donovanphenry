@@ -396,6 +396,7 @@ const useStyles = makeStyles((theme) => ({
     cursor: 'pointer',
     textTransform: 'uppercase',
     fontSize: '17px',
+    opacity: '1',
 
     '&:hover': {
       background: props => props.contactSecondary,
