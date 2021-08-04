@@ -371,6 +371,8 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: theme.spacing(2),
     border: props => `1px solid ${props.contactSecondary}`,
     padding: '.5rem',
+    fontSize: '17px',
+    borderRadius: '5px',
   },
 
   contactMeSubmit: {
