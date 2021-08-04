@@ -349,10 +349,16 @@ const useStyles = makeStyles((theme) => ({
   },
 
   contactMeForm: {
-    margin: '.5rem auto',
-    maxWidth: '500px',
+    margin: '1rem auto',
+    maxWidth: '800px',
+    width: '40%',
+    minWidth: '250px',
     border: props => `2px solid ${props.homeSecondary}`,
     padding: '2rem',
+
+    [theme.breakpoints.down('xs')]: {
+      width: ''
+    },
   },
 
   contactMeLabel: {
@@ -670,29 +676,29 @@ function Home() {
         <Box style = {{display: AppColors.lightTheme == userTheme ? 'none' : 'none', justifyContent: 'center'}}>
           <a className = "glowing-button" onClick = {changeTheme}>Change Theme</a>
         </Box>
+
+        <Typography className = {classes.contactMeTitle}>
+          Contact Me
+        </Typography>
+        <form className = {classes.contactMeForm} onSubmit={sendEmail}>
+          <label className = {classes.contactMeLabel}>Subject</label>
+          <input type="input" name="subject" className = {classes.contactMeInput}/>
+
+          <label className = {classes.contactMeLabel}>First Name</label>
+          <input type="input" name="firstName_from" className = {classes.contactMeInput}/>
+
+          <label className = {classes.contactMeLabel}>Last Name</label>
+          <input type="input" name="lastName_from" className = {classes.contactMeInput}/>
+
+          <label className = {classes.contactMeLabel}>Email</label>
+          <input type="email" name="email_from" className = {classes.contactMeInput}/>
+
+          <label className = {classes.contactMeLabel}>Message</label>
+          <textarea name="message" className = {classes.contactMeInput}/>
+
+          <input type="submit" value="Send" className = {classes.contactMeSubmit} />
+        </form>
       </Paper>
-
-      <Typography className = {classes.contactMeTitle}>
-        Contact Me
-      </Typography>
-      <form className = {classes.contactMeForm} onSubmit={sendEmail}>
-        <label className = {classes.contactMeLabel}>Subject</label>
-        <input type="input" name="subject" className = {classes.contactMeInput}/>
-
-        <label className = {classes.contactMeLabel}>First Name</label>
-        <input type="input" name="firstName_from" className = {classes.contactMeInput}/>
-
-        <label className = {classes.contactMeLabel}>Last Name</label>
-        <input type="input" name="lastName_from" className = {classes.contactMeInput}/>
-
-        <label className = {classes.contactMeLabel}>Email</label>
-        <input type="email" name="email_from" className = {classes.contactMeInput}/>
-
-        <label className = {classes.contactMeLabel}>Message</label>
-        <textarea name="message" className = {classes.contactMeInput}/>
-
-        <input type="submit" value="Send" className = {classes.contactMeSubmit} />
-      </form>
 
       <Box className = {classes.externalLinks}>
         <Link href = "https://github.com/Donovanphenry">
