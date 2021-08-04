@@ -960,8 +960,9 @@ function Portfolio() {
                 </Typography>
 
                 <Typography className = {classes.jpProjectDescTypog}>
-                  &nbsp;&nbsp;&nbsp;&nbsp;Image recognition model built with TensorFlow
-                  utilizing transfer learning. An Xception base model is passed into a
+                  &nbsp;&nbsp;&nbsp;&nbsp;Image recognition model built with TensorFlow,
+                  utilizing transfer learning. The goal of the model is to label the species
+                  of an animal, given a photograph of it. An Xception base model is passed into a
                   feed-forward network. Each dense layer has an HE initializer, is
                   batch normalized, and is ReLU activated, except a softmax
                   for the output layer. See the Google Colab if interested in more
