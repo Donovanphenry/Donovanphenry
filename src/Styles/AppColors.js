@@ -16,7 +16,7 @@ AppColors.darkTheme = {
     portfolioPrimary: '#ED5565',
     portfolioSecondary: '#BEBEBE',
     grey: '#BEBEBE',
-    contactPrimary: '#5e9bf7',
+    contactPrimary: '#eeeeee',
     contactSecondary: '#FFD700',
     contactTirtiary: '#0D1117',
 };
