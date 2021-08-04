@@ -36,6 +36,7 @@ import IconButton from '@material-ui/core/IconButton';
 import {FiSun} from 'react-icons/fi';
 import {BiMoon} from 'react-icons/bi';
 import SvgIcon from '@material-ui/core/SvgIcon';
+import {SiPython, SiMathworks, SiDocker, SiMaterialUi} from 'react-icons/si';
 
 import SportsHockeyIcon from '@material-ui/icons/SportsHockey';
 import MenuIcon from '@material-ui/icons/Menu';
@@ -245,14 +246,28 @@ const useStyles = makeStyles((theme) => ({
     },
   },
 
-  jpSkillsTypog: {
+  jpSkillsSectionTitle: {
+    borderBottom: props => `2px solid ${props.grey}`,
     marginTop: theme.spacing(1),
     marginBottom: theme.spacing(4),
     paddingBottom: theme.spacing(1),
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+
+  jpSkillsTypog: {
     color: props => props.portfolioPrimary,
     fontWeight: 'bold',
-    borderBottom: props => `2px solid ${props.grey}`,
     fontSize: '20px',
+    justify: 'center',
+    textAlign: 'center',
+    marginRight: theme.spacing(1),
+  },
+
+  jpSkillsIcon: {
+    fontSize: '20px',
+    color: props => props.portfolioPrimary,
   },
 
   jpSkill: {
@@ -561,9 +576,14 @@ function Portfolio() {
                 // always column
                 // flex basis and grow set when strictly greater than xs
               >
-                <Typography className = {classes.jpSkillsTypog}>
-                  Languages
-                </Typography>
+                <Box className = {classes.jpSkillsSectionTitle}>
+                  <Typography className = {classes.jpSkillsTypog}>
+                    Languages
+                  </Typography>
+                  
+                  <SiPython className = {classes.jpSkillsIcon} />
+                </Box>
+
 
                 <Typography className = {classes.jpSkill}>Java</Typography>
                 <Typography className = {classes.jpSkill}>C++</Typography>
@@ -579,9 +599,13 @@ function Portfolio() {
               </Paper>
 
               <Paper className = {classes.jpSkillsPaper} elevation = {12}>
-                <Typography className = {classes.jpSkillsTypog}>
-                  Frameworks / Libraries
-                </Typography>
+                <Box className = {classes.jpSkillsSectionTitle}>
+                  <Typography className = {classes.jpSkillsTypog}>
+                    Frameworks / Libraries
+                  </Typography>
+                  
+                  <SiMaterialUi className = {classes.jpSkillsIcon} />
+                </Box>
 
                 <Typography className = {classes.jpSkill}>ReactJS</Typography>
                 <Typography className = {classes.jpSkill}>Material UI</Typography>
@@ -596,9 +620,13 @@ function Portfolio() {
 
             <Box className = {classes.jpSkillsPaperBox}>
               <Paper className = {classes.jpSkillsPaper} elevation = {12}>
-                <Typography className = {classes.jpSkillsTypog}>
-                  Relevant Coursework &int;f(x)dx
-                </Typography>
+                <Box className = {classes.jpSkillsSectionTitle}>
+                  <Typography className = {classes.jpSkillsTypog}>
+                    Relevant Coursework
+                  </Typography>
+                  
+                  <SiMathworks className = {classes.jpSkillsIcon} />
+                </Box>
 
                 <Typography className = {classes.jpSkill}>Calculus I, II, III</Typography>
                 <Typography className = {classes.jpSkill}>Differential Equations</Typography>
@@ -616,9 +644,13 @@ function Portfolio() {
               </Paper>
 
               <Paper className = {classes.jpSkillsPaper} elevation = {12}>
-                <Typography className = {classes.jpSkillsTypog}>
-                  Other
-                </Typography>
+                <Box className = {classes.jpSkillsSectionTitle}>
+                  <Typography className = {classes.jpSkillsTypog}>
+                    Other
+                  </Typography>
+                  
+                  <SiDocker className = {classes.jpSkillsIcon} />
+                </Box>
 
                 <Typography className = {classes.jpSkill}>Git</Typography>
                 <Typography className = {classes.jpSkill}>GitHub</Typography>
