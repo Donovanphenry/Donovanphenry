@@ -397,6 +397,9 @@ const useStyles = makeStyles((theme) => ({
     textTransform: 'uppercase',
     fontSize: '17px',
     opacity: '1',
+    webkitAppearance: 'none',
+    mozAppearance: 'none',
+    appearance: 'none',
 
     '&:hover': {
       background: props => props.contactSecondary,
