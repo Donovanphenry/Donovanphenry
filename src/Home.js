@@ -6,6 +6,8 @@ import {useHistory} from 'react-router-dom';
 
 import AppContext from './AppContext';
 
+import emailjs from 'emailjs-com';
+
 import JoshuaSunset from './images/JoshuaSunset.jpg';
 import Dijkstras from './images/Dijkstras.png';
 import CompSciNoRules from './images/CompSciNoRules.png';
@@ -337,6 +339,52 @@ const useStyles = makeStyles((theme) => ({
     paddingRight: theme.spacing(1),
     textDecoration: 'none',
   },
+
+  contactMeTitle: {
+    marginTop: theme.spacing(3),
+    fontSize: '30px',
+    color: props => props.homeSecondary,
+    textAlign: 'center',
+    fontWeight: 'bold',
+  },
+
+  contactMeForm: {
+    margin: '.5rem auto',
+    maxWidth: '500px',
+    border: props => `2px solid ${props.homeSecondary}`,
+    padding: '2rem',
+  },
+
+  contactMeLabel: {
+    display: 'block',
+    color: props => props.contactPrimary,
+    width: '100%',
+    fontSize: '20px',
+    textAlign: 'center',
+  },
+
+  contactMeInput: {
+    width: '15em',
+    display: 'block',
+    width: '100%',
+    marginTop: theme.spacing(1),
+    marginBottom: theme.spacing(2),
+    border: props => `1px solid ${props.contactSecondary}`,
+    padding: '.5rem',
+  },
+
+  contactMeSubmit: {
+    width: '100%',
+    border: '0',
+    padding: '.5rem',
+    background: props => props.contactPrimary,
+    color: props => props.contactTirtiary,
+    cursor: 'pointer',
+
+    '&:hover': {
+      background: props => props.contactSecondary,
+    },
+  },
 }));
 
 /**
@@ -352,6 +400,18 @@ function Home() {
   const toggleDrawerTraverse = (location) => {
     setDrawerOpen(false);
     history.push(location);
+  };
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm('service_iggvzj7', 'personal_website', e.target, 'user_hEmdXCylL98AtRfQFa8Rt')
+      .then((result) => {
+          console.log(result.text);
+      }, (error) => {
+          console.log(error.text);
+      });
+    e.target.reset();
   };
 
   const changeTheme = () => {
@@ -609,6 +669,28 @@ function Home() {
           <a className = "glowing-button" onClick = {changeTheme}>Change Theme</a>
         </Box>
       </Paper>
+
+      <Typography className = {classes.contactMeTitle}>
+        Contact Me
+      </Typography>
+      <form className = {classes.contactMeForm} onSubmit={sendEmail}>
+        <label className = {classes.contactMeLabel}>Subject</label>
+        <input type="input" name="subject" className = {classes.contactMeInput}/>
+
+        <label className = {classes.contactMeLabel}>First Name</label>
+        <input type="input" name="firstName_from" className = {classes.contactMeInput}/>
+
+        <label className = {classes.contactMeLabel}>Last Name</label>
+        <input type="input" name="lastName_from" className = {classes.contactMeInput}/>
+
+        <label className = {classes.contactMeLabel}>Email</label>
+        <input type="email" name="email_from" className = {classes.contactMeInput}/>
+
+        <label className = {classes.contactMeLabel}>Message</label>
+        <textarea name="message" className = {classes.contactMeInput}/>
+
+        <input type="submit" value="Send" className = {classes.contactMeSubmit} />
+      </form>
 
       <Box className = {classes.externalLinks}>
         <Link href = "https://github.com/Donovanphenry">

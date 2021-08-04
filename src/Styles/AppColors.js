@@ -16,6 +16,9 @@ AppColors.darkTheme = {
     portfolioPrimary: '#ED5565',
     portfolioSecondary: '#BEBEBE',
     grey: '#BEBEBE',
+    contactPrimary: '#5e9bf7',
+    contactSecondary: '#FFD700',
+    contactTirtiary: '#0D1117',
 };
 
 AppColors.lightTheme = {
@@ -34,6 +37,9 @@ AppColors.lightTheme = {
   portfolioPrimary: '#3f51b5',
   portfolioSecondary: '#252627',
   grey: '#BEBEBE',
+  contactPrimary: '#252627',
+  contactSecondary: '#3f51b5',
+  contactTirtiary: '#eeeeee',
 };
 
 export default AppColors;
