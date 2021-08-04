@@ -395,6 +395,7 @@ const useStyles = makeStyles((theme) => ({
     color: props => props.contactTirtiary,
     cursor: 'pointer',
     textTransform: 'uppercase',
+    fontSize: '17px',
 
     '&:hover': {
       background: props => props.contactSecondary,
