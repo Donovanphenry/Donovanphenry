@@ -597,12 +597,22 @@ function Portfolio() {
             <Box className = {classes.jpSkillsPaperBox}>
               <Paper className = {classes.jpSkillsPaper} elevation = {12}>
                 <Typography className = {classes.jpSkillsTypog}>
-                  Server Tier
+                  Relevant Coursework &int;f(x)dx
                 </Typography>
 
-                <Typography className = {classes.jpSkill}>Node.js</Typography>
-                <Typography className = {classes.jpSkill}>Express</Typography>
-                <Typography className = {classes.jpSkill}>OpenAPI</Typography>
+                <Typography className = {classes.jpSkill}>Calculus I, II, III</Typography>
+                <Typography className = {classes.jpSkill}>Differential Equations</Typography>
+                <Typography className = {classes.jpSkill}>Linear Algebra</Typography>
+                <Typography className = {classes.jpSkill}>Discrete Structures</Typography>
+                <Typography className = {classes.jpSkill}>Probability Theory</Typography>
+                <Typography className = {classes.jpSkill}>Computer Architecture</Typography>
+                <Typography className = {classes.jpSkill}>Web Development</Typography>
+                <Typography className = {classes.jpSkill}>Data Structures &amp; Algorithms</Typography>
+                <Typography className = {classes.jpSkill}>Applied Machine Learning</Typography>
+                <Typography className = {classes.jpSkill}>Artificial Intelligence</Typography>
+                <Typography className = {classes.jpSkill}>Calc. Based Mechanics</Typography>
+                <Typography className = {classes.jpSkill}>Calc. Based Electromagnetism</Typography>
+                <Typography className = {classes.jpSkill}>Calc. Based Fluids, Optics & Waves</Typography>
               </Paper>
 
               <Paper className = {classes.jpSkillsPaper} elevation = {12}>
@@ -614,16 +624,9 @@ function Portfolio() {
                 <Typography className = {classes.jpSkill}>GitHub</Typography>
                 <Typography className = {classes.jpSkill}>Docker</Typography>
                 <Typography className = {classes.jpSkill}>Jest & Puppeteer</Typography>
-                <Typography className = {classes.jpSkill}>Calculus I, II, III</Typography>
-                <Typography className = {classes.jpSkill}>Computer Architecture</Typography>
-                <Typography className = {classes.jpSkill}>Web Development</Typography>
-                <Typography className = {classes.jpSkill}>Linear Algebra</Typography>
-                <Typography className = {classes.jpSkill}>Discrete Structures</Typography>
-                <Typography className = {classes.jpSkill}>Probability Theory</Typography>
-                <Typography className = {classes.jpSkill}>Differential Equations</Typography>
-                <Typography className = {classes.jpSkill}>Calc. Based Mechanics</Typography>
-                <Typography className = {classes.jpSkill}>Calc. Based Electromagnetism</Typography>
-                <Typography className = {classes.jpSkill}>Calc. Based Fluids, Optics & Waves</Typography>
+                <Typography className = {classes.jpSkill}>Node.js</Typography>
+                <Typography className = {classes.jpSkill}>Express</Typography>
+                <Typography className = {classes.jpSkill}>OpenAPI</Typography>
               </Paper>
             </Box>
           </Box>
