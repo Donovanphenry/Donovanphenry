@@ -637,7 +637,7 @@ function Home() {
               <Box className={classes.homeInfoTextFlex}>
                 <Box className = {classes.homeInfoSectionTitle}>
                   <Typography className={classes.homeInfoHeader}>
-                    Goals &amp; Aspirations
+                    Goals &amp; Ambitions
                   </Typography>
                   
                   <GiStairsGoal className = {classes.homeInfoIcon} />
