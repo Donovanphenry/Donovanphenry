@@ -36,7 +36,7 @@ import {BiMoon} from 'react-icons/bi';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import WorkIcon from '@material-ui/icons/Work';
-import {GiAchievement, GiStairsGoal, GiBurningPassion} from 'react-icons/gi';
+import {GiAchievement, GiStairsGoal, GiBurningPassion, GiMailbox} from 'react-icons/gi';
 import {FaHiking} from 'react-icons/fa';
 
 import AppColors from './Styles/AppColors';
@@ -311,12 +311,11 @@ const useStyles = makeStyles((theme) => ({
   homeInfoHeader: {
     color: props => props.homeSecondary,
     fontSize: '20px',
-    textAlign: 'center',
     marginRight: theme.spacing(1),
   },
 
   homeInfoIcon: {
-    fontSize: 'large',
+    fontSize: '25px',
     color: props => props.homeSecondary,
   },
 
@@ -354,12 +353,24 @@ const useStyles = makeStyles((theme) => ({
     textDecoration: 'none',
   },
 
-  contactMeTitle: {
+  contactMeSectionTitle: {
+    display: 'flex',
+    justifyContent: 'center',
     marginTop: theme.spacing(1),
+  },
+
+  contactMeTypog: {
     fontSize: '30px',
-    color: props => props.contactSecondary,
     textAlign: 'center',
+    alignContent: 'center',
     fontWeight: 'bold',
+    color: props => props.contactSecondary,
+    marginRight: theme.spacing(1),
+  },
+
+  contactMeIcon: {
+    color: props => props.contactSecondary,
+    fontSize: '30px',
   },
 
   contactMeForm: {
@@ -719,9 +730,13 @@ function Home() {
           <a className = "glowing-button" onClick = {changeTheme}>Change Theme</a>
         </Box>
 
-        <Typography className = {classes.contactMeTitle}>
-          Contact Me
-        </Typography>
+        <Box className = {classes.contactMeSectionTitle}>
+          <Typography className = {classes.contactMeTypog}>
+            Contact Me
+          </Typography>
+
+          <GiMailbox className = {classes.contactMeIcon}/>
+        </Box>
         <form className = {classes.contactMeForm} onSubmit={sendEmail}>
           <label className = {classes.contactMeLabel}>Subject</label>
           <input type="input" name="subject" className = {classes.contactMeInput}/>
