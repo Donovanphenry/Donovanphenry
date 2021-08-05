@@ -646,22 +646,21 @@ function Home() {
                 <Typography className={classes.homeInfoTypog}>
                   &nbsp;&nbsp;&nbsp;&nbsp;I&apos;m
                   very passionate about math
-                  and computer science, which leads me to believe
-                  that I will enjoy machine learning. In turn, I&apos;d
-                  love an opportunity to contribute to a company whose
+                  and computer science, and thus, I&apos;ve developed
+                  a love for machine learning. In turn, I&apos;d
+                  relish an opportunity to contribute to a company whose
                   mission lies at the forefront of this technology. I
                   have enrolled in several machine learning courses
                   throughout my time at UC Santa Cruz, will continue
-                  to enroll in more,
-                  and I&apos;m currently a member of UCSC&apos;s <a
+                  to enroll in more
+                  . Also, I&apos;m currently a member of UCSC&apos;s <a
                     className = {classes.middleOfTextLink}
                     href = "https://scai.ucsc.edu/" >
                     SCAI
                   </a> (Santa
                   Cruz Artificial Intelligence)
-                  club. I
-                  also particularly enjoy analysing algorithms and their
-                  order of growth and would be thrilled to be able to
+                  club. Furthermore, I particularly enjoy analysing algorithms
+                  and their order of growth and would be thrilled to be able to
                   contribute to a company who specializes in such a field.
                 </Typography>
               </Box>
