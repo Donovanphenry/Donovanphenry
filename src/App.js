@@ -28,7 +28,7 @@ const useStyles = makeStyles({
  */
 function App() {
   const classes = useStyles();
-  const appCol = localStorage.getItem('AppColors') || 'dark';
+  const appCol = localStorage.getItem('AppColors') || 'light';
   const [userTheme, setUserTheme] = React.useState(appCol == 'dark' ? AppColors.darkTheme : AppColors.lightTheme);
 
   React.useEffect(() => {

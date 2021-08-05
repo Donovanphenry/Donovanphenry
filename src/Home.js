@@ -612,7 +612,7 @@ function Home() {
               <Box className={classes.homeInfoTextFlex}>
                 <Box className = {classes.homeInfoSectionTitle}>
                   <Typography className={classes.homeInfoHeader}>
-                    Academic Achievements
+                    School Achievements
                   </Typography>
                   
                   <GiAchievement className = {classes.homeInfoIcon} />
@@ -620,7 +620,7 @@ function Home() {
 
                 <Typography className={classes.homeInfoTypog}>
                   &nbsp;&nbsp;&nbsp;&nbsp;I&apos;m
-                  currently a junior at UC Santa Cruz 🎓
+                  currently a senior at UC Santa Cruz 🎓
                   majoring in computer science (B.S.), and concurrently
                   pursuing a minor in statistics.
                 </Typography>
@@ -705,7 +705,7 @@ function Home() {
               <Box className={classes.homeInfoTextFlex}>
                 <Box className = {classes.homeInfoSectionTitle}>
                   <Typography className={classes.homeInfoHeader}>
-                    Personal Interests
+                    Interests
                   </Typography>
                   
                   <FaHiking className = {classes.homeInfoIcon} />
