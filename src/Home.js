@@ -743,7 +743,7 @@ function Home() {
           <label className = {classes.contactMeLabel}>Name</label>
           <input type="input" name="name_from" className = {classes.contactMeInput}/>
 
-          <label className = {classes.contactMeLabel}>Email</label>
+          <label className = {classes.contactMeLabel}>Email Address</label>
           <input type="email" name="email_from" className = {classes.contactMeInput}/>
 
           <label className = {classes.contactMeLabel}>Message</label>
