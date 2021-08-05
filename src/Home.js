@@ -36,6 +36,9 @@ import {BiMoon} from 'react-icons/bi';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import WorkIcon from '@material-ui/icons/Work';
+import {GiAchievement, GiStairsGoal, GiBurningPassion} from 'react-icons/gi';
+import {FaHiking} from 'react-icons/fa';
+
 import AppColors from './Styles/AppColors';
 
 const buttonWidth = 150;
@@ -296,14 +299,25 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(3),
   },
 
-  homeInfoHeader: {
+  homeInfoSectionTitle: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
     marginBottom: theme.spacing(1),
-    borderTop: props => `2px solid ${props.primary}`,
-    fontSize: '20px',
-    textAlign: 'center',
-    color: props => props.homeSecondary,
     paddingBottom: theme.spacing(1),
     borderBottom: props => `1px solid ${props.homeSecondary}`,
+  },
+  
+  homeInfoHeader: {
+    color: props => props.homeSecondary,
+    fontSize: '20px',
+    textAlign: 'center',
+    marginRight: theme.spacing(1),
+  },
+
+  homeInfoIcon: {
+    fontSize: 'large',
+    color: props => props.homeSecondary,
   },
 
   homeInfoTypog: {
@@ -585,9 +599,13 @@ function Home() {
               </img>
 
               <Box className={classes.homeInfoTextFlex}>
-                <Typography className={classes.homeInfoHeader}>
-                  Academic Achievements
-                </Typography>
+                <Box className = {classes.homeInfoSectionTitle}>
+                  <Typography className={classes.homeInfoHeader}>
+                    Academic Achievements
+                  </Typography>
+                  
+                  <GiAchievement className = {classes.homeInfoIcon} />
+                </Box>
 
                 <Typography className={classes.homeInfoTypog}>
                   &nbsp;&nbsp;&nbsp;&nbsp;I&apos;m
@@ -606,9 +624,13 @@ function Home() {
               </img>
 
               <Box className={classes.homeInfoTextFlex}>
-                <Typography className={classes.homeInfoHeader}>
-                  Goals &amp; Aspirations
-                </Typography>
+                <Box className = {classes.homeInfoSectionTitle}>
+                  <Typography className={classes.homeInfoHeader}>
+                    Goals &amp; Aspirations
+                  </Typography>
+                  
+                  <GiStairsGoal className = {classes.homeInfoIcon} />
+                </Box>
 
                 <Typography className={classes.homeInfoTypog}>
                   &nbsp;&nbsp;&nbsp;&nbsp;I&apos;m
@@ -644,9 +666,13 @@ function Home() {
               </img>
 
               <Box className={classes.homeInfoTextFlex}>
-                <Typography className = {classes.homeInfoHeader}>
-                  Passions
-                </Typography>
+                <Box className = {classes.homeInfoSectionTitle}>
+                  <Typography className = {classes.homeInfoHeader}>
+                    Passions
+                  </Typography>
+                  
+                  <GiBurningPassion className = {classes.homeInfoIcon} />
+                </Box>
 
                 <Typography className = {classes.homeInfoTypog}>
                   &nbsp;&nbsp;&nbsp;&nbsp;I&apos;m
@@ -666,9 +692,13 @@ function Home() {
               </img>
 
               <Box className={classes.homeInfoTextFlex}>
-                <Typography className={classes.homeInfoHeader}>
-                  Personal Interests
-                </Typography>
+                <Box className = {classes.homeInfoSectionTitle}>
+                  <Typography className={classes.homeInfoHeader}>
+                    Personal Interests
+                  </Typography>
+                  
+                  <FaHiking className = {classes.homeInfoIcon} />
+                </Box>
 
                 <Typography className={classes.homeInfoTypog}>
                   &nbsp;&nbsp;&nbsp;&nbsp;I
