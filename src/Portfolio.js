@@ -794,8 +794,7 @@ function Portfolio() {
                 </Typography>
 
                 <Typography className = {classes.jpProjectTechStack}>
-                  JavaScript, Node.js, Express.js, React.js, PostgreSQL, Material UI,
-                  OpenAPI, Yaml
+                  Node.js, Express.js, React.js, PostgreSQL
                 </Typography>
 
                 <Typography className = {classes.jpProjectDescTypog}>
