@@ -923,8 +923,8 @@ function Resume() {
             </Typography>
             
             <Typography className = {classes.interestsDescript}>
-              - Computer Science: Applied Machine Learning,
-              Data Structs and Algorithms, Computer Architecture,
+              - Computer Science: Applied Machine Learning, Artificial
+              Intelligence, Data Structs and Algorithms, Computer Architecture,
               Web Development, Analysis of Algorithms
             </Typography>
 
@@ -949,7 +949,7 @@ function Resume() {
 
             <Grid item sm = {4}>
               <Typography className = {classes.projectTemplate}>
-                Project Picture
+                Project GitHub
               </Typography>
             </Grid>
 
@@ -975,9 +975,11 @@ function Resume() {
           </Grid>
 
           <Grid item xs = {12} sm = {4} className = {classes.projectPictureContainer}>
-            <Avatar className = {classes.projectPicture}
-              src = {PromoterPredictorModel}
-            />
+            <Link href = 'https://github.com/Donovanphenry/Hide_And_Seq'>
+              <Avatar className = {classes.projectPicture}
+                src = {PromoterPredictorModel}
+              />
+            </Link>
           </Grid>
           <Grid item xs = {12} sm = {6} className = {classes.projectDesc}>
             <Typography className = {classes.projectDescTypog}>
@@ -1002,9 +1004,11 @@ function Resume() {
           </Grid>
 
           <Grid item xs = {12} sm = {4} className = {classes.projectPictureContainer}>
-            <Avatar className = {classes.projectPicture}
-              src = {Integral}
-            />
+            <Link href = 'https://github.com/Donovanphenry/Symbolic-Calculator'>
+              <Avatar className = {classes.projectPicture}
+                src = {Integral}
+              />
+            </Link>
           </Grid>
           <Grid item xs = {12} sm = {6} className = {classes.projectDesc}>
             <Typography className = {classes.projectDescTypog}>
@@ -1027,9 +1031,11 @@ function Resume() {
           </Grid>
 
           <Grid item xs = {12} sm = {4} className = {classes.projectPictureContainer}>
-            <Avatar className = {classes.projectPicture}
-              src = {AoJ}
-            />
+            <Link href = 'https://github.com/Donovanphenry/Attack-on-Jupiter'>
+              <Avatar className = {classes.projectPicture}
+                src = {AoJ}
+              />
+            </Link>
           </Grid>
           <Grid item xs = {12} sm = {6} className = {classes.projectDesc}>
             <Typography className = {classes.projectDescTypog}>
@@ -1043,35 +1049,17 @@ function Resume() {
         <Grid container className = {classes.project}>
           <Grid item xs = {12} sm = {2} className = {classes.projectName}>
             <Typography className = {classes.projectNameTypog}>
-              Finding Nemo
-            </Typography>
-          </Grid>
-
-          <Grid item xs = {12} sm = {4} className = {classes.projectPictureContainer}>
-            <Avatar className = {classes.projectPicture} src = {FindingNemo}>
-              FN
-            </Avatar>
-          </Grid>
-          <Grid item xs = {12} sm = {6} className = {classes.projectDesc}>
-            <Typography className = {classes.projectDescTypog}>
-              Designed a linked list, stack, queue and binary search tree and integrated them in a maze game
-              and created an algorithm to find the exit of the maze based on a depth-first search.
-            </Typography>
-          </Grid>
-        </Grid>
-
-        <Grid container className = {classes.project}>
-          <Grid item xs = {12} sm = {2} className = {classes.projectName}>
-            <Typography className = {classes.projectNameTypog}>
               Slug Mail
             </Typography>
           </Grid>
 
           <Grid item xs = {12} sm = {4} className = {classes.projectPictureContainer}>
-            <Avatar className = {classes.projectPicture} src = {SlugMail}
-            >
-              SM
-            </Avatar>
+            <Link href = 'https://github.com/Donovanphenry/Slug-Mail'>
+              <Avatar className = {classes.projectPicture} src = {SlugMail}
+              >
+                SM
+              </Avatar>
+            </Link>
           </Grid>
           <Grid item xs = {12} sm = {6} className = {classes.projectDesc}>
             <Typography className = {classes.projectDescTypog}>

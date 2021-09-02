@@ -235,6 +235,7 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
     margin: theme.spacing(1),
     background: props => props.portfolioBackground2,
+    maxWidth: '700px',
 
     [theme.breakpoints.up('sm')]: {
       flexBasis: 1,
@@ -326,6 +327,7 @@ const useStyles = makeStyles((theme) => ({
     marginRight: theme.spacing(1),
     marginTop: theme.spacing(2),
     marginBottom: theme.spacing(2),
+    maxWidth: '700px',
   },
 
   portfolioPaperPic: {
@@ -345,16 +347,23 @@ const useStyles = makeStyles((theme) => ({
     borderTop: props => `2px solid ${props.portfolioPrimary}`,
     paddingTop: theme.spacing(3),
     marginTop:theme.spacing(2),
-    marginBottom: theme.spacing(2),
+    marginBottom: theme.spacing(1),
     textAlign: 'center',
     width: '100%',
 
     [theme.breakpoints.up('sm')]: {
-      fontSize: '18px',
+      fontSize: '22px',
     },
     [theme.breakpoints.down('xs')]: {
-      fontSize: '16px',
+      fontSize: '20px',
     },
+  },
+
+  jpProjectTechStack: {
+    color: props => props.portfolioPrimary,
+    fontStyle: 'italic',
+    marginBottom: theme.spacing(1),
+    textAlign: 'center',
   },
 
   jpProjectDescTypog: {
@@ -698,6 +707,10 @@ function Portfolio() {
                   Attack On Jupiter
                 </Typography>
 
+                <Typography className = {classes.jpProjectTechStack}>
+                  Java, Java.util, JavaFX
+                </Typography>
+
                 <Typography className = {classes.jpProjectDescTypog}>
                   &nbsp;&nbsp;&nbsp;&nbsp;I,
                   along with three other classmates, designed and
@@ -738,10 +751,14 @@ function Portfolio() {
                   Snek
                 </Typography>
 
+                <Typography className = {classes.jpProjectTechStack}>
+                  Python, Pygame, NumPy
+                </Typography>
+
                 <Typography className = {classes.jpProjectDescTypog}>
                   &nbsp;&nbsp;&nbsp;&nbsp;Through model-free reinforcement learning,
                   an A.I. agent is taught how to play the game "Snake."
-                  The program utilizes pygame to set up the graphics and
+                  The program utilizes Pygame to set up the graphics and
                   event loops. The method of reinforcement learning used
                   by the snake agent is Q-learning. Each time the program
                   executes, the most optimal q-table is
@@ -773,6 +790,11 @@ function Portfolio() {
 
                 <Typography className = {classes.jpProjectNameTypog}>
                   Slug Mail
+                </Typography>
+
+                <Typography className = {classes.jpProjectTechStack}>
+                  JavaScript, Node.js, Express.js, React.js, PostgreSQL, Material UI,
+                  OpenAPI, Yaml
                 </Typography>
 
                 <Typography className = {classes.jpProjectDescTypog}>
@@ -827,6 +849,10 @@ function Portfolio() {
                   Hide &amp; Seq
                 </Typography>
 
+                <Typography className = {classes.jpProjectTechStack}>
+                  Python, NumPy, TensorFlow, Pandas, SeqIO
+                </Typography>
+
                 <Typography className = {classes.jpProjectDescTypog}>
                   &nbsp;&nbsp;&nbsp;&nbsp;Machine learning
                   project with the goal of detecting the position
@@ -864,6 +890,10 @@ function Portfolio() {
 
                 <Typography className = {classes.jpProjectNameTypog}>
                   Mancala A.I.
+                </Typography>
+
+                <Typography className = {classes.jpProjectTechStack}>
+                  Python
                 </Typography>
 
                 <Typography className = {classes.jpProjectDescTypog}>
@@ -905,12 +935,16 @@ function Portfolio() {
                   ADT Library
                 </Typography>
 
+                <Typography className = {classes.jpProjectTechStack}>
+                  C, C++
+                </Typography>
+
                 <Typography className = {classes.jpProjectDescTypog}>
                   &nbsp;&nbsp;&nbsp;&nbsp;Library with different
                   ADTs implemented by me throughout the years. Each
                   implementation contains a client module that uses
                   the data structure and a blackbox module that unit tests
-                  it. The languages used are C, C++ and Java, distinguished
+                  it. The languages used are C and C++, distinguished
                   by different subdirectories in the repo. The different
                   ADTs implemented thus far are a linked list, stack, queue,
                   binary search tree, red-black tree, dictionary, and a
@@ -945,6 +979,10 @@ function Portfolio() {
 
                 <Typography className = {classes.jpProjectNameTypog}>
                   Symbolic Calculator
+                </Typography>
+
+                <Typography className = {classes.jpProjectTechStack}>
+                  JavaScript
                 </Typography>
 
                 <Typography className = {classes.jpProjectDescTypog}>
@@ -992,6 +1030,10 @@ function Portfolio() {
 
                 <Typography className = {classes.jpProjectNameTypog}>
                   Model See Model Do
+                </Typography>
+
+                <Typography className = {classes.jpProjectTechStack}>
+                  Python, NumPy, TensorFlow
                 </Typography>
 
                 <Typography className = {classes.jpProjectDescTypog}>

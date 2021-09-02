@@ -651,9 +651,9 @@ function Home() {
                   relish an opportunity to contribute to a company whose
                   mission lies at the forefront of this technology. I
                   have enrolled in several machine learning courses
-                  throughout my time at UC Santa Cruz, will continue
-                  to enroll in more
-                  . Also, I&apos;m currently a member of UCSC&apos;s <a
+                  throughout my time at UC Santa Cruz, and will continue
+                  to enroll in more.
+                  Also, I&apos;m currently a member of UCSC&apos;s <a
                     className = {classes.middleOfTextLink}
                     href = "https://scai.ucsc.edu/" >
                     SCAI
