@@ -364,6 +364,7 @@ const useStyles = makeStyles((theme) => ({
     fontStyle: 'italic',
     marginBottom: theme.spacing(1),
     textAlign: 'center',
+    fontWeight: 'bold',
   },
 
   jpProjectDescTypog: {
