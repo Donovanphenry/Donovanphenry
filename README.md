@@ -1,10 +1,9 @@
 # My GitHub profile!
 - 🏫 Senior at UC Santa Cruz
-- 🖥️ Computer Science, B.S.
-- 📊 Statistics Minor
+  - 🖥️ Computer Science, B.S.
+  - 📊 Statistics Minor
 - 🧮 Very interested in theoretical computer science and machine learning.
-- 🧬 Currently working on a machine learning program designed to detect a promoter in a DNA sequence, given that the sequence has one. See my Hide_And_Seq repo if interested!
-- 👨‍💻 Interning at Infinite Options as a ReactJS front-end developer and data scientist. 
+- 🧬 Currently working on a machine learning program designed to detect deforestation in the Amazon from satellite imagery. For anyone interested: https://github.com/Deforestation-Detector
 
 
 # My personal website
