@@ -2,11 +2,11 @@ import React from 'react';
 import {useHistory} from 'react-router-dom';
 
 import AppContext from './AppContext';
+
 import AoJ from './images/AoJ.png';
-import FindingNemo from './images/FindingNemo.png';
-import SlugMail from './images/SlugMail.png';
 import PromoterPredictorModel from './images/PromoterPredictorModel.png';
-import Integral from './images/Integral.png';
+import BstAnalysis from './images/BST_Analysis.png';
+import DefDec from './images/DefDec.png';
 
 /* eslint-disable */
 
@@ -467,7 +467,6 @@ const useStyles = makeStyles((theme) => ({
   
   resumeFooter: {
     borderTop: props => `2px solid ${props.grey}`,
-    marginBottom: theme.spacing(1),
     marginLeft: theme.spacing(8),
     marginRight: theme.spacing(8),
     padding: theme.spacing(2),
@@ -503,6 +502,86 @@ function Resume() {
     setDrawerOpen(false);
     history.push(location)
   };
+
+  const experiences = [
+    {
+      company: 'NASA - GISS',
+      location: 'Remote',
+      title: 'Software Engineer Intern',
+      dates: 'January, 2022 - Present',
+      description: 'Brought on to recreate existing data visualization project that is both more efficient ' +
+        'and also more user-friendly.'
+    },
+    {
+      company: 'Infinite Options/Serving Fresh',
+      location: 'Remote',
+      title: 'Data Science/React Intern',
+      dates: 'March, 2021 - September, 2021',
+      description: 'Created various histograms and tables based off of the expected value of products ' +
+        'and price differentials between competitors. Contributed in various ways as a front-end React developer. ' +
+        'Often brought onto new projects to bring about efficiency increases/refactor code.'
+    },
+    {
+      company: 'Westside',
+      location: 'Torrance',
+      title: 'Technician',
+      dates: 'June, 2017 - August 2018',
+      description: 'Detailed cars, performed simple maintenance of luxury cars, high security cars and of the shop. Prepared vehicles ' +
+        'for photo shoots and commercials.'
+    },
+    {
+      company: 'Westside',
+      location: 'Torrance',
+      title: 'Shadow',
+      dates: 'June, 2018 - August, 2018',
+      description: "Shadowed the same company's software engineer and asked to learn and evaluate the code."
+    },
+    {
+      company: "Mr. B's Bricks",
+      location: 'Manhattan Beach',
+      title: 'Camp Instructor',
+      dates: 'August, 2016 - June, 2017',
+      description: 'Served as a counselor for an after school program in which kids, K-5th, are provided ' +
+        'an opportunity to build with LEGOs. I ensured that the kids were having fun and weren’t feeling overwhelmed by the instructions.',
+    }
+  ];
+
+  const projects = [
+    {
+      name: 'Deforestation Detector',
+      github_link: 'https://github.com/Deforestation-Detector',
+      icon_src: DefDec,
+      description: 'Machine learning and web gl project in which deep learning team collected data of satellite images ' +
+        'and trained a neural network on said images. After this, a 3x3 grid of images were stitched together and the ' +
+        'model made predictions on those images. The web team then created a rendering of those predictions using blender and web gl. ' +
+        'The motivation of this project was to promote awareness about the devastating effects and extent of deforestation.'
+    },
+    {
+      name: 'Hide and Seq',
+      github_link: 'https://github.com/Donovanphenry/Hide_And_Seq',
+      icon_src: PromoterPredictorModel,
+      description: 'Machine learning project with the goal of detecting the position of a promoter in a given DNA sequence. My partner and ' +
+        'I have collected, cleansed, and analyzed data that was collected from EPDNew. We are currently constructing the model, which will be ' +
+        'a convolutional neural network (CNN) combined with a BiLSTM. If interested, more information on it can be found on my GitHub repository.'
+    },
+    {
+      name: 'Attack on Jupiter',
+      github_link: 'https://github.com/Donovanphenry/Attack-on-Jupiter',
+      icon_src: AoJ,
+      description: 'I, along with three other classmates, designed and deployed a 2-dimensional video game (created using Java FX’s API) in which ' +
+        'the user has to defeat three bosses. My role in the game’s development was lead designer of the UML and lead/full-stack developer of the game itself.'
+    },
+    {
+      name: 'ADT Library',
+      github_link: 'https://github.com/Donovanphenry/ADT-Library',
+      icon_src: BstAnalysis,
+      description: "Library with different ADTs implemented by me throughout the years. Each implementation contains a client module that uses the data " +
+        "structure and a blackbox module that unit tests it. The languages used are C and C++, distinguished by different subdirectories in the repo. " +
+        "The different ADTs implemented thus far are a linked list, stack, queue, binary search tree, red-black tree, dictionary, and a graph, which is " +
+        "capable of breadth-first and depth-first search. I've also implemented a BigInteger ADT which can perform operations on arbitrarily large integers, " +
+        "so long as the computer has space for it.",
+    },
+  ];
 
   const changeTheme = () => {
     setUserTheme(userTheme == AppColors.darkTheme ? AppColors.lightTheme : AppColors.darkTheme);
@@ -737,94 +816,26 @@ function Resume() {
             </Typography>
 
             <List className = {classes.descriptionList}>
-              <ListItem className = {classes.employmentOp}>
-                <ListItemText>
-                  <Typography className = {classes.employmentInfo}>
-                    <span className = {classes.compName}>Infinite Options/Serving Fresh</span>
-                    <span className = {classes.locTitle}>, Remote - Data Science/React Intern</span>
-                  </Typography>
+              {
+                experiences.map(job => (
+                  <ListItem className = {classes.employmentOp}>
+                    <ListItemText>
+                      <Typography className = {classes.employmentInfo}>
+                        <span className = {classes.compName}>{job.company}</span>
+                        <span className = {classes.locTitle}>, {job.location} - {job.title}</span>
+                      </Typography>
 
-                  <Typography className = {classes.employmentDates}>
-                    March, 2021 - Present
-                  </Typography>
+                      <Typography className = {classes.employmentDates}>
+                        {job.dates}
+                      </Typography>
 
-                  <Typography className = {classes.employmentDescription}>
-                    Created various histograms and tables based off of the
-                    expected value of products and price differentials between competitors
-                    for the Serving Fresh admin page. Currently contributing to Serving
-                    Fresh in various ways as a front-end React developer.
-                  </Typography>
-                </ListItemText>
-              </ListItem>
-
-              <ListItem className = {classes.employmentOp}>
-                <ListItemText>
-                  <Typography className = {classes.employmentInfo}>
-                    <span className = {classes.compName}>Westside</span>
-                    <span className = {classes.locTitle}>, Torrance - Technician</span>
-                  </Typography>
-
-                  <Typography className = {classes.employmentDates}>
-                    June, 2017 - August 2018
-                  </Typography>
-
-                  <Typography className = {classes.employmentDescription}>
-                    Detailed cars, performed simple maintenance of luxury cars,
-                    high security cars and of the shop. Prepared vehicles for photo shoots and commercials.
-                  </Typography>
-                </ListItemText>
-              </ListItem>
-
-              <ListItem className = {classes.employmentOp}>
-                <ListItemText>
-                  <Typography className = {classes.employmentInfo}>
-                    <span className = {classes.compName}>Westside</span>
-                    <span className = {classes.locTitle}>, Torrance - Technician</span>
-                  </Typography>
-
-                  <Typography className = {classes.employmentDates}>
-                    June, 2018 - August 2018
-                  </Typography>
-
-                  <Typography className = {classes.employmentDescription}>
-                    Shadowed the same company's software engineer and asked to learn and evaluate the code.
-                  </Typography>
-                </ListItemText>
-              </ListItem>
-
-              <ListItem className = {classes.employmentOp}>
-                <ListItemText>
-                  <Typography className = {classes.employmentInfo}>
-                    <span className = {classes.compName}>Mr. B's Bricks</span>
-                    <span className = {classes.locTitle}>, Manhattan Beach - Camp Instructor</span>
-                  </Typography>
-
-                  <Typography className = {classes.employmentDates}>
-                    August, 2016 - June, 2017
-                  </Typography>
-
-                  <Typography className = {classes.employmentDescription}>
-                    Served as a counselor for an after school program in which kids, K-5th, are provided an opportunity to build with LEGOs. I ensured that the kids were having fun and weren’t feeling overwhelmed by the instructions.
-                  </Typography>
-                </ListItemText>
-              </ListItem>
-
-              <ListItem className = {classes.employmentOp}>
-                <ListItemText>
-                  <Typography className = {classes.employmentInfo}>
-                    <span className = {classes.compName}>Renova Group</span>
-                    <span className = {classes.locTitle}>, El Segundo - Data Entry Clerk</span>
-                  </Typography>
-
-                  <Typography className = {classes.employmentDates}>
-                    June 2013 - August, 2013
-                  </Typography>
-
-                  <Typography className = {classes.employmentDescription}>
-                    Processed invoices using Microsoft Excel.
-                  </Typography>
-                </ListItemText>
-              </ListItem>
+                      <Typography className = {classes.employmentDescription}>
+                        {job.description}
+                      </Typography>
+                    </ListItemText>
+                  </ListItem>
+                ))
+              }
             </List>
 
             <Typography className = {classes.sectionType} id = 'resExperience'>
@@ -833,7 +844,7 @@ function Resume() {
 
             <Typography className = {classes.interestsDescript}>
               - Languages: Java, C++, C, JavaScript, Python, PostgreSQL,
-              C#, JSX, XHTML, CSS, Assembly, Scheme, SmallTalk, Ocaml, Perl
+              C#, HTML, CSS, Assembly, Scheme, SmallTalk, Ocaml, Perl, MATLab
             </Typography>
 
             <Typography className = {classes.interestsDescript}>
@@ -967,108 +978,30 @@ function Resume() {
           </Typography>
         </Hidden>
 
-        <Grid container className = {classes.project}>
-          <Grid item xs = {12} sm = {2} className = {classes.projectName}>
-            <Typography className = {classes.projectNameTypog}>
-              Hide and Seq
-            </Typography>
-          </Grid>
+        <Grid container className = {classes.project} style = {{alignItems: 'center'}}>
+          {
+            projects.map(project => (
+              <React.Fragment>
+                <Grid item xs = {12} sm = {2} className = {classes.projectName}>
+                  <Typography className = {classes.projectNameTypog}>
+                    {project.name}
+                  </Typography>
+                </Grid>
 
-          <Grid item xs = {12} sm = {4} className = {classes.projectPictureContainer}>
-            <Link href = 'https://github.com/Donovanphenry/Hide_And_Seq'>
-              <Avatar className = {classes.projectPicture}
-                src = {PromoterPredictorModel}
-              />
-            </Link>
-          </Grid>
-          <Grid item xs = {12} sm = {6} className = {classes.projectDesc}>
-            <Typography className = {classes.projectDescTypog}>
-              Machine learning
-              project with the goal of detecting the position
-              of a promoter in a given DNA sequence.
-              My partner and I have collected, cleansed,
-              and analyzed data that was collected from EPDNew.
-              We are currently constructing the model, which will
-              be a convolutional neural network (CNN) combined
-              with a BiLSTM. If interested, more information on it can
-              be found on my GitHub repository.
-            </Typography>
-          </Grid>
-        </Grid>
+                <Grid item xs = {12} sm = {4} className = {classes.projectPictureContainer}>
+                  <Link href = {project.github_link}>
+                    <Avatar className = {classes.projectPicture} src = {project.icon_src} />
+                  </Link>
+                </Grid>
 
-        <Grid container className = {classes.project}>
-          <Grid item xs = {12} sm = {2} className = {classes.projectName}>
-            <Typography className = {classes.projectNameTypog}>
-              Symbolic Calculator
-            </Typography>
-          </Grid>
-
-          <Grid item xs = {12} sm = {4} className = {classes.projectPictureContainer}>
-            <Link href = 'https://github.com/Donovanphenry/Symbolic-Calculator'>
-              <Avatar className = {classes.projectPicture}
-                src = {Integral}
-              />
-            </Link>
-          </Grid>
-          <Grid item xs = {12} sm = {6} className = {classes.projectDesc}>
-            <Typography className = {classes.projectDescTypog}>
-              Hub for mathematical
-              operations covered in calculus and linear algebra
-              such as integration, derivatives, matrix multiplication,
-              vector operations, eigen decompositions etc. Currently
-              under construction, but as of right now, many derivatives
-              can be calculated and most basic matrix operations can
-              be performed.
-            </Typography>
-          </Grid>
-        </Grid>
-
-        <Grid container className = {classes.project}>
-          <Grid item xs = {12} sm = {2} className = {classes.projectName}>
-            <Typography className = {classes.projectNameTypog}>
-              Attack On Jupiter
-            </Typography>
-          </Grid>
-
-          <Grid item xs = {12} sm = {4} className = {classes.projectPictureContainer}>
-            <Link href = 'https://github.com/Donovanphenry/Attack-on-Jupiter'>
-              <Avatar className = {classes.projectPicture}
-                src = {AoJ}
-              />
-            </Link>
-          </Grid>
-          <Grid item xs = {12} sm = {6} className = {classes.projectDesc}>
-            <Typography className = {classes.projectDescTypog}>
-              I, along with three other classmates, designed and deployed a 2-dimensional video game
-              (created using Java FX’s API) in which the user has to defeat three bosses. My role in the game’s
-              development was lead designer of the UML and lead/full-stack developer of the game itself.
-            </Typography>
-          </Grid>
-        </Grid>
-
-        <Grid container className = {classes.project}>
-          <Grid item xs = {12} sm = {2} className = {classes.projectName}>
-            <Typography className = {classes.projectNameTypog}>
-              Slug Mail
-            </Typography>
-          </Grid>
-
-          <Grid item xs = {12} sm = {4} className = {classes.projectPictureContainer}>
-            <Link href = 'https://github.com/Donovanphenry/Slug-Mail'>
-              <Avatar className = {classes.projectPicture} src = {SlugMail}
-              >
-                SM
-              </Avatar>
-            </Link>
-          </Grid>
-          <Grid item xs = {12} sm = {6} className = {classes.projectDesc}>
-            <Typography className = {classes.projectDescTypog}>
-              Full stack, responsive web app using Node.js, Express, ReactJS, PostgreSQL, Material UI among other development
-              tools. A REST API is implemented. Supports multiple users who are able to check their mailboxes for mail,
-              star certain emails, mark emails unread, and many more features. The GitHub&apos;s README
-              contains a quick, 3 minute youtube video demonstration of the program.
-            </Typography>
-          </Grid>
+                <Grid item xs = {12} sm = {6} className = {classes.projectDesc}>
+                  <Typography className = {classes.projectDescTypog}>
+                    {project.description}
+                  </Typography>
+                </Grid>
+              </React.Fragment>
+            ))
+          }
         </Grid>
       </Box>
 
