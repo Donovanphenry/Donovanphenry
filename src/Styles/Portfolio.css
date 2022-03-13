@@ -1,3 +1,9 @@
+.my-skills
+{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+}
+
 .project-container
 {
     display: grid;
@@ -27,7 +33,7 @@
 
 @media all and (max-width: 935px)
 {
-    .project-container
+    .project-container, .my-skills
     {
         grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     }
@@ -35,7 +41,7 @@
 
 @media all and (max-width: 330px)
 {
-    .project-container
+    .project-container, .my-skills
     {
         grid-template-columns: 1fr;
     }

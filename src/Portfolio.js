@@ -595,6 +595,56 @@ function Portfolio() {
     return changeFilters;
   };
 
+  const skills = {
+    'Languages': [
+      'Java',
+      'C++',
+      'JavaScript',
+      'Python',
+      'C',
+      'C#',
+      'HTML',
+      'CSS',
+      'Assembly',
+      'PostgreSQL',
+      'Lisp'
+    ],
+    'Frameworks / Libraries': [
+      'React',
+      'Material UI',
+      'NumPy',
+      'Pandas',
+      'TensorFlow',
+      'PyTorch',
+      'Java Util',
+      'JavaFX'
+    ],
+    'Relevant Coursework': [
+      'Calculus I, II, III',
+      'Differential Equations',
+      'Linear Algebra',
+      'Discrete Structures',
+      'Probability Theory',
+      'Computer Architecture',
+      'Web Development',
+      'Data Structures and Algorithms',
+      'Applied Machine Learning',
+      'Artificial Intelligence',
+      'Calc. Based Mechanics',
+      'Calc. Based Electromagnetism',
+      'Calc. Based Fluids, Optics and Waves'
+    ],
+    'Other': [
+      'Git',
+      'GitHub',
+      'Docker',
+      'Jest and Puppeteer',
+      'Node.js',
+      'Express',
+      'OpenAPI',
+    ]
+  };
+
   return (
     <Box className = {classes.jpContainer} elevation = {24}>
       <AppBar position="static" className = {classes.appBar}>
@@ -738,108 +788,76 @@ function Portfolio() {
             Skills
           </Typography>
 
-          <Box
-            className = {classes.jpSkillsTree}
-            // row when strictly greater than sm
-            // columns when less than or equal to sm
-          >
-            <Box
-              className = {classes.jpSkillsPaperBox}
-              // row when strictly greater than xs
-              // column when less than or equal to xs
+          <div className = 'my-skills'>
+            <Paper
+              className = {classes.jpSkillsPaper}
+              elevation = {12}
+              // always column
+              // flex basis and grow set when strictly greater than xs
             >
-              <Paper
-                className = {classes.jpSkillsPaper}
-                elevation = {12}
-                // always column
-                // flex basis and grow set when strictly greater than xs
-              >
-                <Box className = {classes.jpSkillsSectionTitle}>
-                  <Typography className = {classes.jpSkillsTypog}>
-                    Languages
-                  </Typography>
-                  
-                  <SiPython className = {classes.jpSkillsIcon} />
-                </Box>
+              <Box className = {classes.jpSkillsSectionTitle}>
+                <Typography className = {classes.jpSkillsTypog}>
+                  Languages
+                </Typography>
+                
+                <SiPython className = {classes.jpSkillsIcon} />
+              </Box>
 
+              {
+                skills['Languages'].map(language => (
+                  <Typography key = {'Language ' + language} className = {classes.jpSkill}>{language}</Typography>
+                ))
+              }
+            </Paper>
 
-                <Typography className = {classes.jpSkill}>Java</Typography>
-                <Typography className = {classes.jpSkill}>C++</Typography>
-                <Typography className = {classes.jpSkill}>JavaScript</Typography>
-                <Typography className = {classes.jpSkill}>Python</Typography>
-                <Typography className = {classes.jpSkill}>C</Typography>
-                <Typography className = {classes.jpSkill}>C#</Typography>
-                <Typography className = {classes.jpSkill}>XHTML</Typography>
-                <Typography className = {classes.jpSkill}>CSS</Typography>
-                <Typography className = {classes.jpSkill}>Assembly</Typography>
-                <Typography className = {classes.jpSkill}>PostgreSQL</Typography>
-                <Typography className = {classes.jpSkill}>Scheme, OCaml &amp; Smalltalk</Typography>
-              </Paper>
+            <Paper className = {classes.jpSkillsPaper} elevation = {12}>
+              <Box className = {classes.jpSkillsSectionTitle}>
+                <Typography className = {classes.jpSkillsTypog}>
+                  Frameworks / Libraries
+                </Typography>
+                
+                <SiMaterialUi className = {classes.jpSkillsIcon} />
+              </Box>
 
-              <Paper className = {classes.jpSkillsPaper} elevation = {12}>
-                <Box className = {classes.jpSkillsSectionTitle}>
-                  <Typography className = {classes.jpSkillsTypog}>
-                    Frameworks / Libraries
-                  </Typography>
-                  
-                  <SiMaterialUi className = {classes.jpSkillsIcon} />
-                </Box>
+              {
+                skills['Frameworks / Libraries'].map(fw_lib => (
+                  <Typography key = {'Frameworks / Libraries ' + fw_lib} className = {classes.jpSkill}>{fw_lib}</Typography>
+                ))
+              }
+            </Paper>
 
-                <Typography className = {classes.jpSkill}>ReactJS</Typography>
-                <Typography className = {classes.jpSkill}>Material UI</Typography>
-                <Typography className = {classes.jpSkill}>NumPy</Typography>
-                <Typography className = {classes.jpSkill}>Pandas</Typography>
-                <Typography className = {classes.jpSkill}>TensorFlow</Typography>
-                <Typography className = {classes.jpSkill}>PyTorch</Typography>
-                <Typography className = {classes.jpSkill}>Java Util</Typography>
-                <Typography className = {classes.jpSkill}>JavaFX</Typography>
-              </Paper>
-            </Box>
+            <Paper className = {classes.jpSkillsPaper} elevation = {12}>
+              <Box className = {classes.jpSkillsSectionTitle}>
+                <Typography className = {classes.jpSkillsTypog}>
+                  Relevant Coursework
+                </Typography>
+                
+                <SiMathworks className = {classes.jpSkillsIcon} />
+              </Box>
 
-            <Box className = {classes.jpSkillsPaperBox}>
-              <Paper className = {classes.jpSkillsPaper} elevation = {12}>
-                <Box className = {classes.jpSkillsSectionTitle}>
-                  <Typography className = {classes.jpSkillsTypog}>
-                    Relevant Coursework
-                  </Typography>
-                  
-                  <SiMathworks className = {classes.jpSkillsIcon} />
-                </Box>
+              {
+                skills['Relevant Coursework'].map(course => (
+                  <Typography key = {'Relevant Coursework ' + course} className = {classes.jpSkill}>{course}</Typography>
+                ))
+              }
+            </Paper>
 
-                <Typography className = {classes.jpSkill}>Calculus I, II, III</Typography>
-                <Typography className = {classes.jpSkill}>Differential Equations</Typography>
-                <Typography className = {classes.jpSkill}>Linear Algebra</Typography>
-                <Typography className = {classes.jpSkill}>Discrete Structures</Typography>
-                <Typography className = {classes.jpSkill}>Probability Theory</Typography>
-                <Typography className = {classes.jpSkill}>Computer Architecture</Typography>
-                <Typography className = {classes.jpSkill}>Web Development</Typography>
-                <Typography className = {classes.jpSkill}>Data Structures &amp; Algorithms</Typography>
-                <Typography className = {classes.jpSkill}>Applied Machine Learning</Typography>
-                <Typography className = {classes.jpSkill}>Artificial Intelligence</Typography>
-                <Typography className = {classes.jpSkill}>Calc. Based Mechanics</Typography>
-                <Typography className = {classes.jpSkill}>Calc. Based Electromagnetism</Typography>
-                <Typography className = {classes.jpSkill}>Calc. Based Fluids, Optics & Waves</Typography>
-              </Paper>
+            <Paper className = {classes.jpSkillsPaper} elevation = {12}>
+              <Box className = {classes.jpSkillsSectionTitle}>
+                <Typography className = {classes.jpSkillsTypog}>
+                  Other
+                </Typography>
+                
+                <SiDocker className = {classes.jpSkillsIcon} />
+              </Box>
 
-              <Paper className = {classes.jpSkillsPaper} elevation = {12}>
-                <Box className = {classes.jpSkillsSectionTitle}>
-                  <Typography className = {classes.jpSkillsTypog}>
-                    Other
-                  </Typography>
-                  
-                  <SiDocker className = {classes.jpSkillsIcon} />
-                </Box>
-
-                <Typography className = {classes.jpSkill}>Git</Typography>
-                <Typography className = {classes.jpSkill}>GitHub</Typography>
-                <Typography className = {classes.jpSkill}>Docker</Typography>
-                <Typography className = {classes.jpSkill}>Jest & Puppeteer</Typography>
-                <Typography className = {classes.jpSkill}>Node.js</Typography>
-                <Typography className = {classes.jpSkill}>Express</Typography>
-                <Typography className = {classes.jpSkill}>OpenAPI</Typography>
-              </Paper>
-            </Box>
-          </Box>
+              {
+                skills['Other'].map(other_skill => (
+                  <Typography key = {'Other ' + other_skill}>{other_skill}</Typography>
+                ))
+              }
+            </Paper>
+          </div>
         </Box>
 
         <Box
