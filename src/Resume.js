@@ -817,10 +817,15 @@ function Resume() {
 
             <List className = {classes.descriptionList}>
               {
-                experiences.map(job => (
-                  <ListItem className = {classes.employmentOp}>
+                experiences.map((job, index) => (
+                  <ListItem
+                    className = {classes.employmentOp}
+                    key = {`${index} container`}
+                  >
                     <ListItemText>
-                      <Typography className = {classes.employmentInfo}>
+                      <Typography
+                        className = {classes.employmentInfo}
+                      >
                         <span className = {classes.compName}>{job.company}</span>
                         <span className = {classes.locTitle}>, {job.location} - {job.title}</span>
                       </Typography>
@@ -981,7 +986,7 @@ function Resume() {
         <Grid container className = {classes.project} style = {{alignItems: 'center'}}>
           {
             projects.map(project => (
-              <React.Fragment>
+              <React.Fragment key = {`${project.name} Fragment`}>
                 <Grid item xs = {12} sm = {2} className = {classes.projectName}>
                   <Typography className = {classes.projectNameTypog}>
                     {project.name}
@@ -990,7 +995,7 @@ function Resume() {
 
                 <Grid item xs = {12} sm = {4} className = {classes.projectPictureContainer}>
                   <Link href = {project.github_link}>
-                    <Avatar className = {classes.projectPicture} src = {project.icon_src} />
+                    <Avatar className = {classes.projectPicture} src = {project.icon_src}/>
                   </Link>
                 </Grid>
 

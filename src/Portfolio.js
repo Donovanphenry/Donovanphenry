@@ -3,6 +3,7 @@ import {useHistory} from 'react-router-dom';
 
 import AppColors from './Styles/AppColors';
 import AppContext from './AppContext';
+import './Styles/Portfolio.css'
 
 import PortfolioPicture from './PortfolioPicture';
 import AoJ from './images/AoJ.png';
@@ -11,13 +12,11 @@ import SlugMail from './images/SlugMail.png';
 import SlugMailGIF from './images/SlugMailGIF.gif';
 import PromoterPredictorModel from './images/PromoterPredictorModel.png';
 import BstAnalysis from './images/BST_Analysis.png';
-import Integral from './images/Integral.png';
 import Mancala_AI from './images/Mancala-AI.png';
 import Model_See_Model_Do from './images/Model-See-Model-Do.png';
 import Snake_Pic from './images/Snake-Pic.png';
 import Snake from './images/Snake.gif';
-
-import {ReactComponent as Google_Colab} from './SVGs/Google_ G _Logo.svg';
+import DefDec from './images/DefDec.png';
 /* eslint-disable */
 
 import Link from '@material-ui/core/Link';
@@ -35,7 +34,6 @@ import Box from '@material-ui/core/Box';
 import IconButton from '@material-ui/core/IconButton';
 import {FiSun} from 'react-icons/fi';
 import {BiMoon} from 'react-icons/bi';
-import SvgIcon from '@material-ui/core/SvgIcon';
 import {SiPython, SiMathworks, SiDocker, SiMaterialUi} from 'react-icons/si';
 
 import SportsHockeyIcon from '@material-ui/icons/SportsHockey';
@@ -427,6 +425,127 @@ function Portfolio() {
     setUserTheme(newTheme);
   };
 
+  const projects = [
+    {
+      name: 'Deforestation Detector',
+      main_link: 'https://deforestationdetector.com',
+      github_link: 'https://github.com/Deforestation-Detector',
+      static_src: DefDec,
+      dynamic_src: DefDec,
+      description: 'Machine learning and web gl project in which deep learning team collected data of satellite images ' +
+        'and trained a neural network on said images. After this, a 3x3 grid of images were stitched together and the ' +
+        'model made predictions on those images. The web team then created a rendering of those predictions using blender and web gl. ' +
+        'The motivation of this project was to promote awareness about the devastating effects and extent of deforestation.',
+      project_type: {
+        AI: true,
+        Web: true,
+      },
+      stack: 'Web-gl, Python, PyData, Tensorflow'
+    },
+    {
+      name: 'Snek',
+      main_link: 'https://github.com/Donovanphenry/Snake-AI',
+      github_link: 'https://github.com/Donovanphenry/Snake-AI',
+      static_src: Snake_Pic,
+      dynamic_src: Snake,
+      description: 'I, along with three other classmates, designed and deployed a 2-dimensional video game (created using Java FX’s API) in ' +
+        'which the user has to defeat three bosses. My role in the game’s development was lead designer of the UML and lead/full-stack ' +
+        'developer of the game itself.',
+      project_type: {
+        AI: true,
+      },
+      stack: 'Python, PyGame, NumPy'
+    },
+    {
+      name: 'Attack on Jupiter',
+      main_link: 'https://github.com/Donovanphenry/Attack-on-Jupiter',
+      github_link: 'https://github.com/Donovanphenry/Attack-on-Jupiter',
+      static_src: AoJ,
+      dynamic_src: AoJGIF,
+      description: 'I, along with three other classmates, designed and deployed a 2-dimensional video game (created using Java FX’s API) in which ' +
+        'the user has to defeat three bosses. My role in the game’s development was lead designer of the UML and lead/full-stack developer of the game itself.',
+      project_type: {
+        SWE: true,
+      },
+      stack: 'Java, Java.util, JavaFX'
+    },
+    {
+      name: 'Slug Mail',
+      main_link: 'https://github.com/Donovanphenry/Slug-Mail',
+      github_link: 'https://github.com/Donovanphenry/Slug-Mail',
+      static_src: SlugMail,
+      dynamic_src: SlugMailGIF,
+      description: "Full stack, responsive web app using NodeJS, Express, ReactJS, PostgreSQL, Material UI among other development tools. " +
+        "A REST API is implemented. Supports multiple users who are able to check their mailboxes for mail, star certain emails, mark emails " +
+        "unread, and many more features. The GitHub's README contains a quick, 3 minute youtube video demonstration of the program.",
+      project_type: {
+        Web: true,
+      },
+      stack: 'Node.js, Express.js, React.js, PostgreSQL'
+    },
+    {
+      name: 'Hide and Seq',
+      main_link: 'https://github.com/Donovanphenry/Hide_And_Seq',
+      github_link: 'https://github.com/Donovanphenry/Hide_And_Seq',
+      static_src: PromoterPredictorModel,
+      dynamic_src: PromoterPredictorModel,
+      description: 'Machine learning project with the goal of detecting the position of a promoter in a given DNA sequence. My partner and ' +
+        'I have collected, cleansed, and analyzed data that was collected from EPDNew. We are currently constructing the model, which will be ' +
+        'a convolutional neural network (CNN) combined with a BiLSTM. If interested, more information on it can be found on my GitHub repository.',
+      project_type: {
+        AI: true,
+      },
+      stack: 'Python, PyData, Tensorflow, SeqIO'
+    },
+    {
+      name: 'Mancala',
+      main_link: 'https://github.com/Donovanphenry/Mancala-AI',
+      github_link: 'https://github.com/Donovanphenry/Mancala-AI',
+      static_src: Mancala_AI,
+      dynamic_src: Mancala_AI,
+      description: "Game A.I. built to play mancala using mini-max, and mini-max with α-β pruning. Interact with the game through the command-line. " +
+        "One can choose to play against it, or have two A.I.'s play against one another by providing which player the human would like to be as the " +
+        "second argument to the command-line. Choosing a player number other than 1 or 2 will pit two A.I. against each other. The first argument is " +
+        "the player that will move first. As is, the AI will be able to see 4 moves ahead. One can change this depth, but may run into RAM issues if the " +
+        "depth gets too high.",
+      project_type: {
+        AI: true,
+      },
+      stack: 'Python',
+    },
+    {
+      name: 'ADT Library',
+      main_link: 'https://github.com/Donovanphenry/ADT-Library',
+      github_link: 'https://github.com/Donovanphenry/ADT-Library',
+      static_src: BstAnalysis,
+      dynamic_src: BstAnalysis,
+      description: "Library with different ADTs implemented by me throughout the years. Each implementation contains a client module that uses the " +
+        "data structure and a blackbox module that unit tests it. The languages used are C and C++, distinguished by different subdirectories in the " +
+        "repo. The different ADTs implemented thus far are a linked list, stack, queue, binary search tree, red-black tree, dictionary, and a graph, " +
+        "which is capable of breadth-first and depth-first search. I've also implemented a BigInteger ADT which can perform operations on arbitrarily " +
+        "large integers, so long as the computer has space for it.",
+      project_type: {
+        SWE: true,
+      },
+      stack: 'C, C++'
+    },
+    {
+      name: 'Model See Model Do',
+      main_link: 'https://github.com/Donovanphenry/Model-See-Model-Do',
+      github_link: 'https://github.com/Donovanphenry/Model-See-Model-Do',
+      static_src: Model_See_Model_Do,
+      dynamic_src: Model_See_Model_Do,
+      description: "Image recognition model built with TensorFlow, utilizing transfer learning. The goal of the model is to label the species of an " +
+        "animal, given a photograph of it. An Xception base model is passed into a feed-forward network. Each dense layer has an HE initializer, is " +
+        "batch normalized, and is ReLU activated, except a softmax for the output layer. See the Google Colab if interested in more details. A testing " +
+        "accuracy of 99.9% is achieved, with a validation accuracy of 97%.",
+      project_type: {
+        AI: true,
+      },
+      stack: 'Python, NumPy, Tensorflow'
+    },
+  ];
+
   return (
     <Box className = {classes.jpContainer} elevation = {24}>
       <AppBar position="static" className = {classes.appBar}>
@@ -682,373 +801,56 @@ function Portfolio() {
             My Projects
           </Typography>
 
-          <Box className = {classes.jpProjectsGrid}>
-            <Paper className = {classes.jpProjectPaper} elevation = {12}>
-              <Link
-                href = "https://github.com/Donovanphenry/Attack-on-Jupiter"
-              >
-                <PortfolioPicture
-                  className = {classes.portfolioPaperPic}
-                  statPicSrc = {AoJ}
-                  dynamPicSrc = {AoJGIF}
-                />
-              </Link>
-
-              <Box className = {classes.jpProjectInfo}>
-                <Link
-                  href = "https://github.com/Donovanphenry/Attack-on-Jupiter"
-                  className = {classes.projectGitHubLink}
+          <div className = 'project-container'>
+            {
+              projects.map(project => (
+                <Paper
+                  className = {classes.jpProjectPaper}
+                  elevation = {12}
+                  key = {`${project.name} paper`}
                 >
-                  <IconButton color = 'inherit'>
-                    <GitHubIcon />
-                  </IconButton>
-                </Link>
-
-                <Typography className = {classes.jpProjectNameTypog}>
-                  Attack On Jupiter
-                </Typography>
-
-                <Typography className = {classes.jpProjectTechStack}>
-                  Java, Java.util, JavaFX
-                </Typography>
-
-                <Typography className = {classes.jpProjectDescTypog}>
-                  &nbsp;&nbsp;&nbsp;&nbsp;I,
-                  along with three other classmates, designed and
-                  deployed a 2-dimensional
-                  video game (created using Java FX’s API) in which
-                  the user has to defeat three
-                  bosses. My role in the game’s development was lead
-                  designer of the UML and
-                  lead/full-stack developer of the game itself.
-                </Typography>
-              </Box>
-            </Paper>
-
-            <Paper className = {classes.jpProjectPaper} elevation = {12}>
-              <Link
-                href = "https://github.com/Donovanphenry/Snake-AI"
-              >
-                <PortfolioPicture
-                  className = {classes.portfolioPaperPic}
-                  statPicSrc = {Snake_Pic}
-                  dynamPicSrc = {Snake}
-                />
-              </Link>
-
-              <Box className = {classes.jpProjectInfo}>
-                <Box style = {{display: 'flex'}}>
                   <Link
-                    href = "https://github.com/Donovanphenry/Snake-AI"
-                    className = {classes.projectGitHubLink}
+                    href = {project.main_link}
                   >
-                    <IconButton color = 'inherit'>
-                      <GitHubIcon />
-                    </IconButton>
-                  </Link>
-                </Box>
-
-                <Typography className = {classes.jpProjectNameTypog}>
-                  Snek
-                </Typography>
-
-                <Typography className = {classes.jpProjectTechStack}>
-                  Python, Pygame, NumPy
-                </Typography>
-
-                <Typography className = {classes.jpProjectDescTypog}>
-                  &nbsp;&nbsp;&nbsp;&nbsp;Through model-free reinforcement learning,
-                  an A.I. agent is taught how to play the game "Snake."
-                  The program utilizes Pygame to set up the graphics and
-                  event loops. The method of reinforcement learning used
-                  by the snake agent is Q-learning. Each time the program
-                  executes, the most optimal q-table is
-                  saved and the agent uses said q-table to navigate the board.
-                </Typography>
-              </Box>
-            </Paper>
-
-            <Paper className = {classes.jpProjectPaper} elevation = {12}>
-              <Link
-                href = "https://github.com/Donovanphenry/Slug-Mail"
-              >
-                <PortfolioPicture
-                  className = {classes.portfolioPaperPic}
-                  statPicSrc = {SlugMail}
-                  dynamPicSrc = {SlugMailGIF}
-                />
-              </Link>
-
-              <Box className = {classes.jpProjectInfo}>
-                <Link
-                  href = "https://github.com/Donovanphenry/Slug-Mail"
-                  className = {classes.projectGitHubLink}
-                >
-                  <IconButton color = 'inherit'>
-                    <GitHubIcon />
-                  </IconButton>
-                </Link>
-
-                <Typography className = {classes.jpProjectNameTypog}>
-                  Slug Mail
-                </Typography>
-
-                <Typography className = {classes.jpProjectTechStack}>
-                  Node.js, Express.js, React.js, PostgreSQL
-                </Typography>
-
-                <Typography className = {classes.jpProjectDescTypog}>
-                  &nbsp;&nbsp;&nbsp;&nbsp;Full
-                  stack, responsive web app using NodeJS,
-                  Express, ReactJS, PostgreSQL, Material UI
-                  among other development
-                  tools. A REST API is implemented. Supports multiple
-                  users who are able to check their mailboxes for mail,
-                  star certain emails, mark emails unread, and many more
-                  features. The GitHub&apos;s README
-                  contains a quick, 3 minute youtube video demonstration
-                  of the program.
-                </Typography>
-              </Box>
-            </Paper>
-
-            <Paper className = {classes.jpProjectPaper} elevation = {12}>
-              <Link
-                href = "https://github.com/Donovanphenry/Hide_And_Seq"
-              >
-                <PortfolioPicture
-                  className = {classes.portfolioPaperPic}
-                  statPicSrc = {PromoterPredictorModel}
-                  dynamPicSrc = {PromoterPredictorModel}
-                />
-              </Link>
-
-              <Box className = {classes.jpProjectInfo}>
-
-
-                <Box style = {{display: 'flex'}}>
-                  <Link
-                    href = "https://github.com/Donovanphenry/Hide_And_Seq"
-                    className = {classes.projectGitHubLink}
-                  >
-                    <IconButton color = 'inherit'>
-                      <GitHubIcon />
-                    </IconButton>
+                    <PortfolioPicture
+                      className = {classes.portfolioPaperPic}
+                      statPicSrc = {project.static_src}
+                      dynamPicSrc = {project.dynamic_src}
+                    />
                   </Link>
 
-                  <Link
-                    href = "https://colab.research.google.com/github/Donovanphenry/Hide_And_Seq/blob/main/Hide_And_Seq.ipynb"
+                  <Box 
+                    className = {classes.jpProjectInfo}
                   >
-                    <IconButton>
-                      <SvgIcon component = {Google_Colab} />
-                    </IconButton>
-                  </Link>
-                </Box>
+                    <div
+                      className = 'project-links-container'
+                    >
+                      <Link
+                        href = {project.github_link}
+                        className = {classes.projectGitHubLink}
+                      >
+                        <IconButton color = 'inherit'>
+                          <GitHubIcon />
+                        </IconButton>
+                      </Link>
+                    </div>
 
-                <Typography className = {classes.jpProjectNameTypog}>
-                  Hide &amp; Seq
-                </Typography>
+                    <Typography className = {classes.jpProjectNameTypog}>
+                      {project.name}
+                    </Typography>
 
-                <Typography className = {classes.jpProjectTechStack}>
-                  Python, NumPy, TensorFlow, Pandas, SeqIO
-                </Typography>
+                    <Typography className = {classes.jpProjectTechStack}>
+                      {project.stack}
+                    </Typography>
 
-                <Typography className = {classes.jpProjectDescTypog}>
-                  &nbsp;&nbsp;&nbsp;&nbsp;Machine learning
-                  project with the goal of detecting the position
-                  of a promoter in a given DNA sequence.
-                  My partner and I have collected, cleansed,
-                  and analyzed data that was collected from EPDNew.
-                  We are currently constructing the model, which will
-                  be a convolutional neural network (CNN) combined
-                  with a BILSTM. If interested, see the Jupiter
-                  Notebook on the GitHub repository.
-                </Typography>
-              </Box>
-            </Paper>
-
-            <Paper className = {classes.jpProjectPaper} elevation = {12}>
-              <Link
-                href = "https://github.com/Donovanphenry/Mancala-AI"
-              >
-                <PortfolioPicture
-                  className = {classes.portfolioPaperPic}
-                  statPicSrc = {Mancala_AI}
-                  dynamPicSrc = {Mancala_AI}
-                />
-              </Link>
-
-              <Box className = {classes.jpProjectInfo}>
-                <Link
-                  href = "https://github.com/Donovanphenry/Mancala-AI"
-                  className = {classes.projectGitHubLink}
-                >
-                  <IconButton color = 'inherit'>
-                    <GitHubIcon />
-                  </IconButton>
-                </Link>
-
-                <Typography className = {classes.jpProjectNameTypog}>
-                  Mancala A.I.
-                </Typography>
-
-                <Typography className = {classes.jpProjectTechStack}>
-                  Python
-                </Typography>
-
-                <Typography className = {classes.jpProjectDescTypog}>
-                  &nbsp;&nbsp;&nbsp;&nbsp;Game A.I. built to play mancala
-                  using mini-max, and mini-max with &alpha;-&beta; pruning. Interact
-                  with the game through the command-line. One can choose to play
-                  against it, or have two A.I.'s play against one another by providing
-                  which player the human would like to be as the second argument to the
-                  command-line. Choosing a player number other than 1 or 2 will pit two A.I.
-                  against each other. The first argument is the player that will move first.
-                  As is, the AI will be able to see 4 moves ahead. One can change this depth,
-                  but may run into RAM issues if the depth gets too high.
-                </Typography>
-              </Box>
-            </Paper>
-
-            <Paper className = {classes.jpProjectPaper} elevation = {12}>
-              <Link
-                href = "https://github.com/Donovanphenry/ADT-Library"
-              >
-                <PortfolioPicture
-                  className = {classes.portfolioPaperPic}
-                  statPicSrc = {BstAnalysis}
-                  dynamPicSrc = {BstAnalysis}
-                />
-              </Link>
-
-              <Box className = {classes.jpProjectInfo}>
-                <Link
-                  href = "https://github.com/Donovanphenry/ADT-Library"
-                  className = {classes.projectGitHubLink}
-                >
-                  <IconButton color = 'inherit'>
-                    <GitHubIcon />
-                  </IconButton>
-                </Link>
-
-                <Typography className = {classes.jpProjectNameTypog}>
-                  ADT Library
-                </Typography>
-
-                <Typography className = {classes.jpProjectTechStack}>
-                  C, C++
-                </Typography>
-
-                <Typography className = {classes.jpProjectDescTypog}>
-                  &nbsp;&nbsp;&nbsp;&nbsp;Library with different
-                  ADTs implemented by me throughout the years. Each
-                  implementation contains a client module that uses
-                  the data structure and a blackbox module that unit tests
-                  it. The languages used are C and C++, distinguished
-                  by different subdirectories in the repo. The different
-                  ADTs implemented thus far are a linked list, stack, queue,
-                  binary search tree, red-black tree, dictionary, and a
-                  graph, which is capable of breadth-first and
-                  depth-first search. I've also implemented a BigInteger
-                  ADT which can perform operations on arbitrarily large
-                  integers, so long as the computer has space for it.
-                </Typography>
-              </Box>
-            </Paper>
-
-            <Paper className = {classes.jpProjectPaper} elevation = {12}>
-              <Link
-                href = "https://github.com/Donovanphenry/Symbolic-Calculator"
-              >
-                <PortfolioPicture
-                  className = {classes.portfolioPaperPic}
-                  statPicSrc = {Integral}
-                  dynamPicSrc = {Integral}
-                />
-              </Link>
-
-              <Box className = {classes.jpProjectInfo}>
-                <Link
-                  href = "https://github.com/Donovanphenry/Symbolic-Calculator"
-                  className = {classes.projectGitHubLink}
-                >
-                  <IconButton color = 'inherit'>
-                    <GitHubIcon />
-                  </IconButton>
-                </Link>
-
-                <Typography className = {classes.jpProjectNameTypog}>
-                  Symbolic Calculator
-                </Typography>
-
-                <Typography className = {classes.jpProjectTechStack}>
-                  JavaScript
-                </Typography>
-
-                <Typography className = {classes.jpProjectDescTypog}>
-                  &nbsp;&nbsp;&nbsp;&nbsp;Hub for mathematical
-                  operations covered in calculus and linear algebra
-                  such as integration, derivatives, matrix multiplication,
-                  vector operations, eigen decompositions etc. Currently
-                  under construction, but as of right now, many derivatives
-                  can be calculated and most basic matrix operations can
-                  be performed.
-                </Typography>
-              </Box>
-            </Paper>
-
-            <Paper className = {classes.jpProjectPaper} elevation = {12}>
-              <Link
-                href = "https://github.com/Donovanphenry/Model-See-Model-Do"
-              >
-                <PortfolioPicture
-                  className = {classes.portfolioPaperPic}
-                  statPicSrc = {Model_See_Model_Do}
-                  dynamPicSrc = {Model_See_Model_Do}
-                />
-              </Link>
-
-              <Box className = {classes.jpProjectInfo}>
-                <Box style = {{display: 'flex'}}>
-                  <Link
-                    href = "https://github.com/Donovanphenry/Model-See-Model-Do"
-                    className = {classes.projectGitHubLink}
-                  >
-                    <IconButton color = 'inherit'>
-                      <GitHubIcon />
-                    </IconButton>
-                  </Link>
-
-                  <Link
-                    href = "https://colab.research.google.com/drive/1PM4tHzmZGzSoXSoSKz_Qh5-23BC2oTO4#scrollTo=ssAiORDaX_EH"
-                  >
-                    <IconButton>
-                      <SvgIcon component = {Google_Colab} />
-                    </IconButton>
-                  </Link>
-                </Box>
-
-                <Typography className = {classes.jpProjectNameTypog}>
-                  Model See Model Do
-                </Typography>
-
-                <Typography className = {classes.jpProjectTechStack}>
-                  Python, NumPy, TensorFlow
-                </Typography>
-
-                <Typography className = {classes.jpProjectDescTypog}>
-                  &nbsp;&nbsp;&nbsp;&nbsp;Image recognition model built with TensorFlow,
-                  utilizing transfer learning. The goal of the model is to label the species
-                  of an animal, given a photograph of it. An Xception base model is passed into a
-                  feed-forward network. Each dense layer has an HE initializer, is
-                  batch normalized, and is ReLU activated, except a softmax
-                  for the output layer. See the Google Colab if interested in more
-                  details. A testing accuracy of 99.9% is achieved, with a validation
-                  accuracy of 97%.
-                </Typography>
-              </Box>
-            </Paper>
-          </Box>
+                    <Typography className = {classes.jpProjectDescTypog}>
+                      {project.description}
+                    </Typography>
+                  </Box>
+                </Paper>
+              ))
+            }
+          </div>
         </Box>
       </Paper>
 
