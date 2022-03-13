@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {useHistory} from 'react-router-dom';
 
 import AppColors from './Styles/AppColors';
@@ -34,6 +34,9 @@ import Box from '@material-ui/core/Box';
 import IconButton from '@material-ui/core/IconButton';
 import {FiSun} from 'react-icons/fi';
 import {BiMoon} from 'react-icons/bi';
+import {GiBrainFreeze} from 'react-icons/gi';
+import {MdWeb} from 'react-icons/md';
+import {VscCircuitBoard} from 'react-icons/vsc';
 import {SiPython, SiMathworks, SiDocker, SiMaterialUi} from 'react-icons/si';
 
 import SportsHockeyIcon from '@material-ui/icons/SportsHockey';
@@ -410,6 +413,14 @@ const useStyles = makeStyles((theme) => ({
 function Portfolio() {
   const {userTheme, setUserTheme} = React.useContext(AppContext);
   const [drawerOpen, setDrawerOpen] = React.useState(false);
+
+  const defaultFilter = {
+    All: true,
+    AI: false,
+    SWE: false,
+    Web: false,
+  };
+  const [projectFilters, setProjectFilters] = useState(defaultFilter);
   const history = useHistory();
   const classes = useStyles(userTheme);
 
@@ -425,6 +436,8 @@ function Portfolio() {
     setUserTheme(newTheme);
   };
 
+  console.log('userTheme = ', userTheme);
+
   const projects = [
     {
       name: 'Deforestation Detector',
@@ -437,6 +450,7 @@ function Portfolio() {
         'model made predictions on those images. The web team then created a rendering of those predictions using blender and web gl. ' +
         'The motivation of this project was to promote awareness about the devastating effects and extent of deforestation.',
       project_type: {
+        All: true,
         AI: true,
         Web: true,
       },
@@ -452,6 +466,7 @@ function Portfolio() {
         'which the user has to defeat three bosses. My role in the game’s development was lead designer of the UML and lead/full-stack ' +
         'developer of the game itself.',
       project_type: {
+        All: true,
         AI: true,
       },
       stack: 'Python, PyGame, NumPy'
@@ -465,6 +480,7 @@ function Portfolio() {
       description: 'I, along with three other classmates, designed and deployed a 2-dimensional video game (created using Java FX’s API) in which ' +
         'the user has to defeat three bosses. My role in the game’s development was lead designer of the UML and lead/full-stack developer of the game itself.',
       project_type: {
+        All: true,
         SWE: true,
       },
       stack: 'Java, Java.util, JavaFX'
@@ -479,6 +495,7 @@ function Portfolio() {
         "A REST API is implemented. Supports multiple users who are able to check their mailboxes for mail, star certain emails, mark emails " +
         "unread, and many more features. The GitHub's README contains a quick, 3 minute youtube video demonstration of the program.",
       project_type: {
+        All: true,
         Web: true,
       },
       stack: 'Node.js, Express.js, React.js, PostgreSQL'
@@ -493,6 +510,7 @@ function Portfolio() {
         'I have collected, cleansed, and analyzed data that was collected from EPDNew. We are currently constructing the model, which will be ' +
         'a convolutional neural network (CNN) combined with a BiLSTM. If interested, more information on it can be found on my GitHub repository.',
       project_type: {
+        All: true,
         AI: true,
       },
       stack: 'Python, PyData, Tensorflow, SeqIO'
@@ -509,6 +527,7 @@ function Portfolio() {
         "the player that will move first. As is, the AI will be able to see 4 moves ahead. One can change this depth, but may run into RAM issues if the " +
         "depth gets too high.",
       project_type: {
+        All: true,
         AI: true,
       },
       stack: 'Python',
@@ -525,6 +544,7 @@ function Portfolio() {
         "which is capable of breadth-first and depth-first search. I've also implemented a BigInteger ADT which can perform operations on arbitrarily " +
         "large integers, so long as the computer has space for it.",
       project_type: {
+        All: true,
         SWE: true,
       },
       stack: 'C, C++'
@@ -540,11 +560,40 @@ function Portfolio() {
         "batch normalized, and is ReLU activated, except a softmax for the output layer. See the Google Colab if interested in more details. A testing " +
         "accuracy of 99.9% is achieved, with a validation accuracy of 97%.",
       project_type: {
+        All: true,
         AI: true,
       },
       stack: 'Python, NumPy, Tensorflow'
     },
   ];
+
+  const filters = [
+    {
+      type: 'Web',
+      icon: <MdWeb/>
+    },
+    {
+      type: 'AI',
+      icon: <GiBrainFreeze/>
+    },
+    {
+      type: 'SWE',
+      icon: <VscCircuitBoard/>
+    }
+  ];
+
+  const handleFilterClicked = (filter_type) => {
+    const changeFilters = () => {
+      const new_filters = {
+        ...projectFilters,
+      };
+      new_filters[filter_type] = !projectFilters[filter_type];
+
+      setProjectFilters(new_filters);
+    };
+
+    return changeFilters;
+  };
 
   return (
     <Box className = {classes.jpContainer} elevation = {24}>
@@ -801,9 +850,31 @@ function Portfolio() {
             My Projects
           </Typography>
 
+          <div className = 'project-filter'>
+            {
+              filters.map(filter => (
+                <IconButton
+                  key = {filter.type}
+                  onClick = {handleFilterClicked(filter.type)}
+                  style = {{color: projectFilters[filter.type] ? userTheme.portfolioPrimary : ''}}
+                >
+                  {filter.icon}
+                </IconButton>
+              ))
+            }
+          </div>
+
           <div className = 'project-container'>
             {
-              projects.map(project => (
+              projects.filter(project => {
+                for (const filter in projectFilters)
+                {
+                  if (projectFilters[filter] && (filter in project.project_type) === false)
+                    return false;
+                }
+
+                return true;
+              }).map(project => (
                 <Paper
                   className = {classes.jpProjectPaper}
                   elevation = {12}

@@ -12,6 +12,18 @@
     flex-wrap: wrap;
 }
 
+.project-filter
+{
+    display: flex;
+    justify-content: center;
+}
+
+.filter-button
+{
+    color: red;
+    border: 2px solid red;
+}
+
 @media all and (max-width: 935px)
 {
     .project-container
