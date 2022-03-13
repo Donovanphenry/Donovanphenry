@@ -32,6 +32,7 @@ import Drawer from '@material-ui/core/Drawer';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import IconButton from '@material-ui/core/IconButton';
+
 import {FiSun} from 'react-icons/fi';
 import {BiMoon} from 'react-icons/bi';
 import {GiBrainFreeze} from 'react-icons/gi';
@@ -44,6 +45,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import HomeIcon from '@material-ui/icons/Home';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import DescriptionIcon from '@material-ui/icons/Description';
+import AllInclusiveIcon from '@material-ui/icons/AllInclusive';
 
 import {makeStyles} from '@material-ui/core/styles';
 
@@ -435,8 +437,6 @@ function Portfolio() {
       AppColors.lightTheme : AppColors.darkTheme;
     setUserTheme(newTheme);
   };
-
-  console.log('userTheme = ', userTheme);
 
   const projects = [
     {
@@ -853,13 +853,16 @@ function Portfolio() {
           <div className = 'project-filter'>
             {
               filters.map(filter => (
-                <IconButton
-                  key = {filter.type}
+                <Button
+                  className = {classes.homeDrawerTravDocBtn}
+                  startIcon = {filter.icon}
                   onClick = {handleFilterClicked(filter.type)}
-                  style = {{color: projectFilters[filter.type] ? userTheme.portfolioPrimary : ''}}
+                  key = {filter.type}
+                  style = {{color: projectFilters[filter.type] ? userTheme.portfolioPrimary : userTheme.portfolioSecondary}}
+                  variant = 'text'
                 >
-                  {filter.icon}
-                </IconButton>
+                  {filter.type}
+                </Button>
               ))
             }
           </div>
