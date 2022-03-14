@@ -853,7 +853,7 @@ function Portfolio() {
 
               {
                 skills['Other'].map(other_skill => (
-                  <Typography key = {'Other ' + other_skill}>{other_skill}</Typography>
+                  <Typography key = {'Other ' + other_skill} className = {classes.jpSkill}>{other_skill}</Typography>
                 ))
               }
             </Paper>
