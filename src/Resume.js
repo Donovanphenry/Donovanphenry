@@ -3,6 +3,8 @@ import {useHistory} from 'react-router-dom';
 
 import AppContext from './AppContext';
 
+import './Styles/Resume.css';
+
 import AoJ from './images/AoJ.png';
 import PromoterPredictorModel from './images/PromoterPredictorModel.png';
 import BstAnalysis from './images/BST_Analysis.png';
@@ -508,7 +510,7 @@ function Resume() {
       company: 'NASA - GISS',
       location: 'Remote',
       title: 'Software Engineer Intern',
-      dates: 'January, 2022 - Present',
+      dates: 'January, 2022 - May, 2022',
       description: 'Brought on to recreate existing data visualization project that is both more efficient ' +
         'and also more user-friendly.'
     },
@@ -955,59 +957,35 @@ function Resume() {
           </Grid>
         </Grid>
 
-        <Hidden xsDown>
-          <Grid container className = {classes.projectTemplateContainer}>
-            <Grid item sm = {2}>
-              <Typography className = {classes.projectTemplate}>
-                Project Name
-              </Typography>
-            </Grid>
+        <Typography className = {classes.sectionType} id = 'resProjects' style = {{textAlign: 'center'}}>
+          Projects
+        </Typography>
 
-            <Grid item sm = {4}>
-              <Typography className = {classes.projectTemplate}>
-                Project GitHub
-              </Typography>
-            </Grid>
+        <div className = 'project-grid'>
+          {projects.map(project => (
+            <div
+              key = {`${project.name}-container-div`}
+              style = {{color: userTheme.resumeSecondary}}
+              className = 'project-container'
+            >
+              <div className = 'project-name'>
+                {project.name}
+              </div>
 
-            <Grid item sm = {6}>
-              <Typography className = {classes.projectTemplate}>
-                Project Description
-              </Typography>
-            </Grid>
-          </Grid>
-        </Hidden>
+              <div className = 'project-picture-container'>
+                <Link href = {project.github_link}>
+                  <img className = 'project-picture' src = {project.icon_src}/>
+                </Link>
+              </div>
 
-        <Hidden smUp>
-          <Typography className = {classes.sectionType} id = 'resProjects'>
-            Projects
-          </Typography>
-        </Hidden>
-
-        <Grid container className = {classes.project} style = {{alignItems: 'center'}}>
-          {
-            projects.map(project => (
-              <React.Fragment key = {`${project.name} Fragment`}>
-                <Grid item xs = {12} sm = {2} className = {classes.projectName}>
-                  <Typography className = {classes.projectNameTypog}>
-                    {project.name}
-                  </Typography>
-                </Grid>
-
-                <Grid item xs = {12} sm = {4} className = {classes.projectPictureContainer}>
-                  <Link href = {project.github_link}>
-                    <Avatar className = {classes.projectPicture} src = {project.icon_src}/>
-                  </Link>
-                </Grid>
-
-                <Grid item xs = {12} sm = {6} className = {classes.projectDesc}>
-                  <Typography className = {classes.projectDescTypog}>
-                    {project.description}
-                  </Typography>
-                </Grid>
-              </React.Fragment>
-            ))
-          }
-        </Grid>
+              <div className = 'project-disc'>
+                <Typography className = 'project-desc-typog'>
+                  {project.description}
+                </Typography>
+              </div>
+            </div>
+          ))}
+        </div>
       </Box>
 
       <Box className = {classes.resumeFooter}>
