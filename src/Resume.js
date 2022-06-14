@@ -920,7 +920,7 @@ function Resume() {
                   </Typography>
 
                   <Typography className = {classes.schoolAwards}>
-                    - High Honors: &Phi;&Beta;&Kappa;, Cum Laude
+                    - High Honors: &Phi;&Beta;&Kappa;, Cum Laude, Dean's Honors
                   </Typography>
 
                   <Typography className = {classes.schoolMajor}>
