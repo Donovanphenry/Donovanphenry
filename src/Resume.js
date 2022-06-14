@@ -879,7 +879,7 @@ function Resume() {
                   </Typography>
 
                   <Typography className = {classes.schoolAwards}>
-                    - SMC Dean's Honor List: Fall 2017, Spring 2018, Fall 2018, Spring 2019, Fall 2019, Spring 2020
+                    - Dean's Honor List: Fall 2017, Spring 2018, Fall 2018, Spring 2019, Fall 2019, Spring 2020
                   </Typography>
 
                   <Typography className = {classes.schoolSTEMProg}>
@@ -915,12 +915,20 @@ function Resume() {
                     - Minor: Statistics.
                   </Typography>
 
+                  <Typography className = {classes.schoolAwards}>
+                    - Dean's Honor List: Winter 2021, Spring 2021, Summer 2021, Fall 2021, Winter 2022, Spring 2022
+                  </Typography>
+
+                  <Typography className = {classes.schoolAwards}>
+                    - High Honors: &Phi;&Beta;&Kappa;, Cum Laude
+                  </Typography>
+
                   <Typography className = {classes.schoolMajor}>
                     - Clubs: Santa Cruz Artificial Intelligence Club
                   </Typography>
 
                   <Typography className = {classes.schoolGPA}>
-                    - GPA: 3.8
+                    - GPA: 3.85
                   </Typography>
                 </ListItemText>
               </ListItem>
@@ -980,7 +988,7 @@ function Resume() {
 
               <div className = 'project-disc'>
                 <Typography className = 'project-desc-typog'>
-                  {project.description}
+                  &nbsp;&nbsp;&nbsp;&nbsp;{project.description}
                 </Typography>
               </div>
             </div>
