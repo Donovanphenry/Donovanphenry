@@ -511,8 +511,9 @@ function Resume() {
       location: 'Remote',
       title: 'Software Engineer Intern',
       dates: 'January, 2022 - May, 2022',
-      description: 'Brought on to recreate existing data visualization project that is both more efficient ' +
-        'and also more user-friendly.'
+      description: 'Developed an interactive flight map for the Research Scanning Polarimeter. Modularized data ' +
+        'pipeline, decreased initial render time, increased frame rate and increased user experience. Wrote, maintained ' +
+        'and distributed a fully functional app as lead programmer of the project.'
     },
     {
       company: 'Infinite Options/Serving Fresh',
