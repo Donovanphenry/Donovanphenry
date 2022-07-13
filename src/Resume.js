@@ -294,6 +294,7 @@ const useStyles = makeStyles((theme) => ({
   },
 
   employmentDescription: {
+    fontWeight: 'normal',
     [theme.breakpoints.down('sm')]: {
       fontSize: '14px',
     },
