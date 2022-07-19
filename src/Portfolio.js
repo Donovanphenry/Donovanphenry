@@ -595,55 +595,71 @@ function Portfolio() {
     return changeFilters;
   };
 
-  const skills = {
-    'Languages': [
-      'Java',
-      'C++',
-      'JavaScript',
-      'Python',
-      'C',
-      'C#',
-      'HTML',
-      'CSS',
-      'Assembly',
-      'PostgreSQL',
-      'Lisp'
-    ],
-    'Frameworks / Libraries': [
-      'React',
-      'Material UI',
-      'NumPy',
-      'Pandas',
-      'TensorFlow',
-      'PyTorch',
-      'Java Util',
-      'JavaFX'
-    ],
-    'Relevant Coursework': [
-      'Calculus I, II, III',
-      'Differential Equations',
-      'Linear Algebra',
-      'Discrete Structures',
-      'Probability Theory',
-      'Computer Architecture',
-      'Web Development',
-      'Data Structures and Algorithms',
-      'Applied Machine Learning',
-      'Artificial Intelligence',
-      'Calc. Based Mechanics',
-      'Calc. Based Electromagnetism',
-      'Calc. Based Fluids, Optics and Waves'
-    ],
-    'Other': [
-      'Git',
-      'GitHub',
-      'Docker',
-      'Jest and Puppeteer',
-      'Node.js',
-      'Express',
-      'OpenAPI',
-    ]
-  };
+  const skills = [
+    {
+      name: 'Languages',
+      icon: <SiPython className = {classes.jpSkillsIcon} />,
+      skill_list: [
+        'Java',
+        'C++',
+        'JavaScript',
+        'Python',
+        'C',
+        'C#',
+        'HTML',
+        'CSS',
+        'Assembly',
+        'PostgreSQL',
+        'Lisp'
+      ],
+    },
+    {
+      name: 'Frameworks / Libraries',
+      icon: <SiMaterialUi className = {classes.jpSkillsIcon} />,
+      skill_list: [
+        'React',
+        'Material UI',
+        'NumPy',
+        'Pandas',
+        'TensorFlow',
+        'PyTorch',
+        'Java Util',
+        'JavaFX'
+      ],
+    },
+    {
+      name: 'Relevant Coursework',
+      icon: <SiMathworks className = {classes.jpSkillsIcon} />,
+      skill_list: [
+        'Calculus I, II, III',
+        'Differential Equations',
+        'Linear Algebra',
+        'Discrete Structures',
+        'Probability Theory',
+        'Computer Architecture',
+        'Web Development',
+        'Data Structures and Algorithms',
+        'Applied Machine Learning',
+        'Artificial Intelligence',
+        'Calc. Based Mechanics',
+        'Calc. Based Electromagnetism',
+        'Calc. Based Fluids, Optics and Waves'
+      ],
+    },
+    {
+      name: 'Other',
+      icon: <SiDocker className = {classes.jpSkillsIcon} />,
+      skill_list: [
+        'Git',
+        'GitHub',
+        'Docker',
+        'Jest and Puppeteer',
+        'Node.js',
+        'Express',
+        'OpenAPI',
+      ],
+    }
+  ];
 
   return (
     <Box className = {classes.jpContainer} elevation = {24}>
@@ -770,7 +786,6 @@ function Portfolio() {
       <Paper
         className = {classes.jpContentContainer}
         // column
-        elevation = {20}
       >
         <Box className = {classes.jpTitle}>
           <Typography className = {classes.jpTitleTypog}>
@@ -789,74 +804,29 @@ function Portfolio() {
           </Typography>
 
           <div className = 'my-skills'>
-            <Paper
-              className = {classes.jpSkillsPaper}
-              elevation = {12}
-              // always column
-              // flex basis and grow set when strictly greater than xs
-            >
-              <Box className = {classes.jpSkillsSectionTitle}>
-                <Typography className = {classes.jpSkillsTypog}>
-                  Languages
-                </Typography>
-                
-                <SiPython className = {classes.jpSkillsIcon} />
-              </Box>
+            {
+              skills.map(skill => (
+                <Paper
+                  className = {classes.jpSkillsPaper}
+                >
+                  <Box className = {classes.jpSkillsSectionTitle}>
+                    <Typography className = {classes.jpSkillsTypog}>
+                      {skill.name}
+                    </Typography>
+                    
+                    {skill.icon}
+                  </Box>
 
-              {
-                skills['Languages'].map(language => (
-                  <Typography key = {'Language ' + language} className = {classes.jpSkill}>{language}</Typography>
-                ))
-              }
-            </Paper>
 
-            <Paper className = {classes.jpSkillsPaper} elevation = {12}>
-              <Box className = {classes.jpSkillsSectionTitle}>
-                <Typography className = {classes.jpSkillsTypog}>
-                  Frameworks / Libraries
-                </Typography>
-                
-                <SiMaterialUi className = {classes.jpSkillsIcon} />
-              </Box>
+                  {
+                    skill.skill_list.map(skill_element => (
+                      <Typography key = {`${skill.name} ${skill_element}`} className = {classes.jpSkill}>{skill_element}</Typography>
+                    ))
+                  }
 
-              {
-                skills['Frameworks / Libraries'].map(fw_lib => (
-                  <Typography key = {'Frameworks / Libraries ' + fw_lib} className = {classes.jpSkill}>{fw_lib}</Typography>
-                ))
-              }
-            </Paper>
-
-            <Paper className = {classes.jpSkillsPaper} elevation = {12}>
-              <Box className = {classes.jpSkillsSectionTitle}>
-                <Typography className = {classes.jpSkillsTypog}>
-                  Relevant Coursework
-                </Typography>
-                
-                <SiMathworks className = {classes.jpSkillsIcon} />
-              </Box>
-
-              {
-                skills['Relevant Coursework'].map(course => (
-                  <Typography key = {'Relevant Coursework ' + course} className = {classes.jpSkill}>{course}</Typography>
-                ))
-              }
-            </Paper>
-
-            <Paper className = {classes.jpSkillsPaper} elevation = {12}>
-              <Box className = {classes.jpSkillsSectionTitle}>
-                <Typography className = {classes.jpSkillsTypog}>
-                  Other
-                </Typography>
-                
-                <SiDocker className = {classes.jpSkillsIcon} />
-              </Box>
-
-              {
-                skills['Other'].map(other_skill => (
-                  <Typography key = {'Other ' + other_skill} className = {classes.jpSkill}>{other_skill}</Typography>
-                ))
-              }
-            </Paper>
+                </Paper>
+              ))
+            }
           </div>
         </Box>
 
@@ -898,7 +868,6 @@ function Portfolio() {
               }).map(project => (
                 <Paper
                   className = {classes.jpProjectPaper}
-                  elevation = {12}
                   key = {`${project.name} paper`}
                 >
                   <Link

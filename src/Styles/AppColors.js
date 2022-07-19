@@ -1,12 +1,12 @@
 const AppColors = {};
 
 AppColors.darkTheme = {
-    homeBackground: '#0D1117',
-    homeBackgroundGradient: '#11171f',
-    homeAppBarColor: '#131921',
-    homePrimary: '#5e9bf7',
-    homeSecondary: '#FFD700',
-    homeMenuBtn: '#5e9bf7',
+    homeBackground: '#303030',
+    homeBackgroundGradient: '#303030',
+    homeAppBarColor: '#303030',
+    homePrimary: '#BEBEBE',
+    homeSecondary: '#ED5565',
+    homeMenuBtn: '#ED5565',
     resumeBackground: '#303030',
     resumePrimary: '#3deb69b7',
     resumeSecondary: '#BEBEBE',
@@ -16,8 +16,8 @@ AppColors.darkTheme = {
     portfolioPrimary: '#ED5565',
     portfolioSecondary: '#BEBEBE',
     grey: '#BEBEBE',
-    contactPrimary: '#81aef7',
-    contactSecondary: '#FFD700',
+    contactPrimary: '#BEBEBE',
+    contactSecondary: '#ED5565',
     contactTirtiary: '#0D1117',
 };
 

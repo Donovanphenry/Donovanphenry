@@ -137,6 +137,7 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
     paddingLeft: theme.spacing(6),
     paddingRight: theme.spacing(6),
+    marginTop: theme.spacing(1),
   },
 
   li: {
