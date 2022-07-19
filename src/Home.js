@@ -336,9 +336,13 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'center',
-    color: props => props.homePrimary,
+    color: 'red',
     paddingTop: theme.spacing(2),
     paddingBottom: theme.spacing(2),
+  },
+
+  externalLinkIcon: {
+    color: props => props.homeSecondary,
   },
 
   middleOfTextLink: {
@@ -758,14 +762,14 @@ function Home() {
 
       <Box className = {classes.externalLinks}>
         <Link href = "https://github.com/Donovanphenry">
-          <IconButton color = 'inherit'>
-            <GitHubIcon />
+          <IconButton>
+            <GitHubIcon className = {classes.externalLinkIcon}/>
           </IconButton>
         </Link>
 
         <Link href = "https://www.linkedin.com/in/donovan-henry/">
-          <IconButton color = 'inherit'>
-            <LinkedInIcon />
+          <IconButton>
+            <LinkedInIcon className = {classes.externalLinkIcon}/>
           </IconButton>
         </Link>
       </Box>
