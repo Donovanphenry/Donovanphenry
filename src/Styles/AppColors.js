@@ -22,17 +22,17 @@ AppColors.darkTheme = {
 };
 
 AppColors.lightTheme = {
-  homeBackground: '#eeeeee',
+  homeBackground: '#DCDCDC',
   homeBackgroundGradient: 'white',
   homeAppBarColor: '#3f51b5',
   homePrimary: '#252627',
   homeSecondary: '#3f51b5',
   homeMenuBtn: '#0D1117',
-  resumeBackground: '#eeeeee',
+  resumeBackground: '#DCDCDC',
   resumePrimary: '#3f51b5',
   resumeSecondary: '#252627',
   resumeAppBarColor: '#3f51b5',
-  portfolioBackground: '#eeeeee',
+  portfolioBackground: '#DCDCDC',
   portfolioBackground2: 'white',
   portfolioPrimary: '#3f51b5',
   portfolioSecondary: '#252627',
