@@ -962,7 +962,7 @@ function Resume() {
 
             <Typography className = {classes.interestsDescript}>
               Played tier 1, club hockey where I learned the importance of teamwork, communication, organization and discipline. Fascinated
-              by theoretical computer science, math and physics. Passionate about helping mankind enhance its influence among the stars.
+              by computer science, math and physics. Passionate about helping the world with my knowledge in computer science.
             </Typography>
           </Grid>
         </Grid>
