@@ -230,7 +230,7 @@ function Resume() {
       company: 'NASA - GISS',
       location: 'Remote',
       title: 'Intern',
-      tech_stack: 'React.js, WebGL, MapboxGL, Material UI, JSFive',
+      tech_stack: 'React, WebGL, MapboxGL, Material UI, JSFive',
       dates: 'Jan, 2022 - May, 2022',
       description: [
         'Developed an interactive flight map for the Research Scanning Polarimeter',
