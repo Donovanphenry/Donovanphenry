@@ -263,7 +263,7 @@ function Resume() {
       icon_src: DefDec,
       description: [
         'Web app designed to promote awareness about the devastating effects of deforestation, and detect deforestation in satellite images',
-        'Neural network trained on image dataset, made predictions on test dataset, and a 3x3 grid was selected',
+        'Neural network trained on image dataset, made predictions on test dataset',
         'Render of these predictions was created using blender, and an interactive model was created using WebGL'
       ]
     },
