@@ -230,7 +230,7 @@ function Resume() {
       location: 'Remote',
       title: 'Intern',
       tech_stack: 'React.js, WebGL, MapboxGL, Material UI, JSFive',
-      dates: 'January, 2022 - May, 2022',
+      dates: 'Jan, 2022 - May, 2022',
       description: [
         'Developed an interactive flight map for the Research Scanning Polarimeter',
         'Modularized data pipeline',
@@ -244,7 +244,7 @@ function Resume() {
       location: 'Remote',
       title: 'Intern',
       tech_stack: 'React, Material UI, MySQL',
-      dates: 'March, 2021 - September, 2021',
+      dates: 'Mar, 2021 - Sep, 2021',
       description: [
         'Created various histograms and tables based off of the expected value of products and price differentials between competitors',
         'Contributed in various ways as a front-end React developer',
@@ -303,7 +303,7 @@ function Resume() {
       name: 'University of California, Santa Cruz',
       degree: 'Bachelor of Science in Computer Science, Minor in Statistics',
       location: 'Santa Cruz, California',
-      dates: 'June 2020 - June 2022',
+      dates: 'June, 2020 - June, 2022',
       accomplishments: [
         "Dean's Honor List in Winter 2021, Spring 2021, Summer 2021, Fall 2021, Winter 2022, Spring 2022",
         'High Honors: Phi Beta Kappa, Cum Laude',
@@ -605,7 +605,7 @@ function Resume() {
                   <div className = 'project-links'>
                     <a href = {proj.github_link} className = 'project-link'>
                       <AiFillGithub />
-                      <p className = 'link-name'>Source</p>
+                      <p className = 'link-name'>Repo</p>
                     </a>
 
                     {
@@ -645,13 +645,16 @@ function Resume() {
           {
             skills.map(skill => (
               <Box className = {'skill-instance'} style = {{color: userTheme.resumeSecondary}}>
-                <div className = 'skill-type'>
-                  {skill.name}
+                <div>
+                  <span className = 'skill-type'>
+                    {skill.name}
+                  </span>
+
+                  <span className = {'skill-list'}>
+                    {': ' + skill.list.join(', ')}
+                  </span>
                 </div>
 
-                <div className = {'skill-list'}>
-                  {': ' + skill.list.join(', ')}
-                </div>
               </Box>
             ))
           }
