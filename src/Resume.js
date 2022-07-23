@@ -39,12 +39,15 @@ import PhoneIcon from '@material-ui/icons/Phone';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import HomeIcon from '@material-ui/icons/Home';
-import {FiSun} from 'react-icons/fi';
+import {FiSun, FiGlobe} from 'react-icons/fi';
 import {BiMoon} from 'react-icons/bi';
+import {AiFillPhone, AiOutlineMail, AiFillLinkedin, AiFillGithub} from 'react-icons/ai';
+import {GiSpiderWeb} from 'react-icons/gi';
 
 import {makeStyles} from '@material-ui/core/styles';
 
 import AppColors from './Styles/AppColors';
+import { red } from '@material-ui/core/colors';
 
 const btnWidth = 140;
 
@@ -144,10 +147,10 @@ const useStyles = makeStyles((theme) => ({
   resumeContentContainer: {
     display: 'flex',
     flexDirection: 'column',
-    margin: theme.spacing(8),
+    marginTop: theme.spacing(2),
+    marginLeft: theme.spacing(8),
+    marginRight: theme.spacing(8),
     marginBottom: theme.spacing(5),
-    borderTop: props => `6px solid ${props.resumePrimary}`,
-    borderBottom: props => `6px solid ${props.resumePrimary}`,
     paddingBottom: theme.spacing(4),
     color: props => props.resumePrimary,
     overflow: 'hidden',
@@ -161,311 +164,26 @@ const useStyles = makeStyles((theme) => ({
     },
   },
 
-  myInfo: {
+  occupation:
+  {
+    color: props => props.resumePrimary,
+  },
+
+  section_title:
+  {
     display: 'flex',
-    alignItems: 'center',
-  },
-
-  myNameTypog: {
+    alignItems: 'end',
     fontWeight: 'bold',
+    fontSize: '25px',
+    marginBottom: '0px',
+    marginTop: '0px',
 
-    [theme.breakpoints.up('md')]: {
-      fontSize: '64px',
+    '&::after': {
+      content: '',
+      flex: '1',
+      height: '2px',
+      backgroundColor: '#3f51b5',
     },
-    [theme.breakpoints.up('sm')]: {
-      fontSize: '50px',
-    },
-    [theme.breakpoints.down('xs')]: {
-      fontSize: '36px',
-      paddingTop: theme.spacing(4),
-    },
-  },
-
-  contactInfoBox: {
-    flexGrow: 1,
-    overflow: 'hidden',
-  },
-
-  contactInfo: {
-    paddingTop: theme.spacing(4),
-    paddingBottom: theme.spacing(2),
-    fontWeight: 'bold',
-    [theme.breakpoints.up('sm')]: {
-      fontSize: '24px',
-    },
-    [theme.breakpoints.down('xs')]: {
-      fontSize: '18px',
-    },
-  },
-
-  selfDescriptionAndAchievements: {
-    [theme.breakpoints.up('sm')]: {
-      marginBottom: theme.spacing(2),
-    },
-  },
-
-  personalInformationFlexbox: {
-    paddingTop: theme.spacing(1),
-    paddingBottom: theme.spacing(1),
-    display: 'flex',
-    alignItems: 'center',
-    overflowX: 'auto',
-    overflowY: 'auto',
-  },
-
-  addressTypog: {
-    marginLeft: theme.spacing(1),
-    color: props => props.resumeSecondary,
-  },
-
-  phoneEmailTypog: {
-    padding: theme.spacing(1),
-    color: props => props.resumeSecondary,
-  },
-
-  githubTypog: {
-    padding: theme.spacing(1),
-  },
-
-  myContactLink: {
-    border: '1px solid #6b6b6b',
-    color: props => props.resumeSecondary,
-    marginLeft: theme.spacing(1),
-    padding: theme.spacing(1),
-  },
-
-  personalInfoBox: {
-    display: 'flex',
-    alignItems: 'center',
-  },
-
-  sectionType: {
-    fontWeight: 'bold',
-    [theme.breakpoints.up('sm')]: {
-      fontSize: '20px',
-    },
-
-    [theme.breakpoints.down('xs')]: {
-      fontSize: '16px',
-      paddingTop: theme.spacing(2),
-    },
-  },
-
-  sectionTypeCloser: {
-    fontWeight: 'bold',
-    [theme.breakpoints.up('sm')]: {
-      fontSize: '20px',
-      marginTop: theme.spacing(2),
-    },
-
-    [theme.breakpoints.down('xs')]: {
-      fontSize: '16px',
-      paddingTop: theme.spacing(2),
-    },
-  },
-
-  descriptionList: {
-    paddingTop: theme.spacing(1),
-  },
-
-  employmentOp: {
-    color: props => props.resumeSecondary,
-    paddingLeft: '0px',
-  },
-
-  employmentInfo: {
-    [theme.breakpoints.up('sm')]: {
-      fontSize: '18px',
-    },
-    [theme.breakpoints.down('xs')]: {
-      fontSize: '15px',
-    },
-  },
-
-  compName: {
-    fontWeight: 'bold',
-  },
-
-  employmentDates: {
-    fontStyle: 'italic',
-    [theme.breakpoints.down('sm')]: {
-      fontSize: '14px',
-    },
-  },
-
-  employmentDescription: {
-    fontWeight: 'normal',
-    [theme.breakpoints.down('sm')]: {
-      fontSize: '14px',
-    },
-  },
-
-  schoolList: {
-    color: props => props.grey,
-  },
-
-  school: {
-    paddingLeft: '0px',
-  },
-
-  uniInfo: {
-    color: props => props.resumeSecondary,
-  },
-
-  schoolNameDates: {
-    paddingLeft: '0px',
-  },
-
-  schoolName: {
-    fontWeight: 'bold',
-  },
-
-  schoolDates: {
-    [theme.breakpoints.up('sm')]: {
-      fontSize: '16px',
-    },
-    [theme.breakpoints.down('xs')]: {
-      fontSize: '15px',
-    },
-  },
-
-  schoolMajor: {
-    paddingTop: theme.spacing(1),
-    [theme.breakpoints.up('sm')]: {
-      fontSize: '16px',
-    },
-    [theme.breakpoints.down('xs')]: {
-      fontSize: '14px',
-    },
-  },
-
-  schoolAwards: {
-    paddingTop: theme.spacing(1),
-    [theme.breakpoints.up('sm')]: {
-      fontSize: '16px',
-    },
-    [theme.breakpoints.down('xs')]: {
-      fontSize: '14px',
-    },
-  },
-
-  schoolSTEMProg: {
-    paddingTop: theme.spacing(1),
-    [theme.breakpoints.up('sm')]: {
-      fontSize: '16px',
-    },
-    [theme.breakpoints.down('xs')]: {
-      fontSize: '14px',
-    },
-  },
-
-  schoolCompSciClub: {
-    paddingTop: theme.spacing(1),
-    [theme.breakpoints.up('sm')]: {
-      fontSize: '16px',
-    },
-    [theme.breakpoints.down('xs')]: {
-      fontSize: '14px',
-    },
-  },
-
-  schoolTutor: {
-    paddingTop: theme.spacing(1),
-    [theme.breakpoints.up('sm')]: {
-      fontSize: '16px',
-    },
-    [theme.breakpoints.down('xs')]: {
-      fontSize: '14px',
-    },
-  },
-
-  schoolGPA: {
-    paddingTop: theme.spacing(1),
-    [theme.breakpoints.up('sm')]: {
-      fontSize: '16px',
-    },
-    [theme.breakpoints.down('xs')]: {
-      fontSize: '14px',
-    },
-  },
-
-  interestsDescript: {
-    color: props => props.resumeSecondary,
-    paddingTop: theme.spacing(1),
-
-    [theme.breakpoints.up('sm')]: {
-      fontSize: '16px'
-    },
-    [theme.breakpoints.down('xs')]: {
-      fontSize: '14px',
-    },
-  },
-
-  projectInfo: {
-    fontSize: '18px',
-  },
-
-  project: {
-    color: props => props.resumeSecondary,
-    marginBottom: theme.spacing(1),
-
-    [theme.breakpoints.up('sm')]: {
-      marginTop: theme.spacing(1),
-    },
-  },
-
-  projectTemplateContainer: {
-    [theme.breakpoints.down('sm')]: {
-      display: 'flex',
-      justifyContent: 'flex-end',
-    },
-  },
-
-  projectTemplate: {
-    fontWeight: 'bold',
-    [theme.breakpoints.up('sm')]: {
-      fontSize: '20px',
-    },
-
-    [theme.breakpoints.down('xs')]: {
-      fontSize: '16px',
-      overflow: 'auto',
-      color: props => props.resumePrimary,
-      marginTop: theme.spacing(2),
-      marginBottom: theme.spacing(1),
-    },
-  },
-
-  projectDesc: {
-    paddingTop: theme.spacing(1),
-  },
-
-  projectDescTypog: {
-    [theme.breakpoints.down('sm')]: {
-      fontSize: '14px',
-    },
-  },
-
-  projectName: {
-    overflow: 'auto',
-  },
-
-  projectNameTypog: {
-    paddingTop: theme.spacing(1),
-    fontWeight: 'bold',
-
-    [theme.breakpoints.down('sm')]: {
-      fontSize: '14px',
-    },
-
-    [theme.breakpoints.down('xs')]: {
-      marginBottom: theme.spacing(2),
-    },
-  },
-
-  projectPicture: {
-    height: theme.spacing(9),
-    width: theme.spacing(9),
   },
   
   resumeFooter: {
@@ -510,82 +228,105 @@ function Resume() {
     {
       company: 'NASA - GISS',
       location: 'Remote',
-      title: 'Software Engineer Intern',
+      title: 'Intern',
+      tech_stack: 'React.js, WebGL, MapboxGL, Material UI, JSFive',
       dates: 'January, 2022 - May, 2022',
-      description: 'Developed an interactive flight map for the Research Scanning Polarimeter. Modularized data ' +
-        'pipeline, decreased initial render time, increased frame rate and increased user experience. Wrote, maintained ' +
-        'and distributed a fully functional app as lead programmer of the project.'
+      description: [
+        'Developed an interactive flight map for the Research Scanning Polarimeter',
+        'Modularized data pipeline',
+        'Decreased initial render time',
+        'Increased frame rate and increased user experience',
+        'Wrote, maintained and distributed a fully functional app as lead programmer of the project'
+      ]
     },
     {
       company: 'Infinite Options/Serving Fresh',
       location: 'Remote',
-      title: 'Data Science/React Intern',
+      title: 'Intern',
+      tech_stack: 'React, Material UI, MySQL',
       dates: 'March, 2021 - September, 2021',
-      description: 'Created various histograms and tables based off of the expected value of products ' +
-        'and price differentials between competitors. Contributed in various ways as a front-end React developer. ' +
-        'Often brought onto new projects to bring about efficiency increases/refactor code.'
+      description: [
+        'Created various histograms and tables based off of the expected value of products and price differentials between competitors',
+        'Contributed in various ways as a front-end React developer',
+        'Often brought onto new projects to bring about efficiency increases/refactor code'
+      ]
     },
-    {
-      company: 'Westside',
-      location: 'Torrance',
-      title: 'Technician',
-      dates: 'June, 2017 - August 2018',
-      description: 'Detailed cars, performed simple maintenance of luxury cars, high security cars and of the shop. Prepared vehicles ' +
-        'for photo shoots and commercials.'
-    },
-    {
-      company: 'Westside',
-      location: 'Torrance',
-      title: 'Shadow',
-      dates: 'June, 2018 - August, 2018',
-      description: "Shadowed the same company's software engineer and asked to learn and evaluate the code."
-    },
-    {
-      company: "Mr. B's Bricks",
-      location: 'Manhattan Beach',
-      title: 'Camp Instructor',
-      dates: 'August, 2016 - June, 2017',
-      description: 'Served as a counselor for an after school program in which kids, K-5th, are provided ' +
-        'an opportunity to build with LEGOs. I ensured that the kids were having fun and weren’t feeling overwhelmed by the instructions.',
-    }
   ];
 
   const projects = [
     {
       name: 'Deforestation Detector',
       github_link: 'https://github.com/Deforestation-Detector',
+      live_link: 'https://deforestationdetector.com',
+      tech_stack: 'Python, JavaScript, TensorFlow, NumPy, WebGL, HTML, CSS',
       icon_src: DefDec,
-      description: 'Machine learning and web gl project in which deep learning team collected data of satellite images ' +
-        'and trained a neural network on said images. After this, a 3x3 grid of images were stitched together and the ' +
-        'model made predictions on those images. The web team then created a rendering of those predictions using blender and web gl. ' +
-        'The motivation of this project was to promote awareness about the devastating effects and extent of deforestation.'
+      description: [
+        'Web app designed to promote awareness about the devastating effects of deforestation, and detect deforestation in satellite images',
+        'Neural network trained on image dataset, made predictions on test dataset, and a 3x3 grid was selected',
+        'Render of these predictions was created using blender, and an interactive model was created using WebGL'
+      ]
     },
     {
       name: 'Hide and Seq',
       github_link: 'https://github.com/Donovanphenry/Hide_And_Seq',
+      tech_stack: 'Python, TensorFlow, SeqIO, NumPy',
       icon_src: PromoterPredictorModel,
-      description: 'Machine learning project with the goal of detecting the position of a promoter in a given DNA sequence. My partner and ' +
-        'I have collected, cleansed, and analyzed data that was collected from EPDNew. We are currently constructing the model, which will be ' +
-        'a convolutional neural network (CNN) combined with a BiLSTM. If interested, more information on it can be found on my GitHub repository.'
+      description: [
+        'Neural network trained to predict the location of a promoter in a DNA sequence',
+      ]
     },
     {
       name: 'Attack on Jupiter',
       github_link: 'https://github.com/Donovanphenry/Attack-on-Jupiter',
+      tech_stack: 'Java, Java Util, JavaFX',
       icon_src: AoJ,
-      description: 'I, along with three other classmates, designed and deployed a 2-dimensional video game (created using Java FX’s API) in which ' +
-        'the user has to defeat three bosses. My role in the game’s development was lead designer of the UML and lead/full-stack developer of the game itself.'
+      description: [
+        'Designed and deployed a 2D video-game where user has to defeat 3 bosses in 1-on-1 combat',
+        'Created physics engine, health system, user-input system and combat mechanics',
+        'Created user-interface',
+      ]
     },
     {
       name: 'ADT Library',
       github_link: 'https://github.com/Donovanphenry/ADT-Library',
+      tech_stack: 'C, C++, Java, Python',
       icon_src: BstAnalysis,
-      description: "Library with different ADTs implemented by me throughout the years. Each implementation contains a client module that uses the data " +
-        "structure and a blackbox module that unit tests it. The languages used are C and C++, distinguished by different subdirectories in the repo. " +
-        "The different ADTs implemented thus far are a linked list, stack, queue, binary search tree, red-black tree, dictionary, and a graph, which is " +
-        "capable of breadth-first and depth-first search. I've also implemented a BigInteger ADT which can perform operations on arbitrarily large integers, " +
-        "so long as the computer has space for it.",
+      description: [
+        "Library with various ADTs, such as linked list, stack, queue, red-black tree, dictionary, graph etc",
+        "Designed unit tests for each ADT",
+      ]
     },
   ];
+
+  const education = [
+    {
+      name: 'University of California, Santa Cruz',
+      degree: 'Bachelor of Science in Computer Science, Minor in Statistics',
+      location: 'Santa Cruz, California',
+      dates: 'June 2020 - June 2022',
+      accomplishments: [
+        "Dean's Honor List in Winter 2021, Spring 2021, Summer 2021, Fall 2021, Winter 2022, Spring 2022",
+        'High Honors: Phi Beta Kappa, Cum Laude',
+        'Club member of UC Santa Cruz Artificial Intelligence club',
+        'GPA of 3.84'
+      ]
+    }
+  ]
+
+  const skills = [
+    {
+      name: 'Frameworks/Libraries',
+      list: ['React', 'Material UI', 'NumPy', 'Pandas', 'TensorFlow', 'PyTorch', 'Java Util', 'JavaFX']
+    },
+    {
+      name: 'Languages',
+      list: ['Java', 'C++', 'C', 'Rust', 'JavaScript', 'Python', 'C#', 'HTML', 'CSS']
+    },
+    {
+      name: 'Other',
+      list: ['Git', 'Docker', 'Jest', 'Puppeteer', 'Node', 'Express']
+    }
+  ]
 
   const changeTheme = () => {
     setUserTheme(userTheme == AppColors.darkTheme ? AppColors.lightTheme : AppColors.darkTheme);
@@ -742,270 +483,179 @@ function Resume() {
       </AppBar>
 
       <Box className = {classes.resumeContentContainer}>
-        <Grid container className = {classes.myInfo}>
-          <Grid item className = {classes.myName} xs = {12} sm = {6}>
-            <Typography className = {classes.myNameTypog}>
-              Donovan Henry
-            </Typography>
-          </Grid>
+        <Box className = {'personal-info'} style = {{color: userTheme.resumeSecondary}}>
+          <p className = 'name'>
+            <span id = 'first-name'>Donovan</span> <span id = 'last-name'>Henry</span>
+          </p>
 
-          <Grid item className = {classes.contactInfoBox} xs = {12} sm = {6}>
-            <Typography className = {classes.contactInfo}>
-              Contact Me
-            </Typography>
+          <p className = {classes.occupation}>
+            Software Engineer
+          </p>
 
-            <Box 
-              className = {classes.personalInformationFlexbox}
-            >
-              <HomeIcon />
-              <Typography
-                className = {classes.addressTypog}
-              >
-                1555 8th Street, Manhattan Beach, CA
-              </Typography>
-            </Box>
+          <p id = 'location'>
+            304 Cliff Street, Santa Cruz, California, 95060
+          </p>
 
-            <Box
-              className = {classes.personalInformationFlexbox}
-            >
-              <PhoneIcon />
-              <Typography
-                className = {classes.phoneEmailTypog}
-              >
-                (310)617-9136
-              </Typography>
-            </Box>
+          <div>
+            <AiFillPhone/> 310-617-9136 |&nbsp;
+            <AiOutlineMail/> donovanphenry@gmail.com |&nbsp;
+            <FiGlobe/> <a href = 'www.donovanhenry.com' className = 'personal-link' style = {{color: userTheme.resumeSecondary}}> www.donovanhenry.com </a> |&nbsp;
+            <AiFillGithub/> <a href = 'https://github.com/Donovanphenry' className = 'personal-link' style = {{color: userTheme.resumeSecondary}}> donovanphenry </a> |&nbsp;
+            <AiFillLinkedin /> <a href = 'https://www.linkedin.com/in/donovan-henry/' className = 'personal-link' style = {{color: userTheme.resumeSecondary}}> donovan-henry </a> 
+          </div>
+        </Box>
 
-            <Box
-              className = {classes.personalInformationFlexbox}
-            >
-              <MailIcon />
-              <Typography
-                className = {classes.phoneEmailTypog}
-              >
-                dphenry&#64;ucsc.edu
-              </Typography>
-            </Box>
+        <Box className = {'section'} mt = {1}>
+          <p className = 'section-title'>
+            Work Experience
+          </p>
 
-            <Box 
-              className = {classes.personalInformationFlexbox}
-            >
-              <GitHubIcon />
-              <Link
-                className = {classes.myContactLink}
-                href = 'https://github.com/Donovanphenry'
-              >
-                github.com/Donovanphenry
-              </Link>
-            </Box>
+          {
+            experiences.map(exp => (
+              <Box className = {'section-instance'} style = {{color: userTheme.resumeSecondary}}>
+                <div className = 'row-one'>
+                  <p className = 'section-company'>
+                    {exp.company} | <span id = 'instance-title'>{exp.title}</span>
+                  </p>
 
-            <Box 
-              className = {classes.personalInformationFlexbox}
-            >
-              <LinkedInIcon />
-              <Link
-                className = {classes.myContactLink}
-                href = 'https://www.linkedin.com/in/donovan-henry/'
-              >
-                linkedin.com/in/donovan-henry/
-              </Link>
-            </Box>
-          </Grid>
-        </Grid>
+                  <p className = 'instance-location' style = {{color: userTheme.resumePrimary}}>
+                    {exp.location}
+                  </p>
+                </div>
 
-        <Grid container className = {classes.selfDescriptionAndAchievements}>
-          <Grid item xs = {12} sm = {6}>
-            <Typography className = {classes.sectionType} id = 'resExperience'>
-              Experience
-            </Typography>
+                <div className = 'row-two'>
+                  <p className = 'section-stack'>
+                    {exp.tech_stack}
+                  </p>
+                  
+                  <p className = 'instance-duration'>
+                    {exp.dates}
+                  </p>
+                </div>
 
-            <List className = {classes.descriptionList}>
-              {
-                experiences.map((job, index) => (
-                  <ListItem
-                    className = {classes.employmentOp}
-                    key = {`${index} container`}
-                  >
-                    <ListItemText>
-                      <Typography
-                        className = {classes.employmentInfo}
-                      >
-                        <span className = {classes.compName}>{job.company}</span>
-                        <span className = {classes.locTitle}>, {job.location} - {job.title}</span>
-                      </Typography>
+                <ul className = 'section-info'>
+                  {
+                    exp.description.map(ack => (
+                      <li className = 'section-description'>
+                        {ack}
+                      </li>
+                    ))
+                  }
+                </ul>
+              </Box>
+            ))
+          }
+        </Box>
 
-                      <Typography className = {classes.employmentDates}>
-                        {job.dates}
-                      </Typography>
+        <Box className = 'section'>
+          <p className = 'section-title'>
+            Education
+          </p>
 
-                      <Typography className = {classes.employmentDescription}>
-                        {job.description}
-                      </Typography>
-                    </ListItemText>
-                  </ListItem>
-                ))
-              }
-            </List>
+          {
+            education.map(educ => (
+              <Box className = {'section-instance'} style = {{color: userTheme.resumeSecondary}}>
+                <div className = 'row-one'>
+                  <p className = 'section-company'>
+                    {educ.name}
+                  </p>
 
-            <Typography className = {classes.sectionType} id = 'resExperience'>
-              Technical Skills
-            </Typography>
+                  <p className = 'instance-location' style = {{color: userTheme.resumePrimary}}>
+                    {educ.location}
+                  </p>
+                </div>
 
-            <Typography className = {classes.interestsDescript}>
-              - Languages: Java, C++, C, JavaScript, Python, PostgreSQL,
-              C#, HTML, CSS, Assembly, Scheme, SmallTalk, Ocaml, Perl, MATLab
-            </Typography>
+                <div className = 'row-two'>
+                  <p className = 'section-stack'>
+                    {educ.degree}
+                  </p>
+                  
+                  <p className = 'instance-duration'>
+                    {educ.dates}
+                  </p>
+                </div>
 
-            <Typography className = {classes.interestsDescript}>
-              - Developer Tools &amp; Misc: ReactJS, Material UI, Node.js, NPM, Docker,
-              Java Util, Express, REST APIs, Jest, Puppeteer, JavaFX, PyTorch, NumPy,
-              Pandas, TensorFlow, SKLearn
-            </Typography>
-          </Grid>
+                <ul className = 'section-info'>
+                  {
+                    educ.accomplishments.map(ack => (
+                      <li className = 'section-description'>
+                        {ack}
+                      </li>
+                    ))
+                  }
+                </ul>
+              </Box>
+            ))
+          }
+        </Box>
 
-          <Grid item xs = {12} sm = {6}>
-            <Typography className = {classes.sectionType} id = 'resEducation'>
-              Education
-            </Typography>
+        <Box className = 'section'>
+          <p className = 'section-title'>
+            Projects
+          </p>
 
-            <List className = {classes.schoolList}>
-              <ListItem className = {classes.school}>
-                <ListItemText className = {classes.uniInfo}>
-                  <Typography className = {classes.schoolNameDate}>
-                    <span className = {classes.schoolName}>Santa Monica College </span>
-                    <span className = {classes.schoolDates}> | 2017 - 2020</span>
-                  </Typography>
+          {
+            projects.map(proj => (
+              <Box className = {'section-instance'} style = {{color: userTheme.resumeSecondary}}>
+                <div className = 'row-one'>
+                  <p className = 'section-company'>
+                    {proj.name}
+                  </p>
 
-                  <Typography className = {classes.schoolMajor}>
-                    - Major: Computer Science, B.S.
-                  </Typography>
+                  <div className = 'project-links'>
+                    <a href = {proj.github_link} className = 'project-link'>
+                      <AiFillGithub />
+                      <p className = 'link-name'>Source</p>
+                    </a>
 
-                  <Typography className = {classes.schoolAwards}>
-                    - Dean's Honor List: Fall 2017, Spring 2018, Fall 2018, Spring 2019, Fall 2019, Spring 2020
-                  </Typography>
+                    {
+                      proj.live_link && (
+                        <a href = {proj.live_link} className = 'project-link'>
+                          <GiSpiderWeb />
+                          <p className = {'link-name'}>Live</p>
+                        </a>
+                      )
+                    }
+                  </div>
+                </div>
 
-                  <Typography className = {classes.schoolSTEMProg}>
-                    - Member of the SMC STEM program
-                  </Typography>
+                <p className = 'section-stack'>
+                  {proj.tech_stack}
+                </p>
 
-                  <Typography className = {classes.schoolCompSciClub}>
-                    - Participated in SMC's Computer Science club
-                  </Typography>
+                <ul className = 'section-info'>
+                  {
+                    proj.description.map(ack => (
+                      <li className = 'section-description'>
+                        {ack}
+                      </li>
+                    ))
+                  }
+                </ul>
+              </Box>
+            ))
+          }
+        </Box>
+    
+        <Box className = 'section'>
+          <p className = 'section-title'>
+            Skills
+          </p>
 
-                  <Typography className = {classes.schoolTutor}>
-                    - Tutored in SMC's Math lab
-                  </Typography>
+          {
+            skills.map(skill => (
+              <Box className = {'skill-instance'} style = {{color: userTheme.resumeSecondary}}>
+                <div className = 'skill-type'>
+                  {skill.name}
+                </div>
 
-                  <Typography className = {classes.schoolGPA}>
-                    - GPA: 3.7
-                  </Typography>
-                </ListItemText>
-              </ListItem>
-
-              <ListItem className = {classes.school}>
-                <ListItemText className = {classes.uniInfo}>
-                  <Typography className = {classes.schoolNameDate}>
-                    <span className = {classes.schoolName}>University of California, Santa Cruz</span>
-                    <span className = {classes.schoolDates}> | 2020 - 2022</span>
-                  </Typography>
-
-                  <Typography className = {classes.schoolMajor}>
-                    - Major: Computer Science, B.S.
-                  </Typography>
-
-                  <Typography className = {classes.schoolMajor}>
-                    - Minor: Statistics.
-                  </Typography>
-
-                  <Typography className = {classes.schoolAwards}>
-                    - Dean's Honor List: Winter 2021, Spring 2021, Summer 2021, Fall 2021, Winter 2022, Spring 2022
-                  </Typography>
-
-                  <Typography className = {classes.schoolAwards}>
-                    - High Honors: &Phi;&Beta;&Kappa;, Cum Laude, Dean's Honors
-                  </Typography>
-
-                  <Typography className = {classes.schoolMajor}>
-                    - Clubs: Santa Cruz Artificial Intelligence Club
-                  </Typography>
-
-                  <Typography className = {classes.schoolGPA}>
-                    - GPA: 3.85
-                  </Typography>
-                </ListItemText>
-              </ListItem>
-            </List>
-
-            <Typography className = {classes.sectionType}>
-              Relevant Courses &amp; Strengths &int;
-            </Typography>
-
-            <Typography className = {classes.interestsDescript}>
-              - Math: Calculus (I, II &amp; III), Linear Algebra,
-              Discrete Structures, Probability Theory
-            </Typography>
-
-            <Typography className = {classes.interestsDescript}>
-              - Physics(Calc/Linear Algebra Based): Mechanics, E&amp;M
-              &amp; Fluids, Optics and Waves
-            </Typography>
-            
-            <Typography className = {classes.interestsDescript}>
-              - Computer Science: Applied Machine Learning, Artificial
-              Intelligence, Data Structs and Algorithms, Computer Architecture,
-              Web Development, Analysis of Algorithms
-            </Typography>
-
-            <Typography className = {classes.sectionTypeCloser} id = 'resSkillsAndInterests'>
-              Interests & Skills
-            </Typography>
-
-            <Typography className = {classes.interestsDescript}>
-              Played tier 1, club hockey where I learned the importance of teamwork, communication, organization and discipline. Fascinated
-              by computer science, math and physics. Passionate about helping the world with my knowledge in computer science.
-            </Typography>
-          </Grid>
-        </Grid>
-
-        <Typography className = {classes.sectionType} id = 'resProjects' style = {{textAlign: 'center'}}>
-          Projects
-        </Typography>
-
-        <div className = 'project-grid'>
-          {projects.map(project => (
-            <div
-              key = {`${project.name}-container-div`}
-              style = {{color: userTheme.resumeSecondary}}
-              className = 'project-container'
-            >
-              <div className = 'project-name'>
-                {project.name}
-              </div>
-
-              <div className = 'project-picture-container'>
-                <Link href = {project.github_link}>
-                  <img className = 'project-picture' src = {project.icon_src}/>
-                </Link>
-              </div>
-
-              <div className = 'project-disc'>
-                <Typography className = 'project-desc-typog'>
-                  &nbsp;&nbsp;&nbsp;&nbsp;{project.description}
-                </Typography>
-              </div>
-            </div>
-          ))}
-        </div>
-      </Box>
-
-      <Box className = {classes.resumeFooter}>
-        <Typography className = {classes.resumeFooterTypog}>
-          Copyright &#169; 2021 Donovan Henry | All Rights Reserved.
-        </Typography>
-
-        <Typography className = {classes.resumeFooterTypog}>
-          www.donovanhenry.com
-        </Typography>
+                <div className = {'skill-list'}>
+                  {': ' + skill.list.join(', ')}
+                </div>
+              </Box>
+            ))
+          }
+        </Box>
       </Box>
     </div>
   );
