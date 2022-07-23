@@ -302,7 +302,7 @@ function Resume() {
   const education = [
     {
       name: 'University of California, Santa Cruz',
-      degree: 'Bachelor of Science in Computer Science, Minor in Statistics',
+      degree: 'B.S. in Computer Science, Minor in Statistics',
       location: 'Santa Cruz, California',
       dates: 'June, 2020 - June, 2022',
       accomplishments: [
