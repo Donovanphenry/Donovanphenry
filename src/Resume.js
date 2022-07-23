@@ -236,18 +236,18 @@ function Resume() {
         'Developed an interactive flight map for the Research Scanning Polarimeter',
         'Modularized data pipeline',
         'Decreased initial render time',
-        'Increased frame rate and increased user experience',
-        'Wrote, maintained and distributed a fully functional app as lead programmer of the project'
+        'Increased frame rate, and enhanced user experience',
+        'Wrote, maintained, and distributed a fully functional app as lead programmer of the project'
       ]
     },
     {
-      company: 'Infinite Options/Serving Fresh',
+      company: 'Infinite Options',
       location: 'Remote',
       title: 'Intern',
       tech_stack: 'React, Material UI, MySQL',
       dates: 'Mar, 2021 - Sep, 2021',
       description: [
-        'Created various histograms and tables based off of the expected value of products and price differentials between competitors',
+        'Created various histograms, and tables based off of the expected value of products, and price differentials between competitors',
         'Contributed in various ways as a front-end React developer',
         'Often brought onto new projects to bring about efficiency increases/refactor code'
       ]
@@ -260,7 +260,6 @@ function Resume() {
       github_link: 'https://github.com/Deforestation-Detector',
       live_link: 'https://deforestationdetector.com',
       tech_stack: 'Python, JavaScript, TensorFlow, NumPy, WebGL, HTML, CSS',
-      icon_src: DefDec,
       description: [
         'Web app designed to promote awareness about the devastating effects of deforestation, and detect deforestation in satellite images',
         'Neural network trained on image dataset, made predictions on test dataset',
@@ -268,22 +267,24 @@ function Resume() {
       ]
     },
     {
-      name: 'Hide and Seq',
-      github_link: 'https://github.com/Donovanphenry/Hide_And_Seq',
-      tech_stack: 'Python, TensorFlow, SeqIO, NumPy',
-      icon_src: PromoterPredictorModel,
+      name: 'HTTP Server, and Reverse Proxy',
+      github_link: 'https://github.com/Donovanphenry/Server',
+      tech_stack: 'C, PThreads',
       description: [
-        'Neural network trained to predict the location of a promoter in a DNA sequence',
+        'Implements multi-threaded server',
+        'Reverse Proxy acts as a client to several servers',
+        'Log file is maintained to evenly distribute load among available servers',
+        'Supports LRU caching with custom cache size',
+        'Includes shell scripts for unit testing'
       ]
     },
     {
       name: 'Attack on Jupiter',
       github_link: 'https://github.com/Donovanphenry/Attack-on-Jupiter',
       tech_stack: 'Java, Java Util, JavaFX',
-      icon_src: AoJ,
       description: [
-        'Designed and deployed a 2D video-game where user has to defeat 3 bosses in 1-on-1 combat',
-        'Created physics engine, health system, user-input system and combat mechanics',
+        'Designed, and deployed a 2D video-game where user has to defeat 3 bosses in 1-on-1 combat',
+        'Created physics engine, health system, user-input system, and combat mechanics',
         'Created user-interface',
       ]
     },
@@ -291,7 +292,6 @@ function Resume() {
       name: 'ADT Library',
       github_link: 'https://github.com/Donovanphenry/ADT-Library',
       tech_stack: 'C, C++, Java, Python',
-      icon_src: BstAnalysis,
       description: [
         "Library with various ADTs, such as linked list, stack, queue, red-black tree, dictionary, graph etc",
         "Designed unit tests for each ADT",
@@ -304,7 +304,7 @@ function Resume() {
       name: 'University of California, Santa Cruz',
       degree: 'B.S. in Computer Science, Minor in Statistics',
       location: 'Santa Cruz, California',
-      dates: 'June, 2020 - June, 2022',
+      dates: 'Graduated June 2022',
       accomplishments: [
         "Dean's Honor List in Winter 2021, Spring 2021, Summer 2021, Fall 2021, Winter 2022, Spring 2022",
         'High Honors: Phi Beta Kappa, Cum Laude',
@@ -317,16 +317,24 @@ function Resume() {
   const skills = [
     {
       name: 'Frameworks/Libraries',
-      list: ['React', 'Material UI', 'NumPy', 'Pandas', 'TensorFlow', 'PyTorch', 'Java Util', 'JavaFX']
+      list: ['React', 'Material UI', 'NumPy', 'Pandas', 'TensorFlow', 'PyTorch', 'Express']
     },
     {
       name: 'Languages',
       list: ['Java', 'C++', 'C', 'Rust', 'JavaScript', 'Python', 'C#', 'HTML', 'CSS']
     },
     {
+      name: 'Utilities',
+      list: ['Git', 'Docker', 'Jest', 'Puppeteer', 'Node']
+    },
+    {
+      name: 'Interests',
+      list: ['Fascinated by computer science, math, and physics. Passionate about using these to make the world better']
+    },
+    {
       name: 'Other',
-      list: ['Git', 'Docker', 'Jest', 'Puppeteer', 'Node', 'Express']
-    }
+      list: ['Played tier 1 hockey where I learned the importance of teamwork, communication, organization, and discipline']
+    },
   ]
 
   const changeTheme = () => {
@@ -640,7 +648,7 @@ function Resume() {
     
         <Box className = 'section'>
           <p className = 'section-title'>
-            Skills
+            Skills/Interests
           </p>
 
           {
