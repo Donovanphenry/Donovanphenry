@@ -142,7 +142,6 @@ const useStyles = makeStyles((theme) => ({
   resumeContainer: {
     width: '100%',
     backgroundColor: props => props.resumeBackground,
-    // border: '2px solid red',
   },
 
   resumeContentContainer: {
@@ -160,7 +159,9 @@ const useStyles = makeStyles((theme) => ({
       paddingRight: theme.spacing(2),
     },
     [theme.breakpoints.down('xs')]: {
-      margin: theme.spacing(4),
+      marginLeft: theme.spacing(4),
+      marginRight: theme.spacing(4),
+      marginTop: theme.spacing(4)
     },
   },
 
