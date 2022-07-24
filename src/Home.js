@@ -583,18 +583,11 @@ function Home() {
           </Box>
 
           <Typography className={classes.homeAboutMeTypog}>
-            UC Santa Cruz student who&apos;s passionate about computer science,
+            UC Santa Cruz graduate who&apos;s passionate about computer science,
             math and physics. Great experience in C-based languages
             (see &quot;Skills&quot; section of portfolio or resume)
             and web development, with a love for the underlying concepts.
             I.e. data structures, algorithms, computer architecture etc.
-          </Typography>
-
-          <Typography className={classes.homeAspirTypog}>
-            Currently seeking internships & opportunities in STEM-related
-            fields, but some areas of particular interest to me are theoretical
-            computer science, machine learning, web development,
-            deep learning, and computational physics.
           </Typography>
         </Box>
 
@@ -625,9 +618,9 @@ function Home() {
 
                 <Typography className={classes.homeInfoTypog}>
                   &nbsp;&nbsp;&nbsp;&nbsp;I&apos;m
-                  currently a senior at UC Santa Cruz 🎓
-                  majoring in computer science (B.S.), and concurrently
-                  pursuing a minor in statistics.
+                  a graduate from UC Santa Cruz 🎓
+                  with a Bachelor&apos;s of Science in computer science,
+                  and a minor in statistics
                 </Typography>
               </Box>
             </Paper>
@@ -655,10 +648,10 @@ function Home() {
                   a love for machine learning. In turn, I&apos;d
                   relish an opportunity to contribute to a company whose
                   mission lies at the forefront of this technology. I
-                  have enrolled in several machine learning courses
-                  throughout my time at UC Santa Cruz, and will continue
-                  to enroll in more.
-                  Also, I&apos;m currently a member of UCSC&apos;s <a
+                  took several machine learning courses
+                  throughout my time at UC Santa Cruz, and have become
+                  confident in my skills with these technologies.
+                  Also, I was a member of UCSC&apos;s <a
                     className = {classes.middleOfTextLink}
                     href = "https://scai.ucsc.edu/" >
                     SCAI
@@ -720,8 +713,7 @@ function Home() {
                   played tier one hockey for around six years
                   and in turn, I love doing things that involve
                   teamwork. Whether that be working on projects
-                  with friends, getting involved in SCAI club
-                  affairs, playing/watching sports etc., I&apos;ll
+                  with friends, playing/watching sports etc., I&apos;ll
                   love it if it requires that we do it as a team. I
                   also love to go for hikes with friends.
                 </Typography>
