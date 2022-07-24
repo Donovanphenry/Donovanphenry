@@ -308,7 +308,7 @@ function Resume() {
       accomplishments: [
         "Dean's Honor List in Winter 2021, Spring 2021, Summer 2021, Fall 2021, Winter 2022, Spring 2022",
         'High Honors: Phi Beta Kappa, Cum Laude',
-        'Club member of UC Santa Cruz Artificial Intelligence club',
+        'Club member of UC Santa Cruz Artificial Intelligence',
         'GPA of 3.84'
       ]
     }
