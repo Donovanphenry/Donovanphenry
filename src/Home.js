@@ -523,13 +523,29 @@ function Home() {
                     startIcon = {<AssignmentIndIcon />}
                     onClick = {() => {
                       setDrawerOpen(false);
-                      const el = document.getElementById('homeAboutMeTitle');
+                      const el = document.getElementById('about-me');
                       el.scrollIntoView(true);
                     }}
                     color = 'inherit'
                     variant = 'outlined'
                   >
                     About Me
+                  </Button>
+                </ListItem>
+
+                <ListItem>
+                  <Button
+                    className = {classes.homeDrawerTravDocBtn}
+                    startIcon = {<AssignmentIndIcon />}
+                    onClick = {() => {
+                      setDrawerOpen(false);
+                      const el = document.getElementById('contact-me');
+                      el.scrollIntoView(true);
+                    }}
+                    color = 'inherit'
+                    variant = 'outlined'
+                  >
+                    Contact Me
                   </Button>
                 </ListItem>
               </List>
@@ -593,7 +609,7 @@ function Home() {
 
         <Typography
           className = {classes.homeAboutMeTitleTypog}
-          id = 'homeAboutMeTitle'
+          id = 'about-me'
         >
           About Me
         </Typography>
@@ -727,7 +743,7 @@ function Home() {
         </Box>
 
         <Box className = {classes.contactMeSectionTitle}>
-          <Typography className = {classes.contactMeTypog}>
+          <Typography className = {classes.contactMeTypog} id = 'contact-me'>
             Contact Me
           </Typography>
 

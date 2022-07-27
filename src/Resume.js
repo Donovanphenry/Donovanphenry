@@ -398,7 +398,7 @@ function Resume() {
                     color = 'inherit'
                     onClick = {() => {
                       setDrawerOpen(false);
-                      document.getElementById('resExperience').scrollIntoView(true);
+                      document.getElementById('experience').scrollIntoView(true);
                     }}
                   >
                     Experience
@@ -413,7 +413,7 @@ function Resume() {
                     color = 'inherit'
                     onClick = {() => {
                       setDrawerOpen(false);
-                      document.getElementById('resEducation').scrollIntoView(true);
+                      document.getElementById('education').scrollIntoView(true);
                     }}
                   >
                     Education
@@ -428,7 +428,7 @@ function Resume() {
                     color = 'inherit'
                     onClick = {() => {
                       setDrawerOpen(false);
-                      document.getElementById('resSkillsAndInterests').scrollIntoView(true);
+                      document.getElementById('skills').scrollIntoView(true);
                     }}
                   >
                     Skills
@@ -443,7 +443,7 @@ function Resume() {
                     color = 'inherit'
                     onClick = {() => {
                       setDrawerOpen(false);
-                      document.getElementById('resProjects').scrollIntoView(true);
+                      document.getElementById('projects').scrollIntoView(true);
                     }}
                   >
                     Projects
@@ -515,7 +515,7 @@ function Resume() {
         </Box>
 
         <Box className = {'section'} mt = {1}>
-          <p className = 'section-title'>
+          <p className = 'section-title' id = 'experience'>
             Work Experience
           </p>
 
@@ -599,7 +599,7 @@ function Resume() {
         </Box>
 
         <Box className = 'section'>
-          <p className = 'section-title'>
+          <p className = 'section-title' id = 'projects'>
             Projects
           </p>
 
@@ -647,7 +647,7 @@ function Resume() {
         </Box>
     
         <Box className = 'section'>
-          <p className = 'section-title'>
+          <p className = 'section-title' id = 'skills'>
             Skills/Interests
           </p>
 
