@@ -110,12 +110,15 @@ const useStyles = makeStyles((theme) => ({
     color: props => props.homePrimary,
     width: btnWidth,
     justifyContent: 'flex-start',
+    fontSize: '13px',
   },
 
   homeDrawerTravDocBtn: {
-    color: props => props.homePrimary,
+    color: props => props.homeSecondary,
+    borderColor: props => props.homeSecondary,
     width: btnWidth,
     justifyContent: 'flex-start',
+    fontSize: '13px',
   },
 
   homeBtnDivider: {
@@ -526,14 +529,14 @@ function Home() {
                       const el = document.getElementById('about-me');
                       el.scrollIntoView(true);
                     }}
-                    color = 'inherit'
+                    // style = {{color: userTheme.homeSecondary, borderColor: userTheme.homeSecondary}}
                     variant = 'outlined'
                   >
                     About Me
                   </Button>
                 </ListItem>
 
-                <ListItem>
+                <ListItem className = {classes.doc_button}>
                   <Button
                     className = {classes.homeDrawerTravDocBtn}
                     startIcon = {<AssignmentIndIcon />}
@@ -542,7 +545,7 @@ function Home() {
                       const el = document.getElementById('contact-me');
                       el.scrollIntoView(true);
                     }}
-                    color = 'inherit'
+                    // style = {{color: userTheme.homeSecondary, borderColor: userTheme.homeSecondary}}
                     variant = 'outlined'
                   >
                     Contact Me

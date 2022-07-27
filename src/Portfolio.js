@@ -715,7 +715,7 @@ function Portfolio() {
                     className = {classes.drawerTravDocBtn}
                     startIcon = {<SportsHockeyIcon />}
                     onClick = {() => {
-                      let element = document.getElementById('jpSkills');
+                      let element = document.getElementById('skills');
                       element.scrollIntoView(true);
                       setDrawerOpen(false);
                     }}
@@ -732,7 +732,7 @@ function Portfolio() {
                     startIcon = {<DescriptionIcon />}
                     onClick = {() => {
                       setDrawerOpen(false);
-                      document.getElementById('jpProjects').scrollIntoView(true);
+                      document.getElementById('projects').scrollIntoView(true);
                     }}
                     color = 'inherit'
                     variant = 'outlined'
@@ -799,7 +799,7 @@ function Portfolio() {
           id = 'jpSkills'
         >
 
-          <Typography className = {classes.jpSkillsTitleTypog}>
+          <Typography className = {classes.jpSkillsTitleTypog} id = 'skills'>
             Skills
           </Typography>
 
@@ -832,7 +832,7 @@ function Portfolio() {
 
         <Box
           className = {classes.jpProjects}
-          id = 'jpProjects'
+          id = 'projects'
         >
           <Typography className = {classes.jpProjectsTitleTypog}>
             My Projects

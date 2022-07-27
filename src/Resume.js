@@ -423,21 +423,6 @@ function Resume() {
                 <ListItem>
                   <Button
                     className = {classes.drawerTravDocBtn}
-                    startIcon = {<SportsHockeyIcon />}
-                    variant = 'outlined'
-                    color = 'inherit'
-                    onClick = {() => {
-                      setDrawerOpen(false);
-                      document.getElementById('skills').scrollIntoView(true);
-                    }}
-                  >
-                    Skills
-                  </Button>
-                </ListItem>
-
-                <ListItem>
-                  <Button
-                    className = {classes.drawerTravDocBtn}
                     startIcon = {<ComputerIcon />}
                     variant = 'outlined'
                     color = 'inherit'
@@ -447,6 +432,21 @@ function Resume() {
                     }}
                   >
                     Projects
+                  </Button>
+                </ListItem>
+
+                <ListItem>
+                  <Button
+                    className = {classes.drawerTravDocBtn}
+                    startIcon = {<SportsHockeyIcon />}
+                    variant = 'outlined'
+                    color = 'inherit'
+                    onClick = {() => {
+                      setDrawerOpen(false);
+                      document.getElementById('skills').scrollIntoView(true);
+                    }}
+                  >
+                    Skills
                   </Button>
                 </ListItem>
               </List>
@@ -557,7 +557,7 @@ function Resume() {
         </Box>
 
         <Box className = 'section'>
-          <p className = 'section-title'>
+          <p className = 'section-title' id = 'education'>
             Education
           </p>
 
